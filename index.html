@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DIVERGIFY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-container">
+        <a href="/" class="wordmark">DIVERGIFY</a>
+      </div>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#hub">The Hub</a></li>
+          <li><a href="#field-notes">Field Notes</a></li>
+          <li><a href="#dopamine-depot">Dopamine Depot</a></li>
+          <li><a href="#divergipedia">Divergipedia</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="toggle-container">
+        <button id="btn-interference" aria-pressed="false" aria-label="Toggle Reduced Interference Mode">
+          <span class="icon" aria-hidden="true">👁️</span>
+          <span class="label">Low Stim</span>
+        </button>
+
+        <button id="btn-tinfoil" aria-pressed="false" aria-label="Activate Tin Foil Hat Mode">
+          <span class="icon" aria-hidden="true">🛡️</span>
+          <span class="label">Secure</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="hub"><h1>Welcome to DIVERGIFY</h1></section>
+      <section id="field-notes"><h2>Field Notes</h2></section>
+      <section id="dopamine-depot"><h2>Dopamine Depot</h2></section>
+      <section id="divergipedia"><h2>Divergipedia</h2></section>
+      <section id="contact"><h2>Contact</h2></section>
+    </main>
+
+    <div id="live" aria-live="polite" class="visually-hidden"></div>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+  </html>
+

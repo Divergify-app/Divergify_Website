@@ -1,0 +1,83 @@
+:root {
+  --bg-color: #F0F4F8;       /* Hushed Sky */
+  --nav-bg: #FFFFFF;         /* Clean White Header */
+  --text-main: #102A43;      /* Deep Navy */
+  --accent: #627D98;         /* Muted Slate (Buttons) */
+  --shield-color: #27AB83;   /* Success Green for Shield */
+  --font-base: 16px;
+  --anim-speed: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --anim-speed: 0s; }
+}
+
+html { font-size: var(--font-base); }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  transition: background-color var(--anim-speed), color var(--anim-speed);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+/* Header Layout */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--nav-bg);
+  border-bottom: 2px solid #D9E2EC;
+}
+
+.wordmark {
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--text-main);
+  letter-spacing: -0.05em;
+}
+
+.main-nav ul {
+  list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem;
+}
+.main-nav a { color: var(--text-main); text-decoration: none; font-weight: 600; }
+.main-nav a:hover, .main-nav a:focus { text-decoration: underline; }
+
+.toggle-container { display: flex; gap: .5rem; }
+.toggle-container button {
+  display: inline-flex; align-items: center; gap: .5rem;
+  border: 2px solid #D9E2EC; background: #fff; color: var(--text-main);
+  padding: .5rem .75rem; border-radius: .5rem; cursor: pointer;
+  transition: border-color var(--anim-speed), color var(--anim-speed), background var(--anim-speed);
+}
+.toggle-container button:hover { border-color: var(--accent); }
+
+/* Reduced Interference mode toggled on <html> */
+html.reduced-interference { --anim-speed: 0s; --font-base: 19px; }
+html.reduced-interference body {
+  background-color: #FFFFFF;
+  box-shadow: inset 0 0 0 2px #102A43;
+}
+
+/* Tin Foil Hat mode toggled on <html> */
+html.tin-foil-mode .site-header { border-bottom: 4px solid var(--shield-color); }
+
+/* Shields Up pulse */
+@keyframes shield-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 171, 131, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(39, 171, 131, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 171, 131, 0); }
+}
+.shield-active { animation: shield-pulse 0.5s ease-out; color: var(--shield-color) !important; border-color: var(--shield-color) !important; }
+
+main { padding: 2rem; }
+
