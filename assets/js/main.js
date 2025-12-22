@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnInterf = document.getElementById('btn-interference');
   const btnTin = document.getElementById('btn-tinfoil');
   const live = document.getElementById('live');
+  const slider = document.getElementById('energy-slider');
+  const speechBubble = document.getElementById('takota-speech');
+  const leftLid = document.getElementById('lid-left');
+  const rightLid = document.getElementById('lid-right');
+  const heroSection = document.getElementById('hub');
 
   const save = (k, v) => { try { localStorage.setItem(k, v ? 'active' : 'inactive'); } catch {} };
   const pressed = (btn, on) => btn && btn.setAttribute('aria-pressed', String(on));
@@ -64,5 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // wire up events
   btnInterf && btnInterf.addEventListener('click', () => setInterference(!root.classList.contains('reduced-interference')));
   btnTin && btnTin.addEventListener('click', () => setTinFoil(!root.classList.contains('tin-foil-mode')));
-});
 
+  // Energy slider interactions
+  if (slider) {
+    slider.addEventListener('input', e => {
+      const energy = Number(e.target.value);
+      const lidPos = 30 - (energy * 0.3);
+      const safePos = Math.max(0, lidPos);
+      if (leftLid) leftLid.style.transform = `translateY(${safePos}px)`;
+      if (rightLid) rightLid.style.transform = `translateY(${safePos}px)`;
+
+      if (speechBubble && heroSection) {
+        if (energy < 30) {
+          speechBubble.textContent = "Low battery? No problem. We're activating 'Comfort Quest' mode.";
+          heroSection.style.background = 'linear-gradient(180deg, #E3E8EE 0%, #BCCCDC 100%)';
+        } else if (energy < 70) {
+          speechBubble.textContent = 'Okay, baseline looks good. Ready for an Anchor Task?';
+          heroSection.style.background = 'linear-gradient(180deg, #F0F4F8 0%, #D9E2EC 100%)';
+        } else {
+          speechBubble.textContent = "High energy detected! Let's crush Admin Alley while it lasts.";
+          heroSection.style.background = 'linear-gradient(180deg, #F0F4F8 0%, #9FB3C8 100%)';
+        }
+      }
+    });
+  }
+});

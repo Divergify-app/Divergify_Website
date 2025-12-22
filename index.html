@@ -39,7 +39,51 @@
     </header>
 
     <main>
-      <section id="hub"><h1>Welcome to DIVERGIFY</h1></section>
+      <section id="hub" class="hero-section">
+        <div class="hero-content">
+          <div class="takota-container">
+            <div class="speech-bubble" id="takota-speech">
+              Hi, I'm Takota. Where is your brain at right now?
+            </div>
+
+            <svg class="takota-avatar" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="90" fill="#102A43" stroke="#627D98" stroke-width="4"/>
+
+              <g id="eyes-group">
+                <circle cx="70" cy="80" r="15" fill="#F0F4F8"/>
+                <rect id="lid-left" x="50" y="50" width="40" height="30" fill="#102A43" class="eyelid"/>
+
+                <circle cx="130" cy="80" r="15" fill="#F0F4F8"/>
+                <rect id="lid-right" x="110" y="50" width="40" height="30" fill="#102A43" class="eyelid"/>
+              </g>
+
+              <g id="needle-group" style="transform-origin: 100px 120px;">
+                <polygon points="100,100 90,140 100,180 110,140" fill="#27AB83"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="weather-controls">
+            <h1 class="headline">Stop fighting your brain.</h1>
+            <p class="sub-headline">Divergify adapts to your energy, not the other way around.</p>
+
+            <div class="slider-container">
+              <label for="energy-slider" class="slider-label">My Energy Level:</label>
+              <input type="range" min="1" max="100" value="50" class="energy-slider" id="energy-slider" />
+              <div class="slider-labels" aria-hidden="true">
+                <span>Zombie</span>
+                <span>Okay-ish</span>
+                <span>Let's Go</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <button class="btn-primary">Get the App</button>
+              <button class="btn-secondary" id="btn-what-taskache">What is 'Taskache'?</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="field-notes"><h2>Field Notes</h2></section>
       <section id="dopamine-depot"><h2>Dopamine Depot</h2></section>
       <section id="divergipedia"><h2>Divergipedia</h2></section>
@@ -51,4 +95,3 @@
     <script src="assets/js/main.js" defer></script>
   </body>
   </html>
-
