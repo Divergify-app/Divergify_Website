@@ -128,7 +128,13 @@ function renderDivergipedia() {
 
     search.addEventListener("input", () => {
       const q = search.value.trim().toLowerCase();
-      const next = q ? entries.filter(e => e.term.toLowerCase().includes(q) || e.def.toLowerCase().includes(q)) : entries;
+      const next = q
+        ? entries.filter(e =>
+            e.term.toLowerCase().includes(q) ||
+            e.definition.toLowerCase().includes(q) ||
+            e.process.toLowerCase().includes(q)
+          )
+        : entries;
       filtered = next;
       draw(next);
       buildEntries(next);
@@ -148,19 +154,15 @@ function renderDivergipedia() {
       const h = document.createElement("h2");
       h.textContent = item.term;
 
-      const tag = document.createElement("div");
-      tag.className = "dp-tag";
-      tag.textContent = item.tag || "Divergipedia";
-
       top.appendChild(h);
-      top.appendChild(tag);
 
       const d = document.createElement("p");
-      d.className = "text-muted";
-      d.textContent = item.def;
+      d.className = "dp-definition";
+      d.textContent = item.definition;
 
       const ex = document.createElement("p");
-      ex.textContent = `Example: ${item.example}`;
+      ex.className = "dp-process";
+      ex.textContent = item.process;
 
       card.appendChild(top);
       card.appendChild(d);
