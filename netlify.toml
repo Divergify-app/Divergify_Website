@@ -1,2 +1,7 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/app"
+  to = "/app/"
+  status = 301
