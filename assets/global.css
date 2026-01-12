@@ -190,7 +190,7 @@ p { margin: 0 0 var(--space-4); }
 }
 
 .brand svg { height: 26px; width: auto; }
-.wordmark { height: 26px; width: auto; display: block; }
+.wordmark { height: 40px; width: auto; display: block; }
 
 .nav {
   display: flex;
@@ -431,7 +431,7 @@ p { margin: 0 0 var(--space-4); }
 .footer-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: var(--space-4);
   flex-wrap: wrap;
 }
@@ -441,6 +441,16 @@ p { margin: 0 0 var(--space-4); }
   gap: var(--space-4);
   flex-wrap: wrap;
   font-size: var(--text-sm);
+}
+
+.footer-legal {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-legal-links {
+  width: 100%;
+  justify-content: center;
 }
 
 .footer-small {

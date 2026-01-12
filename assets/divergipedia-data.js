@@ -48,8 +48,8 @@ window.DIVERGIPEDIA = [
     "slug": "avoidance-alarm"
   },
   {
-    "term": "Beat Your Baseline",
-    "definition": "A daily streak system where you race against yourself — not perfection, not other people, just your previous performance. Beat Your Baseline tracks how long tasks take you and creates a personal record to chase. Did one thing faster today? You're ahead. On a 3-day improvement streak? Dopamine celebration.",
+    "term": "Beat your baseline",
+    "definition": "A daily streak system where you race against yourself — not perfection, not other people, just your previous performance. Beat your baseline tracks how long tasks take you and creates a personal record to chase. Did one thing faster today? You're ahead. On a 3-day improvement streak? Dopamine celebration.",
     "process": "Behavioral principle: *Self-anchored competition + variable reward timing*",
     "slug": "beat-your-baseline"
   },
@@ -234,10 +234,10 @@ window.DIVERGIPEDIA = [
     "slug": "escape-velocity"
   },
   {
-    "term": "F.E.A.R. Framework",
-    "definition": "A self-brainwashing system adapted from behavioral influence research: **Focus** (make goals unavoidable via environmental cues), **Emotion** (anchor tasks to feelings/consequences), **Agitation** (create productive urgency), **Repetition** (constant exposure until automatic). F.E.A.R. turns tasks into behavior patterns by hitting your nervous system from multiple angles. Example: Your Anchor Task appears on your lock screen (Focus), you've defined why it matters (Emotion), you see the cost of delay (Agitation), and you get varied reminders every 20 minutes (Repetition).",
-    "process": "Behavioral principle: *Multi-vector behavior installation* — single interventions fail. F.E.A.R. compounds influence by layering environmental, emotional, and repetitive triggers.",
-    "slug": "f-e-a-r-framework"
+    "term": "Momentum Weave Framework",
+    "definition": "A Divergify-original behavior design model that layers four drivers: **Cues** (make goals visible through environment and reminders), **Meaning** (anchor tasks to personal stakes), **Urgency** (use a small, chosen push), **Repetition** (steady exposure until it sticks). Momentum Weave turns tasks into patterns by combining context prompts, personal meaning, opted-in time pressure, and daily repetition. Example: Your Anchor Task shows on your lock screen (Cues), you write a one-line why it matters (Meaning), you set a 20-minute countdown you chose (Urgency), and you get a short reminder at the same time each day (Repetition).",
+    "process": "Behavioral principle: *Multi-path behavior support* - layered cues, meaning, urgency, and repetition improve follow-through.",
+    "slug": "momentum-weave-framework"
   },
   {
     "term": "Finish Line Fade",
@@ -301,8 +301,8 @@ window.DIVERGIPEDIA = [
   },
   {
     "term": "Habit Trance Mode",
-    "definition": "A daily repetition system that brainwashes you into automatic behaviors using hypnotic language patterns. You set a habit you want to install (e.g., \"work out daily\") and a specific time. Every day at that time, Divergify sends a short notification with consistent, identity-reinforcing messaging: \"You're the kind of person who works out. You've done it before. Today's the day you already started.\" After 21+ days of this repetitive messaging, the behavior starts feeling automatic — not because you have willpower, but because you've been linguistically conditioned.",
-    "process": "Behavioral principle: *Identity priming through repetition* — behavior change is easier when framed as identity (\"I am someone who...\") rather than action (\"I should...\"). Habit Trance Mode uses daily repetition to install the identity first.",
+    "definition": "A daily repetition system that helps you practice a chosen habit with steady, identity-supporting prompts. You set a habit you want to build (e.g., \"work out daily\") and a specific time. Every day at that time, Divergify sends a short notification with consistent, encouraging messaging: \"You're the kind of person who works out. You've done it before. Today's the day you already started.\" After 21+ days of repetition, the behavior starts feeling more automatic - not because you are forced, but because you've rehearsed it.",
+    "process": "Behavioral principle: *Identity priming through repetition* - behavior change is easier when framed as identity (\"I am someone who...\") rather than action (\"I should...\"). Habit Trance Mode uses daily repetition to support the identity first.",
     "slug": "habit-trance-mode"
   },
   {
@@ -445,8 +445,8 @@ window.DIVERGIPEDIA = [
   },
   {
     "term": "Repetition Lock",
-    "definition": "A daily messaging system that reinforces target behaviors through consistent, hypnotic language patterns. Repetition Lock sends you the same core message every day at the same time, using identity-based framing: \"You're someone who [behavior]. You've done it before. Today's the day you already started.\" After 21+ days, the behavior starts feeling automatic.",
-    "process": "Behavioral principle: *Linguistic conditioning through repetition*",
+    "definition": "A daily messaging system that reinforces target behaviors through consistent, supportive language. Repetition Lock sends you the same core message every day at the same time, using identity-based framing: \"You're someone who [behavior]. You've done it before. Today's the day you already started.\" After 21+ days, the behavior starts feeling automatic.",
+    "process": "Behavioral principle: *Identity reinforcement through repetition*",
     "slug": "repetition-lock"
   },
   {
@@ -547,7 +547,7 @@ window.DIVERGIPEDIA = [
   },
   {
     "term": "Trigger Stack",
-    "definition": "A collection of environmental, sensory, or social cues that automatically prompt a specific behavior. Example: \"When I sit at my desk + put on headphones + open Divergify, I enter work mode.\" Trigger Stack reduces the willpower needed to start by relying on conditioned responses.",
+    "definition": "A collection of environmental, sensory, or social cues that automatically prompt a specific behavior. Example: \"When I sit at my desk + put on headphones + open Divergify, I enter work mode.\" Trigger Stack reduces the willpower needed to start by relying on learned cues you choose.",
     "process": "Behavioral principle: *Multi-sensory behavioral cue layering*",
     "slug": "trigger-stack"
   },
