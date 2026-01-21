@@ -401,14 +401,31 @@ p { margin: 0 0 var(--space-4); }
   justify-content: space-between;
   gap: var(--space-4);
 }
-.dp-term h2 { margin: 0; font-size: var(--text-2xl); }
+.dp-term h2 {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .dp-definition {
   color: var(--color-text);
   margin-top: var(--space-3);
 }
 
-.dp-process {
+.dp-meta {
   color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-2);
+}
+
+.dp-mechanism,
+.dp-usage {
+  color: var(--color-text);
+  margin-top: var(--space-3);
+}
+
+.dp-usage em {
   font-style: italic;
 }
 
