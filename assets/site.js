@@ -132,7 +132,10 @@ function renderDivergipedia() {
         ? entries.filter(e =>
             e.term.toLowerCase().includes(q) ||
             e.definition.toLowerCase().includes(q) ||
-            e.process.toLowerCase().includes(q)
+            e.mechanism.toLowerCase().includes(q) ||
+            e.usage.toLowerCase().includes(q) ||
+            e.phonetic.toLowerCase().includes(q) ||
+            e.pos.toLowerCase().includes(q)
           )
         : entries;
       filtered = next;
@@ -156,17 +159,38 @@ function renderDivergipedia() {
 
       top.appendChild(h);
 
+      const meta = document.createElement("p");
+      meta.className = "dp-meta";
+      meta.textContent = `${item.pos} • /${item.phonetic}/`;
+
       const d = document.createElement("p");
       d.className = "dp-definition";
       d.textContent = item.definition;
 
-      const ex = document.createElement("p");
-      ex.className = "dp-process";
-      ex.textContent = item.process;
+      const mech = document.createElement("p");
+      mech.className = "dp-mechanism";
+      const mechLabel = document.createElement("strong");
+      mechLabel.textContent = "Mechanism:";
+      mech.appendChild(mechLabel);
+      const mechText = item.mechanism.startsWith(" ") ? item.mechanism : ` ${item.mechanism}`;
+      mech.appendChild(document.createTextNode(mechText));
+
+      const usage = document.createElement("p");
+      usage.className = "dp-usage";
+      const usageLabel = document.createElement("strong");
+      usageLabel.textContent = "Usage:";
+      usage.appendChild(usageLabel);
+      const usageGap = item.usage.startsWith(" ") ? "" : " ";
+      usage.appendChild(document.createTextNode(usageGap));
+      const usageText = document.createElement("em");
+      usageText.textContent = item.usage;
+      usage.appendChild(usageText);
 
       card.appendChild(top);
+      card.appendChild(meta);
       card.appendChild(d);
-      card.appendChild(ex);
+      card.appendChild(mech);
+      card.appendChild(usage);
 
       mount.appendChild(card);
     });
