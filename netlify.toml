@@ -2,6 +2,11 @@
   publish = "."
 
 [[redirects]]
+  from = "/app/*"
+  to = "/app/index.html"
+  status = 200
+
+[[redirects]]
   from = "/blog/"
   to = "/field-notes/"
   status = 301
