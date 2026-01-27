@@ -2,7 +2,8 @@
 
 const STORAGE_KEYS = {
   shades: "divergify_mode_reduced_interference",
-  tinfoil: "divergify_tinfoil_hat_mode"
+  tinfoil: "divergify_tinfoil_hat_mode",
+  fieldNotesReading: "fieldNotesReadingMode"
 };
 
 const EASTER_EGGS = [
@@ -89,6 +90,88 @@ function setFooterEasterEgg() {
   if (!el) return;
   const line = EASTER_EGGS[Math.floor(Math.random() * EASTER_EGGS.length)];
   el.textContent = line;
+}
+
+function ensureFieldNotesStyles() {
+  const head = document.head;
+  if (!head) return;
+  const existing = qs("link[href='/assets/field-notes.css']", head);
+  if (existing) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/assets/field-notes.css";
+  head.appendChild(link);
+}
+
+function initFieldNotesReadingMode() {
+  const path = (location.pathname || "").toLowerCase();
+  if (!path.includes("/field-notes")) return;
+
+  document.body.dataset.fieldNotes = "true";
+  ensureFieldNotesStyles();
+
+  let mode = "spacious";
+  try {
+    const stored = localStorage.getItem(STORAGE_KEYS.fieldNotesReading);
+    if (stored === "compact" || stored === "spacious") mode = stored;
+  } catch {
+    mode = "spacious";
+  }
+  document.body.dataset.reading = mode;
+
+  const content = qs(".field-notes-body");
+  const main = qs("main");
+  if (content) {
+    content.classList.add("field-notes-article");
+  } else {
+    const article = main?.querySelector(".card");
+    if (article) article.classList.add("field-notes-article");
+  }
+
+  const dateLine = main?.querySelector("time")?.closest("p") || null;
+  if (dateLine) dateLine.classList.add("field-notes-date");
+
+  if (!content && !dateLine) return;
+
+  let insertAfter = null;
+  if (dateLine) {
+    insertAfter = dateLine;
+  } else if (main) {
+    insertAfter = main.querySelector("h1");
+  }
+
+  if (!insertAfter || qs(".reading-toggle", main || document)) return;
+
+  const toggle = document.createElement("div");
+  toggle.className = "reading-toggle";
+  toggle.innerHTML = `
+    <span class="reading-label">Reading</span>
+    <div class="reading-segmented" role="group" aria-label="Reading mode">
+      <button class="reading-button" type="button" data-reading="spacious" aria-pressed="false">Spacious</button>
+      <button class="reading-button" type="button" data-reading="compact" aria-pressed="false">Compact</button>
+    </div>
+  `;
+
+  insertAfter.parentElement?.insertBefore(toggle, insertAfter.nextSibling);
+
+  const buttons = qsa(".reading-button", toggle);
+  function apply(next) {
+    document.body.dataset.reading = next;
+    buttons.forEach(btn => {
+      btn.setAttribute("aria-pressed", btn.dataset.reading === next ? "true" : "false");
+    });
+    try {
+      localStorage.setItem(STORAGE_KEYS.fieldNotesReading, next);
+    } catch {
+      // ignore storage errors
+    }
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => apply(btn.dataset.reading || "spacious"));
+  });
+
+  apply(mode);
 }
 
 /* Divergipedia rendering ---------------------------------------- */
@@ -213,5 +296,6 @@ function renderDivergipedia() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartials();
+  initFieldNotesReadingMode();
   renderDivergipedia();
 });
