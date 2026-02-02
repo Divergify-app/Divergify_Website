@@ -278,9 +278,9 @@ p { margin: 0 0 var(--space-4); }
 .hero-tagline {
   display: block;
   margin: 0 0 var(--space-4);
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   line-height: 1.4;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   letter-spacing: normal;
 }
 
