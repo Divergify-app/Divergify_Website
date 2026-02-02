@@ -276,12 +276,11 @@ p { margin: 0 0 var(--space-4); }
 }
 
 .hero-tagline {
-  display: block;
   margin: 0 0 var(--space-4);
   font-size: var(--text-sm);
-  line-height: 1.4;
-  color: var(--color-text-muted);
+  line-height: 1.6;
   letter-spacing: normal;
+  color: var(--color-text-muted);
 }
 
 .hero-title .highlight { color: var(--color-action-green); }
