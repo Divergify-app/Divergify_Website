@@ -275,19 +275,13 @@ p { margin: 0 0 var(--space-4); }
   line-height: 1.1;
 }
 
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: var(--radius-pill);
-  padding: 8px 14px;
+.hero-tagline {
+  display: block;
+  margin: 0 0 var(--space-4);
   font-size: var(--text-sm);
   line-height: 1.4;
-  letter-spacing: 0.08em;
   color: var(--color-text-muted);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  width: fit-content;
+  letter-spacing: normal;
 }
 
 .hero-title .highlight { color: var(--color-action-green); }
