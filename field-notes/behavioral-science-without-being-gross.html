@@ -1,140 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Why Divergify Uses Behavioral Science (Without Becoming Gross) | Divergify</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Divergify uses behavioral science to support neurodivergent habits without manipulation, shame, or creepy tactics." />
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta name="theme-color" content="#00466C" />
-  <link rel="canonical" href="https://divergify.app/field-notes/behavioral-science-without-being-gross.html" />
-  <meta property="og:site_name" content="Divergify" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Why Divergify Uses Behavioral Science (Without Becoming Gross)" />
-  <meta property="og:description" content="Micro-commitments, positive reinforcement, pattern interruption and more — used in an ethical, empowering way." />
-  <meta property="og:url" content="https://divergify.app/field-notes/behavioral-science-without-being-gross.html" />
-  <meta property="og:image" content="https://divergify.app/assets/social/behavioral-science-without-being-gross-og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Why Divergify Uses Behavioral Science (Without Becoming Gross)" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Why Divergify Uses Behavioral Science (Without Becoming Gross)" />
-  <meta name="twitter:description" content="We use psychology to help your brain, not to control it. No guilt-trips, no dark patterns, no selling your data." />
-  <meta name="twitter:image" content="https://divergify.app/assets/social/behavioral-science-without-being-gross-og.png" />
-  <meta name="twitter:image:alt" content="Why Divergify Uses Behavioral Science (Without Becoming Gross)" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Divergify Uses Behavioral Science (Without Becoming Gross or Manipulative) | Divergify</title>
+    
+    <!-- Tailwind CSS (matches your site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/global.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Typography overrides for the article content */
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
+        .prose strong { color: #111827; font-weight: 700; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        
+        /* The specific "Photo Stack" styling */
+        .photo-stack-container { position: relative; height: 350px; width: 100%; margin: 3rem 0; display: flex; justify-content: center; align-items: center; }
+        .photo-stack-item { position: absolute; transition: transform 0.3s ease; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border: 8px solid white; background: white; }
+        .photo-stack-item:hover { z-index: 10; transform: scale(1.05) rotate(0deg) !important; }
 
+        /* Hide the 'Native Share' button on desktops where it doesn't work */
+        @media (min-width: 1024px) {
+            #share-native { display: none !important; }
+        }
+    </style>
 </head>
-<body>
-  <div data-partial="header"></div>
-<a class="skip-link" href="#main">Skip to content</a>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
 
-<main class="page-shell" id="main" role="main">
-  <section class="section">
-    <div class="section-header">
-      <div class="section-kicker">Ethics</div>
-      <h1 class="section-title">Why Divergify Uses Behavioral Science (Without Becoming Gross or Manipulative)</h1>
-    </div>
-    <div class="card" style="padding:18px 16px;">
-      <p style="color:#b3b3b3;font-size:12px;margin:0 0 8px">Published: <time datetime="2025-11-20">Nov 20, 2025</time></p>
+    <!-- Navbar Placeholder -->
+    <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter">DIVERGIFY</a>
+        <a href="/field-notes/" class="text-sm font-semibold hover:text-blue-600 transition">← Back to Field Notes</a>
+    </nav>
 
-      <p>Behavioral psychology is powerful. It can help people form habits… or pressure them into things they don’t want. We chose the “ethical, empowering, no-shame” lane.</p>
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 pt-12 pb-24">
+        
+        <!-- Header Section -->
+        <header class="mb-10 border-b border-gray-200 pb-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <!-- Tags: Edit these for each post -->
+                <span class="px-3 py-1 bg-yellow-100 rounded-full text-xs font-bold uppercase tracking-wide text-yellow-800">Field Note</span>
+            </div>
 
-      <h2>We Use It for One Reason</h2>
+            <!-- Title: Edit this -->
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-gray-900" id="article-title">
+                Why Divergify Uses Behavioral Science (Without Becoming Gross or Manipulative)
+            </h1>
 
-      <p>To help neurodivergent brains build the structure they crave without fighting themselves every step of the way.</p>
+            <!-- Social Share Bar (Auto-Generated Links) -->
+            <div class="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-500 mt-6">
+                
+                <!-- Native Share (Mobile Only - TikTok/Insta) -->
+                <button id="share-native" onclick="nativeShare()" class="flex items-center gap-2 text-white bg-black hover:bg-gray-800 transition p-2 px-4 rounded-full shadow-sm font-bold">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i> Share to Apps
+                </button>
 
-      <h2>Our Methods Include:</h2>
+                <!-- X / Twitter -->
+                <a id="share-twitter" href="#" target="_blank" class="flex items-center gap-2 hover:text-black transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-black">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
 
-      <ul>
-        <li>Micro-commitments</li>
-        <li>Positive reinforcement</li>
-        <li>Pattern interruption</li>
-        <li>Emotional reflection</li>
-        <li>Identity cues</li>
-        <li>Future-self alignment</li>
-      </ul>
+                <!-- LinkedIn -->
+                <a id="share-linkedin" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-700 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-700">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
 
-      <p>These are human-friendly, research-backed techniques reimagined in Divergify’s style.</p>
+                <!-- Facebook -->
+                <a id="share-facebook" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-600">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
 
-      <h2>What We Never Do</h2>
+                 <!-- WhatsApp -->
+                 <a id="share-whatsapp" href="#" target="_blank" class="flex items-center gap-2 hover:text-green-500 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-green-500">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                
+                <!-- Copy Link -->
+                <button onclick="copyToClipboard()" class="flex items-center gap-2 hover:text-gray-900 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-gray-900 cursor-pointer group ml-auto">
+                    <i class="fa-solid fa-link"></i> <span id="copy-text">Copy Link</span>
+                </button>
+            </div>
+        </header>
 
-      <ul>
-        <li>Manipulate you</li>
-        <li>Punish you</li>
-        <li>Guilt-trip you</li>
-        <li>Sell your data</li>
-        <li>Weaponize your tendencies</li>
-      </ul>
+        <!-- The Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <p style="color:#b3b3b3;font-size:12px;margin:0 0 8px">Published: <time datetime="2025-11-20">Nov 20, 2025</time></p>
+<p>Behavioral psychology is powerful. It can help people form habits… or pressure them into things they don’t want. We chose the “ethical, empowering, no-shame” lane.</p>
+<h2>We Use It for One Reason</h2>
+<p>To help neurodivergent brains build the structure they crave without fighting themselves every step of the way.</p>
+<h2>Our Methods Include:</h2>
+<ul>
+<li>Micro-commitments</li>
+<li>Positive reinforcement</li>
+<li>Pattern interruption</li>
+<li>Emotional reflection</li>
+<li>Identity cues</li>
+<li>Future-self alignment</li>
+</ul>
+<p>These are human-friendly, research-backed techniques reimagined in Divergify’s style.</p>
+<h2>What We Never Do</h2>
+<ul>
+<li>Manipulate you</li>
+<li>Punish you</li>
+<li>Guilt-trip you</li>
+<li>Sell your data</li>
+<li>Weaponize your tendencies</li>
+</ul>
+<p>You already have the engine. Divergify just helps you steer it.</p>
+<h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+<p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+        </article>
 
-      <p>You already have the engine. Divergify just helps you steer it.</p>
+        <!-- Footer / CTA -->
+        <div class="mt-20 p-8 bg-gray-900 text-white rounded-2xl">
+            <h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+            <p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+            <a href="/" class="inline-block bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition transform hover:-translate-y-1">
+                Explore the System
+            </a>
+        </div>
 
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="button button-ghost" href="/field-notes/">← Back to Field Notes</a>
-        <a class="button button-primary" id="share-x" href="#">Share on X</a>
-        <a class="button button-primary" id="share-fb" href="#">Share on Facebook</a>
-        <a class="button button-primary" id="share-li" href="#">Share on LinkedIn</a>
-        <a class="button button-ghost" id="copy-link" href="#">Copy link</a>
-      </div>
-    </div>
-  </section>
-</main>
+    </main>
 
-<script>
-  (function(){
-    const url = 'https://divergify.app/field-notes/behavioral-science-without-being-gross.html';
-    const text = 'Why Divergify Uses Behavioral Science (Without Becoming Gross)';
-    const utm = '?utm_source=social&utm_medium=share&utm_campaign=field-notes';
-    const target = '_blank';
-    document.getElementById('share-x').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url+utm)}&text=${encodeURIComponent(text)}`;
-    document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url+utm)}`;
-    document.getElementById('share-li').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url+utm)}`;
-    document.getElementById('share-x').target = target;
-    document.getElementById('share-fb').target = target;
-    document.getElementById('share-li').target = target;
-    document.getElementById('copy-link').addEventListener('click', (e)=>{
-      e.preventDefault(); navigator.clipboard.writeText(url).then(()=>{ e.target.textContent='Copied!'; setTimeout(()=>e.target.textContent='Copy link',1500); });
-    });
-  })();
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Why Divergify Uses Behavioral Science (Without Becoming Gross)",
-  "datePublished": "2025-11-20",
-  "dateModified": "2025-11-20",
-  "inLanguage": "en-US",
-  "author": { "@type": "Organization", "name": "Divergify" },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Divergify",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://divergify.app/assets/brand/divergify-icon-braincompass.svg",
-      "width": 512,
-      "height": 512
-    }
-  },
-  "image": [
-    "https://divergify.app/assets/brand/divergify-icon-braincompass.svg"
-  ],
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://divergify.app/field-notes/behavioral-science-without-being-gross.html" }
-}
-</script>
+    <!-- Script to Auto-Populate Share Links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current URL and Title
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(document.title);
 
-<div data-partial="footer"></div>
+            // Update Twitter Link
+            document.getElementById('share-twitter').href = 
+                `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentUrl}`;
 
-  <script src="/assets/divergipedia-data.js"></script>
-  <script src="/assets/site.js"></script>
+            // Update LinkedIn Link
+            document.getElementById('share-linkedin').href = 
+                `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+            // Update Facebook Link
+            document.getElementById('share-facebook').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                
+            // Update WhatsApp Link
+            document.getElementById('share-whatsapp').href = 
+                `https://wa.me/?text=${currentTitle}%20${currentUrl}`;
+
+            // Check if Native Share is supported (Mobile/Tablet)
+            if (navigator.share) {
+                document.getElementById('share-native').style.display = 'flex';
+            } else {
+                document.getElementById('share-native').style.display = 'none';
+            }
+        });
+
+        // Native Share Function (Triggers TikTok/Insta menu on phones)
+        async function nativeShare() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'Check out this field note from Divergify:',
+                        url: window.location.href,
+                    });
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                alert('Web Share API not supported on this browser.');
+            }
+        }
+
+        // Copy Link Function
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href);
+            const textSpan = document.getElementById('copy-text');
+            const originalText = textSpan.innerText;
+            
+            textSpan.innerText = "Copied!";
+            setTimeout(() => {
+                textSpan.innerText = originalText;
+            }, 2000);
+        }
+    </script>
 
 </body>
 </html>

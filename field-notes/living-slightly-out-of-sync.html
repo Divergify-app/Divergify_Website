@@ -1,130 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Living Slightly Out of Sync | Divergify</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="On neurodivergence, system mismatch, and building support that adapts to real humans." />
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-  <link rel="icon" href="../assets/favicon.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta name="theme-color" content="#00466C" />
-  <link rel="canonical" href="https://divergify.app/field-notes/living-slightly-out-of-sync.html" />
-  <meta property="og:site_name" content="Divergify" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://divergify.app/field-notes/living-slightly-out-of-sync.html" />
-  <meta property="og:title" content="Living Slightly Out of Sync" />
-  <meta property="og:description" content="On neurodivergence, system mismatch, and building support that adapts to real humans." />
-  <meta property="og:image" content="https://divergify.app/assets/brand/divergify-icon-braincompass.svg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Living Slightly Out of Sync" />
-  <meta name="twitter:description" content="On neurodivergence, system mismatch, and building support that adapts to real humans." />
-  <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-icon-braincompass.svg" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Slightly Out of Sync | Divergify</title>
+    
+    <!-- Tailwind CSS (matches your site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/global.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Typography overrides for the article content */
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
+        .prose strong { color: #111827; font-weight: 700; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        
+        /* The specific "Photo Stack" styling */
+        .photo-stack-container { position: relative; height: 350px; width: 100%; margin: 3rem 0; display: flex; justify-content: center; align-items: center; }
+        .photo-stack-item { position: absolute; transition: transform 0.3s ease; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border: 8px solid white; background: white; }
+        .photo-stack-item:hover { z-index: 10; transform: scale(1.05) rotate(0deg) !important; }
 
+        /* Hide the 'Native Share' button on desktops where it doesn't work */
+        @media (min-width: 1024px) {
+            #share-native { display: none !important; }
+        }
+    </style>
 </head>
-<body>
-  <div data-partial="header"></div>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
 
-  <main class="page-shell" id="main" role="main" style="display:block">
-    <section class="section" aria-labelledby="post-title">
-      <div class="section-header">
-        <div class="section-kicker">Field Notes</div>
-        <h1 class="section-title" id="post-title">Living Slightly Out of Sync</h1>
-      </div>
+    <!-- Navbar Placeholder -->
+    <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter">DIVERGIFY</a>
+        <a href="/field-notes/" class="text-sm font-semibold hover:text-blue-600 transition">← Back to Field Notes</a>
+    </nav>
 
-      <div class="card" style="padding:18px 16px;">
-        <p style="color:#b3b3b3;font-size:12px;margin:0 0 12px">Published: <time datetime="2025-04-27">Apr 27, 2025</time></p>
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 pt-12 pb-24">
+        
+        <!-- Header Section -->
+        <header class="mb-10 border-b border-gray-200 pb-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <!-- Tags: Edit these for each post -->
+                <span class="px-3 py-1 bg-yellow-100 rounded-full text-xs font-bold uppercase tracking-wide text-yellow-800">Field Note</span>
+            </div>
 
-      <p>I didn’t grow up learning how to adapt. I grew up failing.</p>
-      <p>Not in ways that were dramatic or easy to explain, but in ways that accumulated quietly over time. School. Work. Relationships. Long stretches of effort followed by collapse. A growing belief that something was wrong with me, paired with no clear explanation of what that something was.</p>
-      <p>When I was growing up, neurodivergence wasn’t understood the way it is now. ADHD wasn’t something girls had. Autism wasn’t something you considered unless someone was visibly struggling in very specific ways. Trauma wasn’t something you carried forward. It was something you were expected to “get over.”</p>
-      <p>Those assumptions didn’t come with tools. They came with judgment.</p>
-      <p>So I internalized it. I tried harder. I blamed myself. And when that didn’t work, I tried to numb the pain of constantly not fitting into systems that never seemed to make room for me.</p>
-      <p>That path caused real harm. Not because I didn’t care, and not because I wanted to self-destruct, but because I was trying to survive without support, without understanding, and without language for what was happening inside me.</p>
-      <p>This story isn’t only about ADHD or autism. It’s also about trauma.</p>
-      <p>Trauma doesn’t just live in memory. When it happens during development, it shapes how the brain learns to regulate emotion, attention, and safety. A nervous system that grows up needing to stay alert, guarded, or adaptable wires itself differently. Not incorrectly. Differently.</p>
-      <p>Later, when that same nervous system is dropped into environments that demand calm, linear productivity and emotional neutrality, it struggles. Not because it’s broken, but because it learned different rules early on.</p>
-      <p>And yet, people are often told: “That was a long time ago.” “You should be over it by now.”</p>
-      <p>As if time alone rewires the brain.</p>
-      <p>It doesn’t.</p>
-      <p>A lot of people living with this kind of mismatch don’t look traumatized from the outside. They look inconsistent. Unreliable. Scattered. Intense. Exhausted. They are often misdiagnosed, misunderstood, or missed entirely.</p>
-      <p>What gets labeled as failure is often adaptation under pressure.</p>
-      <p>Over time, that pressure creates friction. And friction creates pain.</p>
-      <p>This is where addiction enters the picture.</p>
-      <p>People don’t turn to substances because they want to ruin their lives. Some people do seek euphoria, yes. But underneath that desire is almost always something else: relief. Escape. Regulation. A moment of quiet. A way to turn the volume down.</p>
-      <p>Addiction is not about loving substances. It’s about needing distance from reality when reality feels unbearable.</p>
-      <p>That doesn’t erase accountability. Harm is still harm. But understanding why people reach for escape matters, especially in communities where misdiagnosis, untreated neurodivergence, and unresolved trauma overlap.</p>
-      <p>Even now, access to appropriate care is fragile. Medication is politicized. People who genuinely need support are treated with suspicion. Many are left to manage alone, navigating systems that still don’t understand how their minds and nervous systems work.</p>
-      <p>This isn’t a personal failure. It’s a systemic one.</p>
-      <p>I don’t believe people are broken.</p>
-      <p>I believe many people are living inside environments that were never designed with cognitive and emotional variation in mind.</p>
-      <p>The world still runs on assumptions optimized for stability, predictability, and linear focus. Those assumptions worked in slower contexts. They work less well now. And they work especially poorly for people whose minds are shaped by neurodivergence, trauma, or both.</p>
-      <p>When the environment doesn’t match the nervous system, everything costs more. Attention. Regulation. Motivation. Hope.</p>
-      <p>That’s why tools matter.</p>
-      <p>Not as crutches. Not as fixes. But as scaffolding.</p>
-      <p>Scaffolding doesn’t weaken a structure. It allows it to stand long enough to grow.</p>
-      <p>Technology, including AI, often gets framed as a threat to humanity. But for many people, the real threat has always been systems that demand performance without providing support.</p>
-      <p>Used ethically, technology can reduce cognitive load. Hold structure. Externalize memory. Translate between how a mind actually works and what the world expects.</p>
-      <p>It doesn’t replace human thinking. It protects it.</p>
-      <p>That’s not about optimization. It’s about access.</p>
-      <p>Divergify came from living too long without that access.</p>
-      <p>It wasn’t built to fix people, or to convert anyone to a belief system. It was built to offer tools that respect how people actually function, especially those who’ve spent their lives being told they were too much, not enough, or simply wrong.</p>
-      <p>It won’t be for everyone. It doesn’t need to be.</p>
-      <p>If it helps someone feel steadier for an hour, that matters. If it helps someone stop blaming themselves, that matters. If it brings a moment of relief, humor, or recognition, that matters.</p>
-      <p>Not everything meaningful scales neatly.</p>
-      <p>This isn’t a claim about the future.</p>
-      <p>It’s a response to the present. To what happens when people live their lives slightly out of sync, and what becomes possible when the friction eases even a little.</p>
-      <p>If you’re here just to use the tools, that’s enough. If you’re curious about the thinking behind them, it’s here. If none of this resonates, you don’t owe it anything.</p>
-      <p>Take what helps. Leave the rest.</p>
-      <p>That isn’t indifference. It’s respect.</p>
+            <!-- Title: Edit this -->
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-gray-900" id="article-title">
+                Living Slightly Out of Sync
+            </h1>
 
-        <div style="margin-top:16px">
-          <a class="button button-ghost" href="/field-notes/">← Back to Field Notes</a>
+            <!-- Social Share Bar (Auto-Generated Links) -->
+            <div class="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-500 mt-6">
+                
+                <!-- Native Share (Mobile Only - TikTok/Insta) -->
+                <button id="share-native" onclick="nativeShare()" class="flex items-center gap-2 text-white bg-black hover:bg-gray-800 transition p-2 px-4 rounded-full shadow-sm font-bold">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i> Share to Apps
+                </button>
+
+                <!-- X / Twitter -->
+                <a id="share-twitter" href="#" target="_blank" class="flex items-center gap-2 hover:text-black transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-black">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="share-linkedin" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-700 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-700">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a id="share-facebook" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-600">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                 <!-- WhatsApp -->
+                 <a id="share-whatsapp" href="#" target="_blank" class="flex items-center gap-2 hover:text-green-500 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-green-500">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                
+                <!-- Copy Link -->
+                <button onclick="copyToClipboard()" class="flex items-center gap-2 hover:text-gray-900 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-gray-900 cursor-pointer group ml-auto">
+                    <i class="fa-solid fa-link"></i> <span id="copy-text">Copy Link</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- The Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <p style="color:#b3b3b3;font-size:12px;margin:0 0 12px">Published: <time datetime="2025-04-27">Apr 27, 2025</time></p>
+<p>I didn’t grow up learning how to adapt. I grew up failing.</p>
+<p>Not in ways that were dramatic or easy to explain, but in ways that accumulated quietly over time. School. Work. Relationships. Long stretches of effort followed by collapse. A growing belief that something was wrong with me, paired with no clear explanation of what that something was.</p>
+<p>When I was growing up, neurodivergence wasn’t understood the way it is now. ADHD wasn’t something girls had. Autism wasn’t something you considered unless someone was visibly struggling in very specific ways. Trauma wasn’t something you carried forward. It was something you were expected to “get over.”</p>
+<p>Those assumptions didn’t come with tools. They came with judgment.</p>
+<p>So I internalized it. I tried harder. I blamed myself. And when that didn’t work, I tried to numb the pain of constantly not fitting into systems that never seemed to make room for me.</p>
+<p>That path caused real harm. Not because I didn’t care, and not because I wanted to self-destruct, but because I was trying to survive without support, without understanding, and without language for what was happening inside me.</p>
+<p>This story isn’t only about ADHD or autism. It’s also about trauma.</p>
+<p>Trauma doesn’t just live in memory. When it happens during development, it shapes how the brain learns to regulate emotion, attention, and safety. A nervous system that grows up needing to stay alert, guarded, or adaptable wires itself differently. Not incorrectly. Differently.</p>
+<p>Later, when that same nervous system is dropped into environments that demand calm, linear productivity and emotional neutrality, it struggles. Not because it’s broken, but because it learned different rules early on.</p>
+<p>And yet, people are often told: “That was a long time ago.” “You should be over it by now.”</p>
+<p>As if time alone rewires the brain.</p>
+<p>It doesn’t.</p>
+<p>A lot of people living with this kind of mismatch don’t look traumatized from the outside. They look inconsistent. Unreliable. Scattered. Intense. Exhausted. They are often misdiagnosed, misunderstood, or missed entirely.</p>
+<p>What gets labeled as failure is often adaptation under pressure.</p>
+<p>Over time, that pressure creates friction. And friction creates pain.</p>
+<p>This is where addiction enters the picture.</p>
+<p>People don’t turn to substances because they want to ruin their lives. Some people do seek euphoria, yes. But underneath that desire is almost always something else: relief. Escape. Regulation. A moment of quiet. A way to turn the volume down.</p>
+<p>Addiction is not about loving substances. It’s about needing distance from reality when reality feels unbearable.</p>
+<p>That doesn’t erase accountability. Harm is still harm. But understanding why people reach for escape matters, especially in communities where misdiagnosis, untreated neurodivergence, and unresolved trauma overlap.</p>
+<p>Even now, access to appropriate care is fragile. Medication is politicized. People who genuinely need support are treated with suspicion. Many are left to manage alone, navigating systems that still don’t understand how their minds and nervous systems work.</p>
+<p>This isn’t a personal failure. It’s a systemic one.</p>
+<p>I don’t believe people are broken.</p>
+<p>I believe many people are living inside environments that were never designed with cognitive and emotional variation in mind.</p>
+<p>The world still runs on assumptions optimized for stability, predictability, and linear focus. Those assumptions worked in slower contexts. They work less well now. And they work especially poorly for people whose minds are shaped by neurodivergence, trauma, or both.</p>
+<p>When the environment doesn’t match the nervous system, everything costs more. Attention. Regulation. Motivation. Hope.</p>
+<p>That’s why tools matter.</p>
+<p>Not as crutches. Not as fixes. But as scaffolding.</p>
+<p>Scaffolding doesn’t weaken a structure. It allows it to stand long enough to grow.</p>
+<p>Technology, including AI, often gets framed as a threat to humanity. But for many people, the real threat has always been systems that demand performance without providing support.</p>
+<p>Used ethically, technology can reduce cognitive load. Hold structure. Externalize memory. Translate between how a mind actually works and what the world expects.</p>
+<p>It doesn’t replace human thinking. It protects it.</p>
+<p>That’s not about optimization. It’s about access.</p>
+<p>Divergify came from living too long without that access.</p>
+<p>It wasn’t built to fix people, or to convert anyone to a belief system. It was built to offer tools that respect how people actually function, especially those who’ve spent their lives being told they were too much, not enough, or simply wrong.</p>
+<p>It won’t be for everyone. It doesn’t need to be.</p>
+<p>If it helps someone feel steadier for an hour, that matters. If it helps someone stop blaming themselves, that matters. If it brings a moment of relief, humor, or recognition, that matters.</p>
+<p>Not everything meaningful scales neatly.</p>
+<p>This isn’t a claim about the future.</p>
+<p>It’s a response to the present. To what happens when people live their lives slightly out of sync, and what becomes possible when the friction eases even a little.</p>
+<p>If you’re here just to use the tools, that’s enough. If you’re curious about the thinking behind them, it’s here. If none of this resonates, you don’t owe it anything.</p>
+<p>Take what helps. Leave the rest.</p>
+<p>That isn’t indifference. It’s respect.</p>
+<h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+<p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+        </article>
+
+        <!-- Footer / CTA -->
+        <div class="mt-20 p-8 bg-gray-900 text-white rounded-2xl">
+            <h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+            <p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+            <a href="/" class="inline-block bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition transform hover:-translate-y-1">
+                Explore the System
+            </a>
         </div>
-      </div>
-    </section>
-  </main>
 
-  
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Living Slightly Out of Sync",
-    "datePublished": "2025-04-27",
-    "dateModified": "2025-04-27",
-    "inLanguage": "en-US",
-    "author": { "@type": "Organization", "name": "Divergify" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Divergify",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://divergify.app/assets/brand/divergify-icon-braincompass.svg",
-        "width": 512,
-        "height": 512
-      }
-    },
-    "image": [
-      "https://divergify.app/assets/social/default-blog.png"
-    ],
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://divergify.app/field-notes/living-slightly-out-of-sync.html" }
-  }
-  </script>
+    </main>
 
-<div data-partial="footer"></div>
+    <!-- Script to Auto-Populate Share Links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current URL and Title
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(document.title);
 
-  <script src="/assets/divergipedia-data.js"></script>
-  <script src="/assets/site.js"></script>
+            // Update Twitter Link
+            document.getElementById('share-twitter').href = 
+                `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentUrl}`;
+
+            // Update LinkedIn Link
+            document.getElementById('share-linkedin').href = 
+                `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+            // Update Facebook Link
+            document.getElementById('share-facebook').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                
+            // Update WhatsApp Link
+            document.getElementById('share-whatsapp').href = 
+                `https://wa.me/?text=${currentTitle}%20${currentUrl}`;
+
+            // Check if Native Share is supported (Mobile/Tablet)
+            if (navigator.share) {
+                document.getElementById('share-native').style.display = 'flex';
+            } else {
+                document.getElementById('share-native').style.display = 'none';
+            }
+        });
+
+        // Native Share Function (Triggers TikTok/Insta menu on phones)
+        async function nativeShare() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'Check out this field note from Divergify:',
+                        url: window.location.href,
+                    });
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                alert('Web Share API not supported on this browser.');
+            }
+        }
+
+        // Copy Link Function
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href);
+            const textSpan = document.getElementById('copy-text');
+            const originalText = textSpan.innerText;
+            
+            textSpan.innerText = "Copied!";
+            setTimeout(() => {
+                textSpan.innerText = originalText;
+            }, 2000);
+        }
+    </script>
 
 </body>
 </html>

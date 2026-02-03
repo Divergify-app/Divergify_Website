@@ -1,69 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Spiral Bar: How an ADHD Brain Makes Dessert | Divergify</title>
-  <meta name="description" content="A late-night baking glitch proves that ADHD isn't a lack of discipline—it's high-speed adaptive thinking." />
-  <link rel="canonical" href="https://divergify.app/field-notes/the-spiral-bar/" />
-  <meta name="theme-color" content="#1B2559" />
-  <meta property="og:site_name" content="Divergify" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="The Spiral Bar: How an ADHD Brain Makes Dessert" />
-  <meta property="og:description" content="A late-night baking glitch proves that ADHD isn't a lack of discipline—it's high-speed adaptive thinking." />
-  <meta property="og:url" content="https://divergify.app/field-notes/the-spiral-bar/" />
-  <meta property="og:image" content="https://divergify.app/field-notes/the-spiral-bar/header_photo.jpg" />
-  <meta property="og:image:alt" content="The Spiral Bar header photo" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Spiral Bar: How an ADHD Brain Makes Dessert" />
-  <meta name="twitter:description" content="A late-night baking glitch proves that ADHD isn't a lack of discipline—it's high-speed adaptive thinking." />
-  <meta name="twitter:image" content="https://divergify.app/field-notes/the-spiral-bar/header_photo.jpg" />
-  <meta name="twitter:image:alt" content="The Spiral Bar header photo" />
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/global.css" />
-  <link rel="stylesheet" href="/assets/field-notes.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spiral Bar: How an ADHD Brain Makes Dessert | Divergify</title>
+    
+    <!-- Tailwind CSS (matches your site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Typography overrides for the article content */
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
+        .prose strong { color: #111827; font-weight: 700; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        
+        /* The specific "Photo Stack" styling */
+        .photo-stack-container { position: relative; height: 350px; width: 100%; margin: 3rem 0; display: flex; justify-content: center; align-items: center; }
+        .photo-stack-item { position: absolute; transition: transform 0.3s ease; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border: 8px solid white; background: white; }
+        .photo-stack-item:hover { z-index: 10; transform: scale(1.05) rotate(0deg) !important; }
+
+        /* Hide the 'Native Share' button on desktops where it doesn't work */
+        @media (min-width: 1024px) {
+            #share-native { display: none !important; }
+        }
+    </style>
 </head>
-<body class="field-notes-page">
-  <div data-partial="header"></div>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
 
-  <main id="main" class="page-shell">
-    <p class="text-muted"><a href="/field-notes/">Field Notes</a></p>
-    <h1>The Spiral Bar: How an ADHD Brain Makes Dessert</h1>
+    <!-- Navbar Placeholder -->
+    <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter">DIVERGIFY</a>
+        <a href="/field-notes/" class="text-sm font-semibold hover:text-blue-600 transition">← Back to Field Notes</a>
+    </nav>
 
-    <div class="share-bar" style="margin: 0 0 1.5rem;">
-      <div class="share-label text-muted">Share</div>
-      <div class="share-buttons" style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <a class="button button-ghost" id="share-x" href="#">Share on X</a>
-        <a class="button button-ghost" id="share-fb" href="#">Share on Facebook</a>
-        <a class="button button-ghost" id="share-li" href="#">Share on LinkedIn</a>
-        <button class="button button-ghost" id="copy-link" type="button">Copy link</button>
-      </div>
-    </div>
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 pt-12 pb-24">
+        
+        <!-- Header Section -->
+        <header class="mb-10 border-b border-gray-200 pb-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <!-- Tags: Edit these for each post -->
+                <span class="px-3 py-1 bg-yellow-100 rounded-full text-xs font-bold uppercase tracking-wide text-yellow-800">Field Note</span>
+            </div>
 
-    <div class="field-notes-body">
-<p><strong>Tags:</strong> ADHD, Mental Health, Baking, Divergify, Late Night</p>
+            <!-- Title: Edit this -->
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-gray-900" id="article-title">
+                The Spiral Bar: How an ADHD Brain Makes Dessert
+            </h1>
+
+            <!-- Social Share Bar (Auto-Generated Links) -->
+            <div class="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-500 mt-6">
+                
+                <!-- Native Share (Mobile Only - TikTok/Insta) -->
+                <button id="share-native" onclick="nativeShare()" class="flex items-center gap-2 text-white bg-black hover:bg-gray-800 transition p-2 px-4 rounded-full shadow-sm font-bold">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i> Share to Apps
+                </button>
+
+                <!-- X / Twitter -->
+                <a id="share-twitter" href="#" target="_blank" class="flex items-center gap-2 hover:text-black transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-black">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="share-linkedin" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-700 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-700">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a id="share-facebook" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-600">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                 <!-- WhatsApp -->
+                 <a id="share-whatsapp" href="#" target="_blank" class="flex items-center gap-2 hover:text-green-500 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-green-500">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                
+                <!-- Copy Link -->
+                <button onclick="copyToClipboard()" class="flex items-center gap-2 hover:text-gray-900 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-gray-900 cursor-pointer group ml-auto">
+                    <i class="fa-solid fa-link"></i> <span id="copy-text">Copy Link</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- The Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <p><strong>Tags:</strong> ADHD, Mental Health, Baking, Divergify, Late Night</p>
 <p><strong>Reading Time:</strong> 3 minutes</p>
-
 <figure class="field-notes-image" style="margin: 1.5rem 0;">
-  <img src="./header_photo.jpg" alt="The Spiral Bar header photo" loading="lazy" />
+<img alt="The Spiral Bar header photo" loading="lazy" src="./header_photo.jpg"/>
 </figure>
-
 <p>This started as oatmeal cookies.</p>
 <p>It was around 2 a.m., during a snowstorm. I couldn’t go anywhere, hadn’t been to the store in a few days, and the house was asleep. My brain absolutely was not.</p>
 <p>If you have ADHD, you already know this moment. Maybe not a snowstorm. Maybe not being stuck inside. But it’s late, you can’t go anywhere, and the craving isn’t optional. You don’t just want sugar. You <em>need</em> it. And once that switch flips, sleep is off the table.</p>
 <p>That was the headspace I was in when I got into the kitchen convinced I was making oatmeal cookies.</p>
 <p>That was the plan.</p>
-
 <figure class="field-notes-image" style="margin: 1.5rem 0;">
-  <img src="./middle_photo.jpg" alt="The Spiral Bar in-progress photo" loading="lazy" />
+<img alt="The Spiral Bar in-progress photo" loading="lazy" src="./middle_photo.jpg"/>
 </figure>
-
 <h2>The Glitch</h2>
 <p>Then I started pulling ingredients out and realized I didn’t actually have what I thought I had. This is usually where the spiral starts. Not because of the recipe, but because of the story we’ve been taught to tell ourselves when plans don’t work.</p>
 <p><em>Why didn’t I check first.</em> <em>Why can’t I do simple things.</em> <em>Why does this always happen.</em></p>
@@ -90,39 +136,84 @@
 <p><strong>Rules:</strong></p>
 <ol><li><p>Serve this in very small squares.</p></li><li><p>Pair it with milk or sweetened coffee.</p></li><li><p>Stop making eye contact after two bites.</p></li></ol>
 <p>This is normal.</p>
-
 <figure class="field-notes-image" style="margin: 1.5rem 0;">
-  <img src="./final_photo.jpg" alt="The Spiral Bar final photo" loading="lazy" />
+<img alt="The Spiral Bar final photo" loading="lazy" src="./final_photo.jpg"/>
 </figure>
+<h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+<p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+        </article>
 
-    </div>
-  </main>
+        <!-- Footer / CTA -->
+        <div class="mt-20 p-8 bg-gray-900 text-white rounded-2xl">
+            <h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+            <p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+            <a href="/" class="inline-block bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition transform hover:-translate-y-1">
+                Explore the System
+            </a>
+        </div>
 
-  <div data-partial="footer"></div>
+    </main>
 
-  <script>
-    (function(){
-      const url = 'https://divergify.app/field-notes/the-spiral-bar/';
-      const text = 'The Spiral Bar: How an ADHD Brain Makes Dessert';
-      const utm = '?utm_source=social&utm_medium=share&utm_campaign=field-notes';
-      const target = '_blank';
-      document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url + utm) + '&text=' + encodeURIComponent(text);
-      document.getElementById('share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url + utm);
-      document.getElementById('share-li').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url + utm);
-      document.getElementById('share-x').target = target;
-      document.getElementById('share-fb').target = target;
-      document.getElementById('share-li').target = target;
-      const copyButton = document.getElementById('copy-link');
-      copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(url).then(() => {
-          const original = copyButton.textContent;
-          copyButton.textContent = 'Copied!';
-          setTimeout(() => { copyButton.textContent = original; }, 1500);
+    <!-- Script to Auto-Populate Share Links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current URL and Title
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(document.title);
+
+            // Update Twitter Link
+            document.getElementById('share-twitter').href = 
+                `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentUrl}`;
+
+            // Update LinkedIn Link
+            document.getElementById('share-linkedin').href = 
+                `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+            // Update Facebook Link
+            document.getElementById('share-facebook').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                
+            // Update WhatsApp Link
+            document.getElementById('share-whatsapp').href = 
+                `https://wa.me/?text=${currentTitle}%20${currentUrl}`;
+
+            // Check if Native Share is supported (Mobile/Tablet)
+            if (navigator.share) {
+                document.getElementById('share-native').style.display = 'flex';
+            } else {
+                document.getElementById('share-native').style.display = 'none';
+            }
         });
-      });
-    })();
-  </script>
-  <script src="/assets/divergipedia-data.js"></script>
-  <script src="/assets/site.js"></script>
+
+        // Native Share Function (Triggers TikTok/Insta menu on phones)
+        async function nativeShare() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'Check out this field note from Divergify:',
+                        url: window.location.href,
+                    });
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                alert('Web Share API not supported on this browser.');
+            }
+        }
+
+        // Copy Link Function
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href);
+            const textSpan = document.getElementById('copy-text');
+            const originalText = textSpan.innerText;
+            
+            textSpan.innerText = "Copied!";
+            setTimeout(() => {
+                textSpan.innerText = originalText;
+            }, 2000);
+        }
+    </script>
+
 </body>
 </html>

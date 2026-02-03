@@ -1,51 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Designing Without Shame | Divergify</title>
-  <meta name="theme-color" content="#1B2559" />
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/global.css" />
-  <link rel="stylesheet" href="/assets/field-notes.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing Without Shame | Divergify</title>
+    
+    <!-- Tailwind CSS (matches your site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Typography overrides for the article content */
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
+        .prose strong { color: #111827; font-weight: 700; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        
+        /* The specific "Photo Stack" styling */
+        .photo-stack-container { position: relative; height: 350px; width: 100%; margin: 3rem 0; display: flex; justify-content: center; align-items: center; }
+        .photo-stack-item { position: absolute; transition: transform 0.3s ease; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border: 8px solid white; background: white; }
+        .photo-stack-item:hover { z-index: 10; transform: scale(1.05) rotate(0deg) !important; }
+
+        /* Hide the 'Native Share' button on desktops where it doesn't work */
+        @media (min-width: 1024px) {
+            #share-native { display: none !important; }
+        }
+    </style>
 </head>
-<body class="field-notes-page">
-  <div data-partial="header"></div>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
 
-  <main id="main" class="page-shell">
-    <p class="text-muted"><a href="/field-notes/">Field Notes</a></p>
-    <h1>Designing Without Shame</h1>
-    <div class="field-notes-body">
-      <p>A lot of products start with assumptions.</p>
-      <p>More reminders.</p>
-      <p>More streaks.</p>
-      <p>More consequences.</p>
-      <p>Even when it isn’t meant to be shame, it lands as a condescending little presence at the back of your neck, quietly judging you for being behind. Again.</p>
-      <p>The underlying belief is always the same: if people really wanted to do the thing, they would.</p>
-      <p>That belief usually comes from people who have never experienced executive dysfunction.</p>
-      <p>Because motivation was never the missing ingredient.</p>
-      <p>The problem isn’t that we don’t care. It’s that timing is unreliable, friction is constant, and we’re often working against our own brains. Cognitive overload isn’t abstract. It’s what happens when too many parts of your mind are firing at once, all demanding attention, with no clear way to narrow focus onto the one thing that actually matters right now.</p>
-      <p>So we’re not building features to apply more pressure.</p>
-      <p>We’re building features to reduce interference. To lower cognitive load. To help you sequence instead of juggle. To make it easier to land on one task without fighting ten others at the same time.</p>
-      <p>We don’t use shame because it doesn’t work. But more importantly, we don’t use shame because it’s unnecessary. No one is harder on a neurodivergent person than they are on themselves.</p>
-      <p>The near future looks less like big reveals and more like refinement. Tools that get quieter. Systems that interrupt less. Features that help you re enter without punishing you for losing focus in the first place.</p>
-      <p>If something helps, great. If it doesn’t, it won’t fight you. That’s intentional.</p>
-      <p>We’re not trying to fix people.</p>
-      <p>We’re trying to reduce the noise around them.</p>
-      <p>That’s the direction. Slow. Deliberate. Built for the person using it, not the version of them someone else expects.</p>
-    </div>
-  </main>
+    <!-- Navbar Placeholder -->
+    <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-extrabold tracking-tighter">DIVERGIFY</a>
+        <a href="/field-notes/" class="text-sm font-semibold hover:text-blue-600 transition">← Back to Field Notes</a>
+    </nav>
 
-  <div data-partial="footer"></div>
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-6 pt-12 pb-24">
+        
+        <!-- Header Section -->
+        <header class="mb-10 border-b border-gray-200 pb-10">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <!-- Tags: Edit these for each post -->
+                <span class="px-3 py-1 bg-yellow-100 rounded-full text-xs font-bold uppercase tracking-wide text-yellow-800">Field Note</span>
+            </div>
 
-  <script src="/assets/divergipedia-data.js"></script>
-  <script src="/assets/site.js"></script>
+            <!-- Title: Edit this -->
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-gray-900" id="article-title">
+                Designing Without Shame
+            </h1>
+
+            <!-- Social Share Bar (Auto-Generated Links) -->
+            <div class="flex flex-wrap items-center gap-3 text-sm font-medium text-gray-500 mt-6">
+                
+                <!-- Native Share (Mobile Only - TikTok/Insta) -->
+                <button id="share-native" onclick="nativeShare()" class="flex items-center gap-2 text-white bg-black hover:bg-gray-800 transition p-2 px-4 rounded-full shadow-sm font-bold">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i> Share to Apps
+                </button>
+
+                <!-- X / Twitter -->
+                <a id="share-twitter" href="#" target="_blank" class="flex items-center gap-2 hover:text-black transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-black">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a id="share-linkedin" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-700 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-700">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a id="share-facebook" href="#" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-blue-600">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                 <!-- WhatsApp -->
+                 <a id="share-whatsapp" href="#" target="_blank" class="flex items-center gap-2 hover:text-green-500 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-green-500">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                
+                <!-- Copy Link -->
+                <button onclick="copyToClipboard()" class="flex items-center gap-2 hover:text-gray-900 transition p-2 bg-white rounded-md shadow-sm border border-gray-200 hover:border-gray-900 cursor-pointer group ml-auto">
+                    <i class="fa-solid fa-link"></i> <span id="copy-text">Copy Link</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- The Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <p>A lot of products start with assumptions.</p>
+<p>More reminders.</p>
+<p>More streaks.</p>
+<p>More consequences.</p>
+<p>Even when it isn’t meant to be shame, it lands as a condescending little presence at the back of your neck, quietly judging you for being behind. Again.</p>
+<p>The underlying belief is always the same: if people really wanted to do the thing, they would.</p>
+<p>That belief usually comes from people who have never experienced executive dysfunction.</p>
+<p>Because motivation was never the missing ingredient.</p>
+<p>The problem isn’t that we don’t care. It’s that timing is unreliable, friction is constant, and we’re often working against our own brains. Cognitive overload isn’t abstract. It’s what happens when too many parts of your mind are firing at once, all demanding attention, with no clear way to narrow focus onto the one thing that actually matters right now.</p>
+<p>So we’re not building features to apply more pressure.</p>
+<p>We’re building features to reduce interference. To lower cognitive load. To help you sequence instead of juggle. To make it easier to land on one task without fighting ten others at the same time.</p>
+<p>We don’t use shame because it doesn’t work. But more importantly, we don’t use shame because it’s unnecessary. No one is harder on a neurodivergent person than they are on themselves.</p>
+<p>The near future looks less like big reveals and more like refinement. Tools that get quieter. Systems that interrupt less. Features that help you re enter without punishing you for losing focus in the first place.</p>
+<p>If something helps, great. If it doesn’t, it won’t fight you. That’s intentional.</p>
+<p>We’re not trying to fix people.</p>
+<p>We’re trying to reduce the noise around them.</p>
+<p>That’s the direction. Slow. Deliberate. Built for the person using it, not the version of them someone else expects.</p>
+<h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+<p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+        </article>
+
+        <!-- Footer / CTA -->
+        <div class="mt-20 p-8 bg-gray-900 text-white rounded-2xl">
+            <h3 class="text-2xl font-bold mb-2">This is Divergify.</h3>
+            <p class="text-gray-400 mb-6">We don't fix you. We build systems that fit your OS.</p>
+            <a href="/" class="inline-block bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition transform hover:-translate-y-1">
+                Explore the System
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Script to Auto-Populate Share Links -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current URL and Title
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(document.title);
+
+            // Update Twitter Link
+            document.getElementById('share-twitter').href = 
+                `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentUrl}`;
+
+            // Update LinkedIn Link
+            document.getElementById('share-linkedin').href = 
+                `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+
+            // Update Facebook Link
+            document.getElementById('share-facebook').href = 
+                `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+                
+            // Update WhatsApp Link
+            document.getElementById('share-whatsapp').href = 
+                `https://wa.me/?text=${currentTitle}%20${currentUrl}`;
+
+            // Check if Native Share is supported (Mobile/Tablet)
+            if (navigator.share) {
+                document.getElementById('share-native').style.display = 'flex';
+            } else {
+                document.getElementById('share-native').style.display = 'none';
+            }
+        });
+
+        // Native Share Function (Triggers TikTok/Insta menu on phones)
+        async function nativeShare() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'Check out this field note from Divergify:',
+                        url: window.location.href,
+                    });
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                alert('Web Share API not supported on this browser.');
+            }
+        }
+
+        // Copy Link Function
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href);
+            const textSpan = document.getElementById('copy-text');
+            const originalText = textSpan.innerText;
+            
+            textSpan.innerText = "Copied!";
+            setTimeout(() => {
+                textSpan.innerText = originalText;
+            }, 2000);
+        }
+    </script>
+
 </body>
 </html>
