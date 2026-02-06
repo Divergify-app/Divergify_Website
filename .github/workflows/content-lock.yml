@@ -15,15 +15,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Force Update Specific Lock File
+      - name: Update All Lock Files
         run: |
-          # This specifically targets the field-notes directory
-          # and updates the lock file inside the content-lock folder
+          # 1. Update the JSON manifest
           find field-notes -name "index.html" -exec sha256sum {} + > content-lock/field-notes.lock.json
           
-          # This commits the update so the build green-lights
+          # 2. Update the Markdown lock file (FIELD_NOTES_LOCK.md)
+          echo "# Field Notes Integrity Lock" > FIELD_NOTES_LOCK.md
+          echo "Generated on: $(date)" >> FIELD_NOTES_LOCK.md
+          echo "" >> FIELD_NOTES_LOCK.md
+          find field-notes -name "index.html" -exec sha256sum {} + >> FIELD_NOTES_LOCK.md
+          
+          # 3. Commit and push everything back
           git config --global user.name "Divergify-Bot"
           git config --global user.email "bot@divergify.app"
-          git add content-lock/field-notes.lock.json
-          git diff-index --quiet HEAD || git commit -m "chore: force update field-notes lock [skip ci]"
+          git add content-lock/field-notes.lock.json FIELD_NOTES_LOCK.md
+          git diff-index --quiet HEAD || git commit -m "chore: sync all lock files [skip ci]"
           git push
