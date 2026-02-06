@@ -30,6 +30,7 @@ body > .section {
   padding-right: 16px;
 }
 
+/* --- HEADER --- */
 .site-header {
   background: var(--navy);
   border-bottom: 1px solid var(--border-soft, var(--mist));
@@ -81,6 +82,7 @@ body > .section {
   border-radius: 10px;
 }
 
+/* --- TOGGLES & SWITCHES --- */
 .header-toggles {
   display: flex;
   gap: 10px;
@@ -136,10 +138,61 @@ body > .section {
   transform: translateX(18px);
 }
 
+/* --- FIELD NOTES GRID FIX --- */
+/* This fixes the "scrunching" issue on the Field Notes page */
+.grid-3 {
+  display: grid;
+  /* Ensures cards stay at least 320px wide or stack if space is tight */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-soft, var(--mist));
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.card h3 a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--sage);
+}
+
+/* --- FOOTER --- */
 .site-footer {
   background: var(--navy);
   border-top: 1px solid var(--border-soft, var(--mist));
-  margin-top: 28px;
+  margin-top: 48px;
 }
 
 .footer-inner {
@@ -215,6 +268,7 @@ body > .section {
   color: var(--text-muted, var(--mist));
 }
 
+/* --- ACCESSIBILITY & MODES --- */
 body.mode-shades {
   background: var(--navy);
   color: var(--mist);
@@ -262,6 +316,7 @@ body.mode-shades *, body.mode-shades *::before, body.mode-shades *::after {
   scroll-behavior: auto !important;
 }
 
+/* --- RESPONSIVE MOBILE TWEAKS --- */
 @media (max-width: 980px) {
   .header-inner {
     align-items: flex-start;
@@ -276,9 +331,16 @@ body.mode-shades *, body.mode-shades *::before, body.mode-shades *::after {
   .footer-inner {
     grid-template-columns: 1fr;
     text-align: left;
+    gap: 24px;
   }
 
   .footer-legal {
     text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
   }
 }
