@@ -1,38 +1,22 @@
 <!doctype html>
-<html lang="en" data-mode="default" data-privacy="off" data-motion="normal">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#00466C" />
-    <meta name="description" content="Divergify app: local-first tasks, habits, focus, and sidekicks." />
-    <meta name="app-base" content="/app/" />
-    <title>Divergify</title>
-    <script type="module" crossorigin src="/app/assets/index-DrxBHy4T.js"></script>
-    <link rel="stylesheet" crossorigin href="/app/assets/index-B-Da4gAd.css">
-  <link rel="manifest" href="/app/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/app/registerSW.js"></script></head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divergify Redirect</title>
+    <meta http-equiv="refresh" content="0; url=/hub" />
+  </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div id="site-header" class="site-header">
-      <div class="site-shell">
-        <a class="site-brand" href="/app/">Divergify</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="/">Site Home</a>
-          <a href="/app/">App Home</a>
-          <a href="/app/tasks">Tasks</a>
-          <a href="/app/settings">Settings</a>
-          <a href="/app/legal/privacy">Privacy</a>
-        </nav>
-      </div>
-    </div>
-    <div id="root"></div>
-    <div id="site-footer" class="site-footer">
-      <div class="site-shell">
-        <div class="footer-meta">Productivity support only. Not medical advice.</div>
-        <div class="footer-links">
-          <a href="/app/legal/privacy">Privacy</a>
-        </div>
-      </div>
-    </div>
-    <script src="/app/js/universal-layout.js" defer></script>
+    <p>Redirecting to the Hub...</p>
+    <script>
+      (function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.getRegistrations().then((regs) => {
+            regs.forEach((reg) => reg.unregister());
+          });
+        }
+        window.location.replace("/hub");
+      })();
+    </script>
   </body>
 </html>

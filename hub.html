@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Hub | Divergify</title>
+  <title>The Hub | Divergify Ops Centre</title>
+  <meta name="description" content="Dive into Divergify's Hub: your neurodivergent-friendly ops centre with integrated planning, tasks and life-management tools. Beta coming soon." />
   <meta name="theme-color" content="#00466C" />
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -13,6 +14,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/global.css" />
+  <!-- app-inline-start -->
+  <link rel="stylesheet" crossorigin href="/hub/beta/assets/index-C1csjjAv.css">
+  <script type="module" crossorigin src="/hub/beta/assets/index-pUYoKcDS.js"></script>
+  <link rel="manifest" href="/hub/beta/manifest.webmanifest">
+  <script id="vite-plugin-pwa:register-sw" src="/hub/beta/registerSW.js"></script>
+  <!-- app-inline-end -->
   
 </head>
 <body>
@@ -20,6 +27,8 @@
 
   <main id="main" class="page-shell">
     <h1>The Hub</h1>
+
+    <h2>Integrated planning and life management for neurodivergent minds</h2>
 
 <p class="text-muted">
   The Hub is where you take messy mental traffic and turn it into a sequence you can actually run without burning out.
@@ -64,9 +73,14 @@
   </ul>
 </div>
 
-<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px;">
-  <a class="button button-primary" href="/app/">Start Beta</a>
-  <a class="button button-ghost" href="/app.html">App info</a>
+<div class="card" style="margin-top: 18px; padding: 16px;">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <h3 style="margin:0;">Beta workspace</h3>
+    <a class="button button-ghost" href="/hub/beta/" target="_blank" rel="noopener">Open in new tab</a>
+  </div>
+  <div style="margin-top: 12px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); background:#0b0e2a;">
+    <div id="root" style="min-height: 72vh;"></div>
+  </div>
 </div>
 
   </main>
