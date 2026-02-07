@@ -777,9 +777,9 @@ window.DIVERGIPEDIA = [
     "term": "Tin Foil Hat Mode",
     "phonetic": "tin foil hat mode",
     "pos": "n.",
-    "definition": "1. Divergify's privacy-first, zero-tracking operating mode. 2. A setting for the paranoid and the private.",
-    "mechanism": " Trust through transparency. Reduces surveillance anxiety.",
-    "usage": " \"I keep my journal in Tin Foil Hat Mode because my thoughts are between me and the void.\"",
+    "definition": "1. Divergify's no-cloud build mode: no hosted CI, no third-party pipelines. 2. Builds happen locally before release.",
+    "mechanism": " Trust through transparency. Reduces uncertainty by stating what the mode does and does not cover.",
+    "usage": " \"We shipped this build in Tin Foil Hat Mode. It never touched a cloud pipeline.\"",
     "slug": "tin-foil-hat-mode"
   },
   {
