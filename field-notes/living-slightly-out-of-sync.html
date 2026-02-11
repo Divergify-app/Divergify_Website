@@ -7,6 +7,10 @@
     <meta name="description" content="A personal story of growing up neurodivergent with trauma, misdiagnosis and addiction, and how Divergify aims to provide scaffolding, not fixes." />
     <!-- Tailwind CSS (matches your site) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/global.css">
+    <link rel="stylesheet" href="/assets/field-notes.css">
+    <link rel="stylesheet" href="/assets/field-notes-legacy-theme.css">
+
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -20,9 +24,9 @@
         .mono { font-family: 'JetBrains Mono', monospace; }
         
         /* Typography overrides for the article content */
-        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
-        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
-        .prose strong { color: #111827; font-weight: 700; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: var(--color-text); font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--color-text); }
+        .prose strong { color: var(--color-text); font-weight: 700; }
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose li { margin-bottom: 0.5rem; }
         
@@ -35,9 +39,10 @@
         @media (min-width: 1024px) {
             #share-native { display: none !important; }
         }
+
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
+<body data-field-notes="true" class="antialiased selection:bg-yellow-200 selection:text-black">
 
     <!-- Navbar Placeholder -->
     <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
@@ -101,6 +106,9 @@
         <article class="prose prose-lg max-w-none">
             <p style="color:#b3b3b3;font-size:12px;margin:0 0 12px">Published: <time datetime="2025-04-27">Apr 27, 2025</time></p>
 <p>I didn’t grow up learning how to adapt. I grew up failing.</p>
+<figure class="field-notes-image" style="margin: 1.5rem 0;">
+<img src="/field-notes/living-slightly-out-of-sync/childhood-photo-collage.png" alt="Childhood family photo collage" style="width:100%;height:auto;border-radius:12px;" loading="lazy" />
+</figure>
 <p>Not in ways that were dramatic or easy to explain, but in ways that accumulated quietly over time. School. Work. Relationships. Long stretches of effort followed by collapse. A growing belief that something was wrong with me, paired with no clear explanation of what that something was.</p>
 <p>When I was growing up, neurodivergence wasn’t understood the way it is now. ADHD wasn’t something girls had. Autism wasn’t something you considered unless someone was visibly struggling in very specific ways. Trauma wasn’t something you carried forward. It was something you were expected to “get over.”</p>
 <p>Those assumptions didn’t come with tools. They came with judgment.</p>
@@ -218,5 +226,7 @@
         }
     </script>
 
+    <div data-partial="footer"></div>
+    <script src="/assets/site.js"></script>
 </body>
 </html>

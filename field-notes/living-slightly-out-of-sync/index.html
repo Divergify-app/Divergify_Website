@@ -7,6 +7,10 @@
     
     <!-- Tailwind CSS (matches your site) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/global.css">
+    <link rel="stylesheet" href="/assets/field-notes.css">
+    <link rel="stylesheet" href="/assets/field-notes-legacy-theme.css">
+
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -20,9 +24,9 @@
         .mono { font-family: 'JetBrains Mono', monospace; }
         
         /* Typography overrides for the article content */
-        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: #374151; font-size: 1.125rem; }
-        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: #111827; }
-        .prose strong { color: #111827; font-weight: 700; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.75; color: var(--color-text); font-size: 1.125rem; }
+        .prose h2 { font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: var(--color-text); }
+        .prose strong { color: var(--color-text); font-weight: 700; }
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose li { margin-bottom: 0.5rem; }
         
@@ -35,9 +39,10 @@
         @media (min-width: 1024px) {
             #share-native { display: none !important; }
         }
+
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased selection:bg-yellow-200 selection:text-black">
+<body data-field-notes="true" class="antialiased selection:bg-yellow-200 selection:text-black">
 
     <!-- Navbar Placeholder -->
     <nav class="w-full py-6 px-6 max-w-4xl mx-auto flex justify-between items-center">
@@ -215,5 +220,7 @@
         }
     </script>
 
+    <div data-partial="footer"></div>
+    <script src="/assets/site.js"></script>
 </body>
 </html>

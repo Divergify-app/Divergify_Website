@@ -5,6 +5,10 @@ const STORAGE_KEYS = {
   tinfoil: "divergify_tinfoil_hat_mode"
 };
 
+const COMPLIANCE_KEYS = {
+  zeroTrackingBannerDismissed: "divergify_zero_tracking_banner_dismissed_v1"
+};
+
 const EASTER_EGGS = [
   "Reality check: your brain is not broken. Your environment is.",
   "Tin Foil Hat Mode: because consent is not a vibe, it is a rule.",
@@ -53,20 +57,111 @@ function bindSwitches() {
 async function injectPartials() {
   const headerSlot = qs("[data-partial='header']");
   const footerSlot = qs("[data-partial='footer']");
-  if (!headerSlot || !footerSlot) return;
+  if (!headerSlot && !footerSlot) return;
 
-  const [headerHtml, footerHtml] = await Promise.all([
-    fetch("/partials/header.html").then(r => r.text()),
-    fetch("/partials/footer.html").then(r => r.text())
-  ]);
+  const jobs = [];
 
-  headerSlot.innerHTML = headerHtml;
-  footerSlot.innerHTML = footerHtml;
+  if (headerSlot) {
+    jobs.push(
+      fetch("/partials/header.html")
+        .then(r => r.text())
+        .then(html => { headerSlot.innerHTML = html; })
+    );
+  }
 
-  setActiveNav();
-  setFooterEasterEgg();
+  if (footerSlot) {
+    jobs.push(
+      fetch("/partials/footer.html")
+        .then(r => r.text())
+        .then(html => { footerSlot.innerHTML = html; })
+    );
+  }
+
+  await Promise.all(jobs);
+
+  if (headerSlot) setActiveNav();
+  if (footerSlot) setFooterEasterEgg();
   applyModesFromStorage();
   bindSwitches();
+}
+
+function ensureLegalFooterFallback() {
+  if (qs(".site-footer")) return;
+  if (!document.body) return;
+
+  const year = String(new Date().getFullYear());
+  const footer = document.createElement("footer");
+  footer.className = "site-footer site-footer-fallback";
+  footer.setAttribute("role", "contentinfo");
+  footer.innerHTML = `
+    <div style="max-width:1120px;margin:0 auto;padding:24px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+      <div style="font-size:12px;opacity:.85;">
+        © ${year} Divergify. No tracking cookies.
+      </div>
+    </div>
+  `;
+  document.body.appendChild(footer);
+}
+
+function readLocalStorage(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeLocalStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {}
+}
+
+function renderZeroTrackingBanner() {
+  if (readLocalStorage(COMPLIANCE_KEYS.zeroTrackingBannerDismissed) === "1") return;
+  if (qs("[data-zero-tracking-banner]")) return;
+  if (!document.body) return;
+
+  const banner = document.createElement("aside");
+  banner.dataset.zeroTrackingBanner = "true";
+  banner.setAttribute("role", "status");
+  banner.setAttribute("aria-live", "polite");
+  banner.style.cssText = [
+    "position:fixed",
+    "left:16px",
+    "right:16px",
+    "bottom:16px",
+    "z-index:2500",
+    "background:#111827",
+    "color:#f9eed2",
+    "border:1px solid rgba(255,255,255,0.25)",
+    "border-radius:12px",
+    "box-shadow:0 10px 30px rgba(0,0,0,0.3)"
+  ].join(";");
+
+  banner.innerHTML = `
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 14px;">
+      <div style="font-size:14px;line-height:1.45;flex:1 1 420px;">
+        <strong>Zero-Tracking:</strong> We don't use cookies to track you. Just to save your tasks.
+      </div>
+      <a href="/privacy.html" style="color:#cda977;font-size:13px;white-space:nowrap;">Learn more</a>
+      <button type="button" data-zero-tracking-dismiss style="border:1px solid rgba(255,255,255,0.25);background:#1f2937;color:#f9eed2;border-radius:999px;padding:6px 12px;cursor:pointer;">
+        Got it
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+
+  const dismiss = banner.querySelector("[data-zero-tracking-dismiss]");
+  dismiss?.addEventListener("click", () => {
+    writeLocalStorage(COMPLIANCE_KEYS.zeroTrackingBannerDismissed, "1");
+    banner.remove();
+  });
 }
 
 function setActiveNav() {
@@ -244,6 +339,8 @@ function renderDivergipedia() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartials();
+  ensureLegalFooterFallback();
   initFieldNotesLayout();
   renderDivergipedia();
+  renderZeroTrackingBanner();
 });

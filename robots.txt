@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /trash/
+Disallow: /scripts/
+Disallow: /content-lock/
+Disallow: /partials/
+
+Sitemap: https://divergify.app/sitemap.xml
