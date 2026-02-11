@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Controls | Divergify</title>
+  <meta name="description" content="How Divergify handles local-first storage, optional integrations, and explicit consent controls." />
+  <meta name="theme-color" content="#1B2559" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/global.css" />
+</head>
+<body>
+  <div data-partial="header"></div>
+
+  <main id="main" class="page-shell">
+    <h1>Data Controls</h1>
+
+    <p>
+      Effective date: February 11, 2026. This page explains exactly where data lives, what requires explicit permission,
+      and what choices you control.
+    </p>
+
+    <section class="section">
+      <h2>Default behavior (local-first)</h2>
+      <ul>
+        <li>Workspace state is stored on your device/browser.</li>
+        <li>Divergify does not silently upload task content or inferred health/cognitive patterns.</li>
+        <li>No ad-tracking cookies or cross-context behavioral advertising.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>What requires explicit permission</h2>
+      <ul>
+        <li>Submitting contact messages (you explicitly provide and send this data).</li>
+        <li>Optional marketing opt-in (separate checkbox).</li>
+        <li>Opening third-party links (store, social, payment pages).</li>
+        <li>Any future cloud backup/sync or AI integration features.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Cloud and sync model</h2>
+      <p>
+        The intended architecture is user-controlled storage: you choose whether to stay local-only or connect your own
+        cloud provider. If enabled, sync should use end-to-end encrypted data blobs so providers cannot read workspace content.
+      </p>
+      <p class="text-muted">
+        Until that feature is live, default behavior remains local-only.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>AI data boundary</h2>
+      <p>
+        AI features should be optional and separately consented. If enabled, only the minimum required payload should be sent
+        to the selected AI provider, and only for the session/use case you trigger.
+      </p>
+      <p class="text-muted">
+        No AI processing should run on your data unless you explicitly turn it on.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Medical and legal boundary</h2>
+      <p>
+        Divergify is a productivity environment, not a medical provider. We do not diagnose, treat, or provide clinical
+        care. The tools can be used by people with or without formal diagnoses.
+      </p>
+      <p class="text-muted">
+        If we launch regulated healthcare features in the future, we will add the required compliance controls first.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>California + HIPAA quick answers</h2>
+      <ul>
+        <li>HIPAA usually applies to covered healthcare entities and their business associates, not general productivity tools.</li>
+        <li>California disclosures are structured for CalOPPA visibility and CCPA/CPRA-style rights handling where applicable.</li>
+        <li>California privacy rights requests can be submitted via <a href="mailto:chaoscontrol@divergify.app">chaoscontrol@divergify.app</a>.</li>
+        <li>Divergify does not sell personal information or use cross-context behavioral advertising.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Public web inference risk</h2>
+      <p>
+        Public pages can still be indexed and observed at the network/browser level. That means third parties may infer topic
+        interest from visited URLs even when workspace data stays local.
+      </p>
+      <p class="text-muted">
+        We reduce this risk by avoiding ad trackers and keeping workspace content local by default.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Your controls right now</h2>
+      <ul>
+        <li>Clear browser storage to remove local workspace state and settings.</li>
+        <li>Use the “Shades,” “Tin Foil Hat,” and “Brain Mode” controls locally in your browser.</li>
+        <li>Use contact-form consent and opt-in checkboxes intentionally.</li>
+        <li>Email privacy requests to <a href="mailto:chaoscontrol@divergify.app">chaoscontrol@divergify.app</a>.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>State-law alignment</h2>
+      <p>
+        Divergify is built to support consent-first handling and local-first minimization across US state privacy frameworks.
+        Where laws differ by state, we aim to apply the stricter operational standard and update controls as requirements evolve.
+      </p>
+      <p class="text-muted">
+        For legal details, see <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
+      </p>
+    </section>
+  </main>
+
+  <div data-partial="footer"></div>
+
+  <script src="/assets/divergipedia-data.js"></script>
+  <script src="/assets/site.js"></script>
+</body>
+</html>

@@ -79,6 +79,7 @@ const INLINE_FOOTER_PARTIAL = `
     </div>
     <div class="footer-row footer-legal">
       <div class="footer-links footer-legal-links">
+        <a href="/data-controls.html">Data Controls</a>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
       </div>
@@ -330,6 +331,7 @@ function ensureLegalFooterFallback() {
   footer.innerHTML = `
     <div style="max-width:1120px;margin:0 auto;padding:24px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;">
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/data-controls.html">Data Controls</a>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
       </div>
@@ -380,9 +382,9 @@ function renderZeroTrackingBanner() {
   banner.innerHTML = `
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 14px;">
       <div style="font-size:14px;line-height:1.45;flex:1 1 420px;">
-        <strong>Zero-Tracking:</strong> We don't use cookies to track you. Just to save your tasks.
+        <strong>Zero-Tracking:</strong> No ad tracking. Workspace data stays local unless you explicitly enable integrations.
       </div>
-      <a href="/privacy.html" style="color:#cda977;font-size:13px;white-space:nowrap;">Learn more</a>
+      <a href="/data-controls.html" style="color:#cda977;font-size:13px;white-space:nowrap;">Data controls</a>
       <button type="button" data-zero-tracking-dismiss style="border:1px solid rgba(255,255,255,0.25);background:#1f2937;color:#f9eed2;border-radius:999px;padding:6px 12px;cursor:pointer;">
         Got it
       </button>

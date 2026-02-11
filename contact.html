@@ -28,6 +28,9 @@
   If you are reaching out about partnerships, press, early access, or anything that involves building something real, send it here.
   If you are trying to sell us “growth hacks,” save it for someone who still believes in productivity theater.
 </p>
+<p class="text-muted">
+  Do not include medical records, diagnosis details, insurance numbers, or other sensitive health data in this form.
+</p>
 
 <div class="card" style="margin-top: 20px;">
   <h3>Send a message</h3>
@@ -52,11 +55,15 @@
       <textarea name="message" rows="6" required></textarea>
     </label>
     <label>
+      <input type="checkbox" name="consent_to_process" value="yes" required />
+      I consent to Divergify and its form-processing provider storing and processing this message so you can respond.
+    </label>
+    <label>
       <input type="checkbox" name="marketing_opt_in" value="yes" />
       Optional: send me product updates and research invites. Replies to this message are separate.
     </label>
     <p class="text-muted" style="margin: 8px 0 0;">
-      We only send updates if you opt in. Otherwise, this is just a reply channel.
+      We only send updates if you opt in. Otherwise, this is only for direct reply support.
     </p>
     <div style="margin-top: 16px;">
       <button class="button button-primary" type="submit">Send message</button>

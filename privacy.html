@@ -40,6 +40,19 @@
 </section>
 
 <section class="section">
+  <h2>Explicit permission model</h2>
+  <p>
+    Divergify uses consent-first controls. Data stays local unless you take a clear action that authorizes data transfer,
+    such as submitting a contact form, opening a third-party link, or enabling an optional integration.
+  </p>
+  <ul>
+    <li><strong>Default:</strong> local-only operation on your device.</li>
+    <li><strong>Optional:</strong> off-device features are opt-in and can be disabled or revoked.</li>
+    <li><strong>No silent uploads:</strong> we do not background-upload workspace content without your explicit action.</li>
+  </ul>
+</section>
+
+<section class="section">
   <h2>Data categories</h2>
   <p>We process only the minimum data needed to run the site and app.</p>
   <ul>
@@ -47,6 +60,7 @@
     <li><strong>Inferred Health Data (local only):</strong> optional inferences (for example stress/focus patterns) derived on-device.</li>
     <li><strong>Contact Data:</strong> name, email, and message when you submit the contact form or email us.</li>
     <li><strong>Basic Request Logs:</strong> IP address, user agent, and timestamps from hosting infrastructure logs.</li>
+    <li><strong>Public Web Metadata:</strong> page URLs and referrers visible to your browser, network provider, and destination site when you navigate the public web.</li>
   </ul>
 </section>
 
@@ -65,10 +79,24 @@
   <ul>
     <li>Contact form submissions you intentionally send.</li>
     <li>Normal web requests to load site assets.</li>
+    <li>Technical request data sent to third-party resources embedded on specific pages (for example font/CDN files).</li>
     <li>Third-party requests initiated by you (for example external social links or Ko-fi).</li>
+    <li>Public-page access signals (for example URL requests) that search engines and network providers can observe.</li>
   </ul>
   <p>
     Divergify does not upload your local workspace content or Inferred Health Data to our servers.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Inference and crawler limits</h2>
+  <p>
+    Divergify publishes public pages about neurodivergence. Search engines can index those pages, and parties that can see
+    browsing activity (for example an ISP, employer network, or shared-device observer) may infer interest in those topics.
+  </p>
+  <p>
+    To reduce this risk, we avoid ad-tech trackers and cross-context behavioral advertising scripts, and keep core workspace
+    content local by default.
   </p>
 </section>
 
@@ -102,9 +130,64 @@
   <h2>Your choices</h2>
   <ul>
     <li>Clear local storage in your browser/device at any time.</li>
+    <li>Use the <a href="/data-controls.html">Data Controls</a> page for current privacy controls and architecture.</li>
     <li>Request deletion of contact submissions by emailing us.</li>
     <li>Avoid entering sensitive medical information into contact forms.</li>
   </ul>
+</section>
+
+<section class="section">
+  <h2>US state privacy rights notice</h2>
+  <p>
+    Depending on your state of residence and applicable law, you may have rights to request access, correction, deletion,
+    or portability of personal information, and to opt out of specific processing practices where those practices apply.
+  </p>
+  <p>
+    Divergify does not sell personal data and does not use cross-context behavioral advertising. If this changes, we will
+    provide required opt-out controls and update this notice.
+  </p>
+  <p>
+    To make a privacy rights request, email
+    <a href="mailto:chaoscontrol@divergify.app">chaoscontrol@divergify.app</a> with subject line “Privacy Request.”
+  </p>
+</section>
+
+<section class="section">
+  <h2>California-specific disclosures</h2>
+  <p>
+    We provide this policy as a conspicuous privacy notice for California users (CalOPPA). Where California consumer privacy
+    law applies (including CCPA/CPRA), you may request access, deletion, correction, and information about data categories
+    we process.
+  </p>
+  <p>
+    Divergify does not sell personal information and does not share personal information for cross-context behavioral
+    advertising. If this changes, we will provide legally required notices and controls.
+  </p>
+  <p>
+    Divergify is not offered as a healthcare provider service and does not provide diagnosis or treatment. If product scope
+    changes toward regulated healthcare functionality, we will update this policy and controls to match applicable California
+    medical privacy obligations, including CMIA where applicable.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Medical scope and regulatory posture</h2>
+  <p>
+    Divergify is a productivity and cognition-support environment. We do not diagnose, treat, or provide clinical care.
+    The product may be used by people with or without formal diagnoses.
+  </p>
+  <p>
+    HIPAA applies primarily to covered entities (such as healthcare providers, plans, and clearinghouses) and their business
+    associates. Divergify is currently structured as consumer productivity software rather than a covered healthcare service.
+  </p>
+  <p>
+    If we introduce features that materially change that posture, we will update legal terms and controls before rollout.
+    Regardless of legal category, we apply consent-first and data-minimization controls intended to reduce privacy risk.
+  </p>
+  <p>
+    If future features process health-related data off-device, additional consumer-health privacy requirements (including
+    applicable breach-notification rules) may apply.
+  </p>
 </section>
 
 <section class="section">
