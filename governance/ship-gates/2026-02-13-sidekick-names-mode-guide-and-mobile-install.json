@@ -52,7 +52,7 @@
       "status": "pass",
       "rationale": "Primary benefit is discoverability and lower confusion; risk is low because behavior is copy/layout/state-key normalization.",
       "evidence": [
-        "Hub beta rebuilt with sidekick names: Avery, Rick, Aria, Aster, Soren",
+        "Hub beta rebuilt with sidekick names: Avery, Rex, Aria, Aster, Soren",
         "Legacy shades/brain aliases retained to avoid breaking prior local settings"
       ]
     },
