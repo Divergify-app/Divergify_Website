@@ -66,3 +66,104 @@ body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-arti
   outline: 2px solid var(--color-soft-lime);
   outline-offset: 2px;
 }
+
+/* Living Slightly Out of Sync: collage-backed story hero */
+body[data-field-notes="true"].field-note-collage-hero main {
+  padding-top: clamp(12px, 2.2vw, 20px) !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  min-height: clamp(260px, 42vw, 390px);
+  margin-bottom: clamp(28px, 4vw, 40px) !important;
+  padding: clamp(20px, 4vw, 34px) !important;
+  border: 1px solid rgba(249, 238, 210, 0.28) !important;
+  border-radius: 18px;
+  border-bottom-width: 1px !important;
+  background: rgba(11, 10, 34, 0.9);
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/field-notes/living-slightly-out-of-sync/childhood-photo-collage.png");
+  background-size: cover;
+  background-position: center 26%;
+  transform: scale(1.04);
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(10, 8, 30, 0.28) 0%, rgba(10, 8, 30, 0.72) 56%, rgba(10, 8, 30, 0.94) 100%);
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header > * {
+  position: relative;
+}
+
+body[data-field-notes="true"].field-note-collage-hero #article-title {
+  color: #f5f3ff !important;
+  max-width: 13ch;
+  text-shadow: 0 6px 24px rgba(8, 7, 22, 0.72);
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header h2 {
+  margin: 0.15rem 0 0;
+  color: rgba(245, 243, 255, 0.9) !important;
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header .text-sm.font-medium.text-gray-500 {
+  color: rgba(245, 243, 255, 0.82) !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header .bg-white {
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #232147 !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header .bg-white i,
+body[data-field-notes="true"].field-note-collage-hero main > header .bg-white span {
+  color: #232147 !important;
+  opacity: 1 !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero main > header a.bg-white:hover,
+body[data-field-notes="true"].field-note-collage-hero main > header button.bg-white:hover {
+  color: #171533 !important;
+  background: #ffffff !important;
+}
+
+body[data-field-notes="true"].field-note-collage-hero .field-notes-article .field-notes-image:first-of-type {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  body[data-field-notes="true"].field-note-collage-hero main > header {
+    min-height: clamp(240px, 70vw, 310px);
+    padding: 18px !important;
+    border-radius: 14px;
+  }
+
+  body[data-field-notes="true"].field-note-collage-hero main > header .group.ml-auto {
+    margin-left: 0 !important;
+  }
+}
