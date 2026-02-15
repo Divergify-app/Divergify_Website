@@ -3,8 +3,44 @@
 
 [[redirects]]
   from = "/app/*"
-  to = "/hub"
+  to = "/hub.html"
   status = 301
+
+[[redirects]]
+  from = "/hub"
+  to = "/hub.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes.html"
+  to = "/field-notes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/index.html"
+  to = "/field-notes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/living-slightly-out-of-sync.html"
+  to = "/field-notes/living-slightly-out-of-sync/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/living-slightly-out-of-sync"
+  to = "/field-notes/living-slightly-out-of-sync/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/living-slightly-out-of-sync/index.html"
+  to = "/field-notes/living-slightly-out-of-sync/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/blog/"

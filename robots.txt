@@ -5,5 +5,6 @@ Disallow: /trash/
 Disallow: /scripts/
 Disallow: /content-lock/
 Disallow: /partials/
+Disallow: /field-notes/template.html
 
 Sitemap: https://divergify.app/sitemap.xml
