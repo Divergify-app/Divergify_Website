@@ -1,0 +1,84 @@
+{
+  "feature_id": "2026-02-15-hub-beta-service-worker-refresh-hardening",
+  "feature_name": "Hub beta service worker refresh hardening",
+  "owner": "Codex",
+  "date": "2026-02-15",
+  "scope_summary": "Harden hub beta service worker update handling so renamed content and new bundles propagate faster by forcing update checks, activating waiting workers, and reloading when control changes.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "n_a",
+      "rationale": "Runtime caching behavior change only; no policy or legal claim changes.",
+      "evidence": []
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No new telemetry or external data flow was added; service worker logic remains local client runtime behavior.",
+      "evidence": [
+        "hub/beta/registerSW.js only registers and updates /hub/beta/sw.js",
+        "No new fetch endpoints or analytics calls introduced"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical content or claims were changed.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Reduces confusion by making updates visible sooner and avoiding stale persona names after deploy.",
+      "evidence": [
+        "registerSW now posts SKIP_WAITING and reloads once on controllerchange"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "No direct content or model behavior claims changed in this patch.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Primary benefit is consistency between deployed content and what users see; risk is limited to one-time reload on fresh service worker activation.",
+      "evidence": [
+        "hub/beta/registerSW.js triggers window.location.reload() on controllerchange once",
+        "hub/beta/sw.js accepts SKIP_WAITING message for immediate activation"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "n_a",
+      "rationale": "No user-facing marketing or narrative copy changed.",
+      "evidence": []
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Current content becomes more reliable for all users because stale UI strings are less likely to persist.",
+      "evidence": [
+        "Forced update checks on page load reduce stale cache windows"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Update behavior is explicit and syntax validated; no permissions or auth surface changed.",
+      "evidence": [
+        "node --check hub/beta/registerSW.js passes",
+        "node --check hub/beta/sw.js passes"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization or conversion flow changes were made.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and monitor that new hub beta bundles are picked up on first reload after deploy."
+  }
+}
