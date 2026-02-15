@@ -13,8 +13,8 @@
 
   /* Surfaces */
   --color-bg: var(--color-brand-navy);
-  --color-surface: rgba(255,255,255,0.06);
-  --color-surface-strong: rgba(255,255,255,0.10);
+  --color-surface: rgba(249,238,210,0.06);
+  --color-surface-strong: rgba(249,238,210,0.10);
 
   /* Text */
   --color-text: #F9EED2;
@@ -27,7 +27,7 @@
   --color-switch-on: rgba(205,169,119,0.35);
 
   /* Borders */
-  --color-border: rgba(255,255,255,0.18);
+  --color-border: rgba(249,238,210,0.18);
 
   /* Typography */
   --font-heading: "Poppins", system-ui, sans-serif;
@@ -99,7 +99,7 @@ img { max-width: 100%; height: auto; }
   position: absolute;
   left: -9999px;
   top: 0;
-  background: #FFFFFF;
+  background: var(--color-text);
   color: var(--color-brand-navy);
   padding: 8px 12px;
   border-radius: 6px;
@@ -188,7 +188,7 @@ p { margin: 0 0 var(--space-4); }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   color: var(--color-text);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -196,17 +196,23 @@ p { margin: 0 0 var(--space-4); }
   font-weight: 700;
 }
 
-.brand svg { height: 26px; width: auto; }
+.brand-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  flex: 0 0 auto;
+}
+
 .wordmark {
   height: 42px;
   width: auto;
   display: block;
   image-rendering: -webkit-optimize-contrast;
-  filter: drop-shadow(0 0 1px rgba(255,255,255,0.16));
+  filter: drop-shadow(0 0 1px rgba(249,238,210,0.16));
 }
 
 .wordmark-logo {
-  height: 48px;
+  height: 34px;
   width: auto;
   margin: 0;
   object-fit: contain;
@@ -259,7 +265,7 @@ p { margin: 0 0 var(--space-4); }
   width: 42px;
   height: 24px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.16);
+  background: rgba(249,238,210,0.16);
   border: 1px solid var(--color-border);
   position: relative;
   cursor: pointer;
@@ -273,7 +279,7 @@ p { margin: 0 0 var(--space-4); }
   width: 18px;
   height: 18px;
   border-radius: 999px;
-  background: #FFFFFF;
+  background: var(--color-text);
   transition: transform var(--anim-fast) ease;
 }
 .switch[data-on="true"] { background: var(--color-switch-on); }
@@ -442,7 +448,7 @@ p { margin: 0 0 var(--space-4); }
 .card {
   background: transparent;
   border: none;
-  border-left: 2px solid rgba(255,255,255,0.18);
+  border-left: 2px solid rgba(249,238,210,0.18);
   padding: 0 0 0 var(--space-4);
 }
 
@@ -589,12 +595,12 @@ body.mode-reduced {
   --color-soft-lime: #8C7A5E;
   --color-action-green: #8C7A5E;
   --color-link: #5E5C6B;
-  --color-border: rgba(255,255,255,0.12);
+  --color-border: rgba(200,198,209,0.12);
   --color-tag-bg: rgba(94,92,107,0.18);
   --color-active-bg: rgba(140,122,94,0.18);
   --color-switch-on: rgba(140,122,94,0.35);
-  --color-surface: rgba(255,255,255,0.06);
-  --color-surface-strong: rgba(255,255,255,0.10);
+  --color-surface: rgba(200,198,209,0.06);
+  --color-surface-strong: rgba(200,198,209,0.10);
 }
 
 body.mode-reduced * { transition: none !important; animation: none !important; }
@@ -629,7 +635,12 @@ body.mode-reduced * { transition: none !important; animation: none !important; }
 
 @media (max-width: 720px) {
   .wordmark-logo {
-    height: 40px;
+    height: 30px;
+  }
+
+  .brand-icon {
+    width: 22px;
+    height: 22px;
   }
 
   .nav {
@@ -661,14 +672,6 @@ body.mode-reduced * { transition: none !important; animation: none !important; }
     border-radius: var(--radius-md);
     background: var(--color-surface);
   }
-}
-
-body,
-p,
-li,
-span,
-div {
-  color: var(--color-text) !important;
 }
 
 :root {

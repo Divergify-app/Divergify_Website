@@ -38,7 +38,8 @@ const INLINE_HEADER_PARTIAL = `
 <header class="site-header" role="banner">
   <div class="site-header-inner">
     <a class="brand" href="/" aria-label="Divergify home">
-      <img class="wordmark wordmark-logo" src="/assets/brand/tranparentBG-logo.png" alt="Divergify" />
+      <img class="brand-icon" src="/assets/brand/divergify-icon-braincompass.svg" alt="" aria-hidden="true" />
+      <img class="wordmark wordmark-logo" src="/assets/wordmark.svg" alt="Divergify" />
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/">Divergify</a>
@@ -400,11 +401,11 @@ function renderZeroTrackingBanner() {
     "right:16px",
     "bottom:16px",
     "z-index:2500",
-    "background:#111827",
+    "background:#232147",
     "color:#f9eed2",
-    "border:1px solid rgba(255,255,255,0.25)",
+    "border:1px solid rgba(249,238,210,0.25)",
     "border-radius:12px",
-    "box-shadow:0 10px 30px rgba(0,0,0,0.3)"
+    "box-shadow:0 10px 30px rgba(35,33,71,0.3)"
   ].join(";");
 
   banner.innerHTML = `
@@ -413,7 +414,7 @@ function renderZeroTrackingBanner() {
         <strong>Zero-Tracking:</strong> No ad tracking. Workspace data stays local unless you explicitly enable integrations.
       </div>
       <a href="/data-controls.html" style="color:#cda977;font-size:13px;white-space:nowrap;">Data controls</a>
-      <button type="button" data-zero-tracking-dismiss style="border:1px solid rgba(255,255,255,0.25);background:#1f2937;color:#f9eed2;border-radius:999px;padding:6px 12px;cursor:pointer;">
+      <button type="button" data-zero-tracking-dismiss style="border:1px solid rgba(249,238,210,0.25);background:#151426;color:#f9eed2;border-radius:999px;padding:6px 12px;cursor:pointer;">
         Got it
       </button>
     </div>
