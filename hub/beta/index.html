@@ -34,25 +34,29 @@
         <nav class="site-nav" aria-label="Primary">
           <a href="/">Site Home</a>
           <a href="/hub/beta/">App Home</a>
-          <a href="/hub/beta/tasks">Tasks</a>
-          <a href="/hub/beta/guide">Guide</a>
-          <a href="/hub/beta/settings">Settings</a>
-          <a href="/hub/beta/legal/privacy">Privacy</a>
+          <a href="/hub/beta/tasks/">Tasks</a>
+          <a href="/hub/beta/guide/">Guide</a>
+          <a href="/hub/beta/settings/">Settings</a>
+          <a href="/hub/beta/legal/privacy/">Privacy</a>
         </nav>
       </div>
     </div>
     <noscript>
-      <main style="max-width: 980px; margin: 16px auto; padding: 16px; border: 1px solid #5e5c6b; border-radius: 16px;">
-        <h1 style="margin: 0 0 8px;">Divergify Non-JS Mode</h1>
-        <p style="margin: 0 0 12px;">
-          JavaScript is off, so the interactive app cannot run. You can still use this manual fallback:
+      <main id="main" style="max-width: 980px; margin: 16px auto; padding: 18px; border: 1px solid #5e5c6b; border-radius: 16px; background: #181736; color: #f4f1de;">
+        <h1 style="margin: 0 0 8px;">Divergify Hub Beta (No-JS View)</h1>
+        <p style="margin: 0 0 10px;">
+          JavaScript is required for the interactive workspace. In full mode, the Hub provides:
         </p>
-        <ol style="margin: 0; padding-left: 20px;">
-          <li>Write one tiny task and one tiny habit on paper.</li>
-          <li>Run one timer for 5-10 minutes.</li>
-          <li>When the timer ends, choose stop or one more sprint.</li>
-        </ol>
-        <p style="margin: 12px 0 0;">Enable JavaScript to restore full sidekick, timer nudges, and personalization.</p>
+        <ul style="margin: 0 0 10px; padding-left: 20px;">
+          <li>One-focus task flow with low-friction capture.</li>
+          <li>Adaptive sidekicks for brief, non-shaming prompts.</li>
+          <li>Sprint timers and habit check-ins matched to current load.</li>
+          <li>Local-first storage with optional privacy controls.</li>
+        </ul>
+        <p style="margin: 0 0 8px;">
+          Crawlable product context: <a href="/hub.html">Hub Overview</a> · <a href="/guide.html">Guide + FAQ</a> · <a href="/data-controls.html">Data Controls</a>.
+        </p>
+        <p style="margin: 0;">Enable JavaScript to use live routes like Tasks, Sidekicks, and Settings.</p>
       </main>
     </noscript>
     <div id="root"></div>

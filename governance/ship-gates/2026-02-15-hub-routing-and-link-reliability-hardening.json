@@ -1,0 +1,90 @@
+{
+  "feature_id": "2026-02-15-hub-routing-and-link-reliability-hardening",
+  "feature_name": "Hub routing and link reliability hardening",
+  "owner": "Codex",
+  "date": "2026-02-15",
+  "scope_summary": "Eliminate Hub beta deep-link 404 risk by adding SPA rewrites and static route entrypoints, strengthen non-JS route fallbacks, and reduce crawl waste with direct canonical nav links plus Field Notes compatibility redirects.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "n_a",
+      "rationale": "Routing, linking, and fallback copy updates only; no policy or terms changes.",
+      "evidence": []
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No new storage scope or network integrations were introduced; changes are static pages and route handling.",
+      "evidence": [
+        "hub/beta/* route entrypoints keep existing local-first app behavior",
+        "No new API endpoints or analytics calls added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Fallback copy preserves non-medical scope language and does not add diagnosis/treatment claims.",
+      "evidence": [
+        "hub/beta/index.html and route fallback pages retain productivity-only framing"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Reducing broken routes lowers friction and improves predictability for users under cognitive load.",
+      "evidence": [
+        "netlify.toml adds Hub SPA rewrite and Field Notes compatibility redirects",
+        "Direct links now resolve without dead-end 404s"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "No neuroscience or clinical claims were added in this routing-focused patch.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Primary benefit is trust and usability from route reliability; foreseeable harm is low because behavior changes are additive and backward compatible.",
+      "evidence": [
+        "Created static entry files for /hub/beta/tasks/, /sidekicks/, /guide/, /settings/, /legal/privacy/",
+        "Static internal-link audit now reports zero unresolved internal paths"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy changes are concise and aligned with existing tone; no new inflated performance claims.",
+      "evidence": [
+        "No-JS fallback now explains concrete features and links to core trust pages"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Fallbacks now provide meaningful content and navigation in non-JS contexts instead of a minimal blocker message.",
+      "evidence": [
+        "hub/beta/index.html noscript block upgraded with actionable links",
+        "Route entry pages include noscript summaries and clear navigation"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Route behavior is now deterministic across refreshes and direct-entry paths, reducing false 404 regressions.",
+      "evidence": [
+        "netlify.toml includes /hub/beta/* -> /hub/beta/index.html rewrite",
+        "Compatibility redirects added for Field Notes URL variants"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No pricing, upsell, or conversion mechanics changed.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify production deep links for /hub/beta/sidekicks/, /tasks/, /settings/, /guide/, and /legal/privacy/."
+  }
+}

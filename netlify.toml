@@ -13,6 +13,17 @@
   force = true
 
 [[redirects]]
+  from = "/hub/beta"
+  to = "/hub/beta/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hub/beta/*"
+  to = "/hub/beta/index.html"
+  status = 200
+
+[[redirects]]
   from = "/field-notes.html"
   to = "/field-notes/"
   status = 301
@@ -39,6 +50,144 @@
 [[redirects]]
   from = "/field-notes/living-slightly-out-of-sync/index.html"
   to = "/field-notes/living-slightly-out-of-sync/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/the-spiral-bar.html"
+  to = "/field-notes/the-spiral-bar/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/demands-not-motivation.html"
+  to = "/field-notes/demands-not-motivation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/designing-without-shame.html"
+  to = "/field-notes/designing-without-shame/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/the-quiet-expectation.html"
+  to = "/field-notes/the-quiet-expectation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/healthy-momentum.html"
+  to = "/field-notes/healthy-momentum/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/welcome-chaos-brained-geniuses"
+  to = "/field-notes/welcome-chaos-brained-geniuses.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/welcome-chaos-brained-geniuses/"
+  to = "/field-notes/welcome-chaos-brained-geniuses.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/living-without-the-right-default-settings"
+  to = "/field-notes/living-without-the-right-default-settings.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/living-without-the-right-default-settings/"
+  to = "/field-notes/living-without-the-right-default-settings.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/meet-divergify"
+  to = "/field-notes/meet-divergify.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/meet-divergify/"
+  to = "/field-notes/meet-divergify.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/neurodivergence-evolutionary-upgrade"
+  to = "/field-notes/neurodivergence-evolutionary-upgrade.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/neurodivergence-evolutionary-upgrade/"
+  to = "/field-notes/neurodivergence-evolutionary-upgrade.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/inside-divergify-tools"
+  to = "/field-notes/inside-divergify-tools.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/inside-divergify-tools/"
+  to = "/field-notes/inside-divergify-tools.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/behavioral-science-without-being-gross"
+  to = "/field-notes/behavioral-science-without-being-gross.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/behavioral-science-without-being-gross/"
+  to = "/field-notes/behavioral-science-without-being-gross.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/a-day-with-divergify"
+  to = "/field-notes/a-day-with-divergify.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/a-day-with-divergify/"
+  to = "/field-notes/a-day-with-divergify.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/why-divergify-exists"
+  to = "/field-notes/why-divergify-exists.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/why-divergify-exists/"
+  to = "/field-notes/why-divergify-exists.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/healthy-momentum-question-with-gif"
+  to = "/field-notes/healthy-momentum-question-with-gif.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/healthy-momentum-question-with-gif/"
+  to = "/field-notes/healthy-momentum-question-with-gif.html"
   status = 301
   force = true
 
