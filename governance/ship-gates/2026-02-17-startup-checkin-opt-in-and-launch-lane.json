@@ -1,0 +1,98 @@
+{
+  "feature_id": "2026-02-17-startup-checkin-opt-in-and-launch-lane",
+  "feature_name": "Startup check-in opt-in and launch-lane cross-flow wiring",
+  "owner": "Codex",
+  "date": "2026-02-17",
+  "scope_summary": "Make startup state check-in open only on user action, add an explicit launch lane that links tasks to focus and sidekick coaching, and ship updated hub beta bundle references so task/focus/sidekick interactions work as one connected flow.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": false,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The change is UX behavior and copy-level control flow only, with no new legal disclosures or policy collection paths required.",
+      "evidence": [
+        "No new terms, consent scopes, or account requirements introduced",
+        "Changes are limited to startup modal behavior and in-app route/action wiring"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "All new interactions remain local-first and reuse existing in-app state/chat storage with no added network destinations.",
+      "evidence": [
+        "Today launch lane opens existing local sidekick drawer and local task/focus routes",
+        "No new fetch calls, APIs, trackers, or third-party endpoints were added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "State check-in remains framed as productivity support calibration and does not claim diagnosis or treatment outcomes.",
+      "evidence": [
+        "Top bar guidance says state tuning affects focus/sidekick intensity",
+        "Existing non-medical disclaimers remain in hub/footer surfaces"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Moving the check-in to user-initiated entry reduces forced friction at startup while keeping fast access to support-state tuning.",
+      "evidence": [
+        "Shell no longer auto-opens check-in modal on load",
+        "Top bar now surfaces a clear call to action when check-in is due"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "The launch lane supports chunking and immediate next-step execution, aligning with low-friction, cue-based activation patterns for ND workflows.",
+      "evidence": [
+        "Launch lane anchors the day to one task and routes directly into focus",
+        "Sidekick prompt generation now starts from the current anchor task"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users gain clearer control over startup UI and tighter cross-feature transitions; foreseeable harm is low and mostly limited to changed first-run expectation.",
+      "evidence": [
+        "Check-in is still one click away instead of forced blocking modal",
+        "Focus timer now supports mark-done and sidekick debrief actions"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Language remains direct, practical, and non-shaming while preserving existing Divergify framing.",
+      "evidence": [
+        "New labels use concise action verbs: Open check-in, Start sprint, Ask sidekick",
+        "No exaggerated performance or health claims were introduced"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Replacing forced startup modal behavior with explicit controls improves user agency and lowers immediate cognitive load.",
+      "evidence": [
+        "Check-in opens via an explicit button with clear intent",
+        "Launch lane offers clear, sequential actions instead of hidden route jumps"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Bundle references and service worker precache entries were updated together to avoid stale-asset mismatches after deploy.",
+      "evidence": [
+        "Hub and route entry HTML files now point to the same new JS/CSS bundle names",
+        "hub/beta/sw.js precache entries updated to new asset filenames"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No payment, upsell, or monetization flow was introduced or altered.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify startup no longer forces the check-in window, then confirm Launch lane buttons open Focus and Sidekick flows as expected."
+  }
+}
