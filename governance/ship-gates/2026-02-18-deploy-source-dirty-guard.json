@@ -1,0 +1,95 @@
+{
+  "feature_id": "2026-02-18-deploy-source-dirty-guard",
+  "feature_name": "Deploy provenance guard for dirty APP_SOURCE",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Prevent hub beta deploys when APP_SOURCE has uncommitted changes and require APP_SOURCE to be a git repo so build stamp provenance stays trustworthy.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Pipeline hardening only; no legal or regulated-product scope changes.",
+      "evidence": [
+        "Only deploy shell script logic changed",
+        "No public policy or claims text modified"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No user data collection or storage behavior changed.",
+      "evidence": [
+        "No app runtime code paths modified",
+        "No analytics or network endpoints added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical content involved.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Reliable provenance supports trust in behavior-layer iterations.",
+      "evidence": [
+        "Deploy now fails fast on dirty source state",
+        "Build stamp now always comes from a committed source revision"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Reduced deploy ambiguity lowers user confusion from version drift.",
+      "evidence": [
+        "Guard blocks accidental uncommitted builds",
+        "Source commit identity stays deterministic"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users get fewer silent mismatches between shown build and shipped behavior.",
+      "evidence": [
+        "Script exits with clear refusal message on dirty APP_SOURCE",
+        "Non-git sources are rejected instead of stamped as unknown"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "No end-user brand or tone changes.",
+      "evidence": [
+        "No user-facing copy changed",
+        "Change is limited to deploy script safeguards"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "No UI or interaction changes.",
+      "evidence": [
+        "No visual assets changed",
+        "No accessibility behavior impacted"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Improves deployment reliability and provenance integrity.",
+      "evidence": [
+        "Dirty tree check using git status --porcelain",
+        "Hard failure if APP_SOURCE is not a git repository"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization behavior changed.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify deploy script exits with refusal when APP_SOURCE has uncommitted changes."
+  }
+}

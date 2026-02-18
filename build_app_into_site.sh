@@ -19,8 +19,18 @@ if [[ ! -f "$APP_SOURCE/package.json" ]]; then
   exit 1
 fi
 
+if ! git -C "$APP_SOURCE" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "Refusing to deploy: APP_SOURCE is not a git repository." >&2
+  exit 1
+fi
+
+if [[ -n "$(git -C "$APP_SOURCE" status --porcelain 2>/dev/null)" ]]; then
+  echo "Refusing to deploy: APP_SOURCE has uncommitted changes." >&2
+  exit 1
+fi
+
 export VITE_BASE_PATH="$APP_BASE"
-export VITE_BUILD_STAMP="$(cd "$APP_SOURCE" && git rev-parse --short HEAD 2>/dev/null || echo unknown)"
+export VITE_BUILD_STAMP="$(git -C "$APP_SOURCE" rev-parse --short HEAD)"
 
 npm --prefix "$APP_SOURCE" install
 npm --prefix "$APP_SOURCE" run build
