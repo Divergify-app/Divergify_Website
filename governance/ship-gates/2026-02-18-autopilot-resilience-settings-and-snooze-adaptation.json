@@ -1,0 +1,95 @@
+{
+  "feature_id": "2026-02-18-autopilot-resilience-settings-and-snooze-adaptation",
+  "feature_name": "Autopilot settings resilience tools and snooze-driven door friction adaptation",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Add local reset/export/import controls, enforce behavior invariants with tests, and adapt door friction after repeated snoozes while preserving local-first operation.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Changes are local data-management and on-device behavior logic only.",
+      "evidence": [
+        "No legal pages or account flows changed",
+        "No regulated claims introduced"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "All stats and appointment data remain on-device; export/import is user-initiated JSON file transfer.",
+      "evidence": [
+        "No analytics calls or external APIs added",
+        "Stats panel explicitly states on-device storage behavior"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical guidance or claim language was added.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Snooze escalation reduces repeated friction loops and Settings controls reduce abandonment after demo-data clutter.",
+      "evidence": [
+        "Door friction auto-adjusts after repeated snoozes",
+        "Reset/export/import keeps users in control of their own setup"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Non-judgmental adaptive copy and low-friction data recovery support real-world executive function variability.",
+      "evidence": [
+        "Escalation copy is neutral and supportive",
+        "Reset + import flows lower restart cost"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users gain recovery tools and clearer behavior rules with test coverage that reduces regression risk.",
+      "evidence": [
+        "Invariant tests for persona options, overdue breathing, snooze direction, and mode visibility",
+        "Settings panel allows full reset, stats reset, export, and import"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy remains direct and non-hype while clarifying present limitations.",
+      "evidence": [
+        "Reminder limitation line remains in-app",
+        "Stats privacy statement is explicit"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "New controls are plain buttons and file input, retaining responsive layout behavior.",
+      "evidence": [
+        "Settings actions are keyboard-focusable controls",
+        "No hidden gesture-only interactions required"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Import paths normalize data and persistence supports both IndexedDB and localStorage fallback.",
+      "evidence": [
+        "Import parser validates and defaults malformed fields",
+        "Storage supports replace/reset in both primary and fallback engines"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No paywall, upsell, or conversion mechanics were added.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify /hub/beta shows Settings actions, privacy copy, and snooze escalation message behavior."
+  }
+}
