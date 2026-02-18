@@ -1,0 +1,98 @@
+{
+  "feature_id": "2026-02-18-autopilot-persona-mode-behavior-layer",
+  "feature_name": "Autopilot persona behavior layer with next-step engine",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Upgrade Appointment Autopilot Lite from copy-only personas to behavior-driven personas by shipping persona profiles, right-now action suggestions, sprint/breathe overlays, persona-toned out-the-door messaging, and explicit reminder-scope trust copy.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The change remains in productivity planning scope with no regulated claims, consent surface expansion, or legal document updates.",
+      "evidence": [
+        "Behavior changes are local UI logic and persisted persona selection",
+        "No new billing, account, or policy acceptance workflows were added"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Persona selection and action state remain local-first in IndexedDB/localStorage with no silent cloud sync.",
+      "evidence": [
+        "Selected persona persists in local storage layer alongside appointments",
+        "No API endpoint calls were introduced in the shipped browser bundle"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Copy remains operational and behavioral without diagnosis, treatment, or outcome guarantees.",
+      "evidence": [
+        "Out-the-door lines are motivational prompts tied to execution",
+        "Trust line explicitly scopes reminders to in-app runtime behavior"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "The right-now card reduces choice overload through persona-controlled action limits and immediate one-tap execution.",
+      "evidence": [
+        "Persona maxChoices actively limits suggested actions",
+        "Action engine prioritizes overdue/pending steps plus short regulation prompt"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Mode behavior now adapts directive intensity, option count, and execution scaffolding based on selected persona profile.",
+      "evidence": [
+        "Drill profile enforces single-option strictness",
+        "Calm/Coach/Friend profiles provide higher choice counts and softer labels"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users gain clearer immediate actions and explicit expectation-setting around reminder limits; downside is low and mainly stylistic mismatch if persona choice is wrong.",
+      "evidence": [
+        "Right-now panel actions execute directly (do step, sprint, maps, breathe)",
+        "Visible trust copy prevents false assumptions about background notifications"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Persona lines stay direct and non-manipulative while making support style differences obvious in behavior and language.",
+      "evidence": [
+        "Out-the-door copy now varies by persona tone",
+        "Action labels shift ask-vs-tell style via persona tone"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Controls remain button-driven, readable, and mobile-responsive with reduced ambiguity around next actions.",
+      "evidence": [
+        "Right-now suggestions are explicit, tappable actions",
+        "Timer overlays use large countdown text and clear close controls"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "No new external dependencies or network integrations were added to runtime behavior, and build pipeline remains deterministic.",
+      "evidence": [
+        "Updated hub/beta assets are static build artifacts only",
+        "Mode and persona logic executes entirely client-side"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization behavior or conversion funnels are introduced in this change.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify persona-specific choice counts and out-the-door copy on live /hub/beta/."
+  }
+}
