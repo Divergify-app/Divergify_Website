@@ -1,0 +1,95 @@
+{
+  "feature_id": "2026-02-18-autopilot-build-stamp-and-local-stats",
+  "feature_name": "Autopilot build stamping, local stats panel, and deploy wrapper",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Stabilize the Autopilot deployment workflow by stamping builds with source commit hash, adding a one-command website deploy wrapper, and shipping a local-only stats panel (actions, persona selections, snoozes) in Hub Beta.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": true,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Changes are internal deploy metadata and local product telemetry only, with no regulated claim or legal policy scope change.",
+      "evidence": [
+        "No terms/privacy pages changed",
+        "No new account, payment, or consent workflow introduced"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Stats remain local-only and are persisted in the same local IndexedDB/localStorage layer as the app data.",
+      "evidence": [
+        "Counters track actions/snoozes/persona selection locally",
+        "No analytics endpoint or network event emission added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical framing or claims were added or modified.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Stats give immediate self-feedback on behavior use without adding pressure mechanics or dark pattern loops.",
+      "evidence": [
+        "Stats panel is informational and local only",
+        "No streaks, penalties, or coercive prompts introduced"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Local-only usage reflection supports low-friction self-observation while preserving privacy expectations.",
+      "evidence": [
+        "Persona selection count and action count are visible in one compact panel",
+        "Reminder-scope trust copy remains explicit"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users gain traceable build identity and transparent local behavior counters, reducing uncertainty around what version is deployed and whether behavior layer is used.",
+      "evidence": [
+        "Build stamp shows source commit in UI",
+        "Deploy wrapper script reduces manual deployment command errors"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Language remains plain and pragmatic; trust copy clarifies limitations without overpromising capabilities.",
+      "evidence": [
+        "App displays explicit reminder limitation line",
+        "Stats labels are straightforward and non-hyped"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Stats are rendered as readable text and chips in existing responsive layouts without introducing hidden interactions.",
+      "evidence": [
+        "Stats panel uses text + button-free readout elements",
+        "Existing mobile-responsive CSS kept and extended"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Build stamping improves provenance while the wrapper script standardizes source path invocation and reduces deploy variance.",
+      "evidence": [
+        "build_app_into_site.sh exports VITE_BUILD_STAMP from APP_SOURCE commit",
+        "scripts/deploy-hub-beta-autopilot.sh runs deterministic deploy command"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization or conversion flow changes are included.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and confirm live /hub/beta shows stats panel and build stamp hash for the deployed source commit."
+  }
+}

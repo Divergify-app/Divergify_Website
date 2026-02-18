@@ -20,6 +20,7 @@ if [[ ! -f "$APP_SOURCE/package.json" ]]; then
 fi
 
 export VITE_BASE_PATH="$APP_BASE"
+export VITE_BUILD_STAMP="$(cd "$APP_SOURCE" && git rev-parse --short HEAD 2>/dev/null || echo unknown)"
 
 npm --prefix "$APP_SOURCE" install
 npm --prefix "$APP_SOURCE" run build
