@@ -1,0 +1,98 @@
+{
+  "feature_id": "2026-02-18-hub-beta-autopilot-lite-fast-swap",
+  "feature_name": "Hub Beta temporary swap to Appointment Autopilot Lite",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Temporarily replace the existing /hub/beta bundle with the Appointment Autopilot Lite build and add an APP_SOURCE override in build_app_into_site.sh so deployment can switch app sources without changing Netlify routing.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The change is a deployment source swap and does not add regulated claims, account requirements, or legal workflow changes.",
+      "evidence": [
+        "No terms/privacy document changes were introduced",
+        "Feature is local-first appointment workflow with standard browser behavior"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Appointment data remains on-device via IndexedDB with localStorage fallback and no background data export.",
+      "evidence": [
+        "Hub Beta now serves static Vite assets produced from appointment-autopilot-lite",
+        "No backend endpoints or silent sync mechanisms were added in this deployment step"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "The shipped experience is appointment planning and reminders only, without diagnosis or treatment language.",
+      "evidence": [
+        "Primary copy focuses on appointments, timeline steps, and leave-by timing",
+        "No medical outcomes or health efficacy claims were introduced"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "The flow reduces execution friction through pre-commitment steps and time-based cues, with explicit user controls for snooze/skip/done.",
+      "evidence": [
+        "Timeline steps are generated from appointment constraints",
+        "Out-the-door mode allows user override through Snooze 5 minutes"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "The product favors concrete prompts and short actionable checkpoints, supporting low-friction activation patterns.",
+      "evidence": [
+        "Steps are plain language prompts (Shower now, Get ready, Keys wallet shoes)",
+        "Reminders are in-app and scoped to pending due steps"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Immediate benefit is shipping a functioning Hub Beta appointment flow today; main tradeoff is temporary removal of legacy hub beta routes.",
+      "evidence": [
+        "build_app_into_site.sh now supports APP_SOURCE override for fast source switching",
+        "Legacy /hub/beta route artifacts were replaced by the new dist output"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "UI language remains direct and practical without coercive or inflated claims.",
+      "evidence": [
+        "Out The Door mode uses clear action text: Leave now, Open Maps, Snooze 5 minutes",
+        "No exaggerated productivity guarantees were introduced"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "The interface maintains readable contrast tokens, large action buttons, and mobile-responsive layouts.",
+      "evidence": [
+        "Responsive CSS ships with the Autopilot build in hub/beta/assets/index-jiRtVpeF.css",
+        "Core flow actions are represented as buttons and links with visible labels"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Deployment logic now performs deterministic source build and copy operations and limits hub.html inline-rewrite behavior to the legacy app source.",
+      "evidence": [
+        "build_app_into_site.sh validates APP_SOURCE and dist existence before copy",
+        "Legacy hub inline rewrite is conditionally scoped to divergify-hub-app only"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization surfaces or growth mechanics were introduced.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship as temporary Hub Beta replacement, then move Appointment Autopilot into the main hub app route to restore multi-feature architecture."
+  }
+}
