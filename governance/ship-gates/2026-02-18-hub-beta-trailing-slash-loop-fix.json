@@ -1,0 +1,85 @@
+{
+  "feature_id": "2026-02-18-hub-beta-trailing-slash-loop-fix",
+  "feature_name": "Fix /hub/beta/ redirect loop in Netlify rules",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Remove the /hub/beta -> /hub/beta/ forced redirect that created a self-redirect loop, while keeping the /hub/beta/* SPA rewrite to /hub/beta/index.html.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Routing rule correction only; no policy or legal surface changes.",
+      "evidence": [
+        "Only netlify.toml redirect configuration changed"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No data flow changes; fix affects URL routing only.",
+      "evidence": [
+        "No storage or network endpoint code changes"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical language or behavior involved.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "n_a",
+      "rationale": "No behavior-design interaction change.",
+      "evidence": []
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "No cognitive-flow feature change.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users can load /hub/beta/ successfully instead of being trapped in a redirect loop.",
+      "evidence": [
+        "Pre-fix verification showed repeated 301 responses for /hub/beta/",
+        "Rule removal keeps SPA fallback behavior through /hub/beta/* rewrite"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "No user-facing copy or claims changed, so brand voice remains unchanged and compliant.",
+      "evidence": [
+        "Diff only updates Netlify redirect rules and adds governance metadata",
+        "No HTML or content text files were modified by this patch"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Directly improves access by restoring a functioning canonical app URL.",
+      "evidence": [
+        "Canonical route /hub/beta/ no longer self-redirects"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Simplifies redirect graph and removes a loop condition.",
+      "evidence": [
+        "Deleted forced 301 rule from /hub/beta to /hub/beta/"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization elements are involved.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Deploy and verify /hub/beta/ returns HTTP 200 with Autopilot Lite index.html."
+  }
+}

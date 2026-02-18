@@ -13,12 +13,6 @@
   force = true
 
 [[redirects]]
-  from = "/hub/beta"
-  to = "/hub/beta/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/hub/beta/*"
   to = "/hub/beta/index.html"
   status = 200
