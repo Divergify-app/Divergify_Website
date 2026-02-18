@@ -1,0 +1,93 @@
+{
+  "feature_id": "2026-02-18-hub-beta-stamp-sync-7edbe11",
+  "feature_name": "Hub beta build stamp sync to source commit 7edbe11",
+  "owner": "Codex",
+  "date": "2026-02-18",
+  "scope_summary": "Rebuild and redeploy hub beta from clean source commit 7edbe11 so in-app build stamp and shipped artifact provenance match the latest source main.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Asset refresh only; no legal scope changes.",
+      "evidence": [
+        "Only built bundle filenames and index references changed",
+        "No policy or user agreement text modified"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No data-flow changes were introduced.",
+      "evidence": [
+        "No storage logic changed in website repo",
+        "No analytics or remote collection added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical content changes.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Accurate provenance supports reliable behavior-layer iteration and debugging.",
+      "evidence": [
+        "Build stamp in shipped JS now aligns with source commit 7edbe11"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Version trust reduces confusion when users validate behavior changes.",
+      "evidence": [
+        "Live artifact traceability improved via stamp sync"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users and maintainers can now verify exact deployed source commit without ambiguity.",
+      "evidence": [
+        "Hub beta bundle rebuilt from commit 7edbe11",
+        "Index points to new stamped bundle"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "No voice or claims changes.",
+      "evidence": [
+        "User-facing copy remains unchanged",
+        "Only stamp value and bundle hash changed"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "No interaction changes.",
+      "evidence": [
+        "No UI structure changes",
+        "No keyboard or layout behavior changes"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Deploy integrity improved by stamp/source consistency.",
+      "evidence": [
+        "Shipped bundle now carries latest source build stamp",
+        "Provenance checks can match source and deployed artifact"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No monetization changes.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify live /hub/beta bundle contains stamp 7edbe11."
+  }
+}
