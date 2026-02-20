@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Divergify | Neurodivergent Productivity Environment</title>
-      <meta name="description" content="Divergify supports execution without masking, designed for attention, working memory and emotional load. We provide scaffolding for chaos brains, not fixes." />
+      <meta name="description" content="Divergify is in active development. Private beta is coming soon. Explore how the scaffolding system works and try a live preview tool." />
 
   <!-- SEO-META:START -->
   <link rel="canonical" href="https://divergify.app/" />
@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="Divergify" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Divergify | Neurodivergent Productivity Environment" />
-  <meta property="og:description" content="Divergify supports execution without masking, designed for attention, working memory and emotional load. We provide scaffolding for chaos brains, not fixes." />
+  <meta property="og:description" content="Divergify is in active development. Private beta is coming soon. Explore how the scaffolding system works and try a live preview tool." />
   <meta property="og:url" content="https://divergify.app/" />
   <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Divergify | Neurodivergent Productivity Environment" />
-  <meta name="twitter:description" content="Divergify supports execution without masking, designed for attention, working memory and emotional load. We provide scaffolding for chaos brains, not fixes." />
+  <meta name="twitter:description" content="Divergify is in active development. Private beta is coming soon. Explore how the scaffolding system works and try a live preview tool." />
   <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Divergify | Neurodivergent Productivity Environment", "description": "Divergify supports execution without masking, designed for attention, working memory and emotional load. We provide scaffolding for chaos brains, not fixes.", "url": "https://divergify.app/", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Divergify | Neurodivergent Productivity Environment", "description": "Divergify is in active development. Private beta is coming soon. Explore how the scaffolding system works and try a live preview tool.", "url": "https://divergify.app/", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
   <!-- SEO-META:END -->
 <meta name="theme-color" content="#232147" />
   <link rel="icon" href="/favicon.ico">
@@ -38,117 +38,88 @@
   <main id="main" class="page-shell">
     <section class="hero">
       <div>
-        <h1 class="hero-title">Divergify</h1>
+        <p class="kicker">In build mode now. Private beta next.</p>
+        <h1 class="hero-title">For brains that zig when the world zags.</h1>
+        <p>Divergify is a neurodivergent productivity environment built to reduce friction between intention and action. Less guilt. More traction. One anchor task at a time.</p>
+        <p class="text-muted">When we say “zig,” we mean brains that do not run on default settings: ADHD, autism, trauma wired, anxious, overloaded, brilliant, inconsistent. The whole crew.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/contact.html">Get early access</a>
+          <a class="button button-ghost" href="#scaffold-preview">Try a preview tool</a>
+        </div>
+      </div>
 
-        <h2>For brains that zig when the world zags.</h2>
-        <p class="text-muted" style="font-size: 0.95rem;">A place built for minds that run a little out of sync.</p>
-        <p class="text-muted">This is a home base for neurodivergent brains who are tired of being treated like a problem.</p>
-        <p class="text-muted">We use behavioral science and neurodivergent research to reduce friction and protect your attention.</p>
-        <p class="text-muted">No shame. No hacks. Just better conditions.</p>
+      <aside class="panel">
+        <h3 style="margin-top: 0;">Build status</h3>
+        <p style="margin-bottom: 0;">Coming soon. Private beta. You can preview the scaffold logic below and join early access for real product updates.</p>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>Not a planner. Not a habit app. A scaffolding system.</h2>
+      <p>Divergify helps you do the part most apps ignore: starting. You check in, pick one anchor task, then get a scaffold that breaks the task into steps your nervous system can actually follow.</p>
+      <ul>
+        <li>Daily check in: energy, mood, capacity</li>
+        <li>Anchor task: one priority that counts today</li>
+        <li>Scaffolds: tiny steps that reduce overwhelm and initiation paralysis</li>
+        <li>Beat your baseline: progress against you, not productivity influencers</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Where it’s at right now</h2>
+      <p>Divergify is in active development. The marketing site is live. The new structured app build is in progress. Private beta is coming next. If you join early access, you’ll be first to test the real thing.</p>
+      <p class="text-muted" style="font-size: 0.92rem;">No fake trial promises. Just updates you can verify.</p>
+    </section>
+
+    <section class="section" id="scaffold-preview">
+      <div class="panel">
+        <h2 style="margin-top: 0;">Try a scaffold preview</h2>
+        <p>This is a lightweight preview of the scaffold logic. It’s not the full app. It’s a taste of how Divergify turns “I can’t start” into “I can do step one.”</p>
+        <p class="text-muted">This is a preview tool, not the full Divergify app. Nothing you type here is saved.</p>
+
+        <div class="scaffold-preview-grid">
+          <label class="sp-field">
+            <span class="sp-label">Task</span>
+            <input id="sp-task" class="sp-input" placeholder="Example: Clean the kitchen for 10 minutes" />
+          </label>
+
+          <div class="sp-row">
+            <label class="sp-field">
+              <span class="sp-label">Energy</span>
+              <select id="sp-energy" class="sp-input">
+                <option value="1">1 low</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5 high</option>
+              </select>
+            </label>
+
+            <label class="sp-field">
+              <span class="sp-label">Mood</span>
+              <select id="sp-mood" class="sp-input">
+                <option>Calm</option>
+                <option>Foggy</option>
+                <option>Anxious</option>
+                <option>Wired</option>
+                <option>Flat</option>
+                <option>Hyper</option>
+              </select>
+            </label>
+          </div>
+
+          <button id="sp-generate" class="button button-primary" type="button">Generate scaffold</button>
+          <div id="sp-output" class="sp-output"></div>
+        </div>
       </div>
     </section>
-
-    <section class="section">
-      <h2>Welcome home</h2>
-      <p>Most systems were designed for consistency, compliance, and linear focus.</p>
-      <p>If you think in patterns, jump between contexts, or run hot and then crash, you are not broken.</p>
-      <p>You are running different specs inside an outdated system.</p>
-    </section>
-
-    <section class="section">
-      <h2>What we are building</h2>
-      <p>Divergify is an environment that supports execution without forcing you to mask.</p>
-      <p>We design for the real costs of attention, working memory, and emotional load.</p>
-      <p>That means smaller steps, clearer scaffolding, and fewer triggers.</p>
-    </section>
-
-    <section class="section">
-      <h2>Why this structure works</h2>
-      <p>Neurodivergent attention follows relevance, safety, and capacity.</p>
-      <p>When a task feels unclear or costly, the brain protects itself by slowing down or disengaging.</p>
-      <p>The fix is not pressure. It is better conditions.</p>
-      <p class="text-muted" style="font-size: 0.9rem;">For deeper context, check out Field Notes.</p>
-    </section>
-
-  <section class="section">
-    <h2>What you can expect</h2>
-    <ul>
-      <li>Calm, predictable design.</li>
-      <li>Local first defaults with privacy built in.</li>
-      <li>Explicit consent before off-device processing.</li>
-      <li>Support that preserves your autonomy.</li>
-      </ul>
-    <p>This isn’t productivity theater. It’s a workspace for competence.</p>
-  </section>
-
-  <section class="section">
-    <p>Divergify supports effort. It doesn’t replace it.</p>
-    <p>We don’t use shame, manipulation, surveillance, artificial urgency, or deceit to force output.</p>
-    <p>We strive to reduce unnecessary friction and support thinking when it falters.</p>
-  </section>
-
-  <section class="section">
-    <h2>Who this is for</h2>
-    <ul>
-      <li>People who think in systems, not steps.</li>
-      <li>People who do well in complexity but stall in rigid workflows.</li>
-      <li>People who deal with executive dysfunction, RSD, or hyperfocus and are tired of pretending those aren’t factors.</li>
-      </ul>
-    <p>If this feels familiar, you already know why.</p>
-  </section>
-
-  <section class="section">
-    <h2>The stance</h2>
-    <p>No attention extraction.</p>
-    <p>No data selling.</p>
-    <p>No silent cloud sync.</p>
-    <p>No shame loops.</p>
-    <p>Built deliberately. Not loudly. Not desperately.</p>
-  </section>
-
-  <section class="section">
-    <h2>Data control model</h2>
-    <p>Core workspace memory is local on your device.</p>
-    <p>If you choose cloud backup/sync or AI integrations, those are explicit opt-in choices that you control.</p>
-    <p>Divergify is a productivity tool, not a diagnostic or treatment service.</p>
-    <p class="text-muted">Details: <a href="/data-controls.html">Data Controls</a>, <a href="/privacy.html">Privacy Policy</a>.</p>
-  </section>
-
-  <section class="section">
-    <h2>Mission</h2>
-    <p>Build tools that honor neurodivergent reality and reduce the daily cost of functioning.</p>
-    <p>Stability before speed. Clarity before noise. Care before compliance.</p>
-  </section>
-
-  <section class="section">
-    <h2>As you explore</h2>
-    <p>Divergify is intentionally layered. Some things are meant to be experienced first, not explained all at once.</p>
-    <p>You don’t need the full theory to use the system. Deeper context exists for those who want it.</p>
-    <p>Questions tend to surface after real use. When they do, feedback helps shape what gets built next.</p>
-  </section>
-
-  <section class="section">
-    <h2>What lives where</h2>
-    <ul>
-      <li><strong>The Hub</strong> is the working environment. This is where the MVP lives.</li>
-      <li><strong>Field Notes</strong> contains long form thinking, research, and design rationale.</li>
-      <li><strong>Divergipedia</strong> is shared language for patterns that deserve names.</li>
-      <li><strong>Dopamine Depot</strong> is the store that helps fund continued development.</li>
-    </ul>
-    <p class="text-muted">Nothing here is mandatory. Use what helps. Ignore what doesn’t.</p>
-  </section>
-
-  <section class="section">
-    <h2>Start here</h2>
-    <p>There is no required order.</p>
-    <p>Begin where your capacity allows.</p>
-  </section>
 
 </main>
 
 <div data-partial="footer"></div>
 
 <script src="/assets/site.js"></script>
+<script src="/assets/js/scaffold-preview.js"></script>
 <script src="/assets/divergipedia-data.js"></script>
 </body>
 </html>

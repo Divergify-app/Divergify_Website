@@ -99,6 +99,7 @@ const INLINE_FOOTER_PARTIAL = `
     <div class="footer-small">
       © <span id="year"></span> Divergify. All rights reserved. Divergify is a trademark of its owner. No medical or legal advice.
     </div>
+    <div class="footer-small">Divergify is scaffolding, not fixing.</div>
   </div>
 </footer>
 `;
