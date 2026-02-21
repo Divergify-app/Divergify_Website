@@ -1,0 +1,95 @@
+{
+  "feature_id": "2026-02-21-link-state-and-field-notes-stability",
+  "feature_name": "Navigation link-state cleanup and Field Notes first-paint stability",
+  "owner": "Codex",
+  "date": "2026-02-21",
+  "scope_summary": "Normalize visited link colors for nav/buttons/content, align fallback header links with production header links, and preload Field Notes styles so the Field Notes surface does not jump after page load.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Changes are presentational and reduce misleading state changes in UI links.",
+      "evidence": [
+        "No legal copy, terms, or policy semantics changed",
+        "Link labels and destinations remain transparent"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No new storage, telemetry, or data flow was introduced.",
+      "evidence": [
+        "CSS and static HTML updates only",
+        "No new network calls in assets/site.js"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "No diagnostic, treatment, or efficacy language added.",
+      "evidence": [
+        "Only style and navigation behavior updated"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Reducing visual instability lowers cognitive friction and supports predictable interaction.",
+      "evidence": [
+        "Visited/active link colors no longer shift unexpectedly",
+        "Field Notes styles now load on first paint"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Predictable visual behavior reduces context-switch cost and supports low-load navigation.",
+      "evidence": [
+        "Field Notes no longer relies on delayed style injection for base layout"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users get consistent link rendering and reduced layout shift without feature loss.",
+      "evidence": [
+        "Route sanity check passed on touched pages",
+        "Fallback header now points to the same Dopamine Depot destination as the partial"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "No hype language added; messaging remains accurate and direct.",
+      "evidence": [
+        "No conversion or promise copy changed"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Focus-visible behavior remains explicit and link contrast consistency improved for repeated visits.",
+      "evidence": [
+        "a:visited styles now pinned to brand colors",
+        "Field Notes focus-visible outline remains intact"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "No executable dependency changes; fewer runtime divergences between fallback and partial markup.",
+      "evidence": [
+        "Inline header fallback destination now matches partial header",
+        "No broken internal hrefs found in touched pages"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No pricing, checkout, upsell, or monetization flow changes.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Deploy and verify /hub.html, /field-notes/, and /field-notes.html for stable first paint and consistent link color states (default, visited, and active)."
+  }
+}

@@ -62,9 +62,18 @@ body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-arti
   text-underline-offset: 0.18em;
 }
 
+body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-article a:visited {
+  color: var(--color-text);
+}
+
 body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-article a:focus-visible {
   outline: 2px solid var(--color-soft-lime);
   outline-offset: 2px;
+}
+
+body[data-field-notes="true"] .page-shell .card h3 a,
+body[data-field-notes="true"] .page-shell .card h3 a:visited {
+  color: var(--color-text);
 }
 
 /* Living Slightly Out of Sync: collage-backed story hero */

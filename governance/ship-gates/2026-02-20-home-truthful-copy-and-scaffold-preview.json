@@ -1,0 +1,99 @@
+{
+  "feature_id": "2026-02-20-home-truthful-copy-and-scaffold-preview",
+  "feature_name": "Truthful home positioning and client-side scaffold preview",
+  "owner": "Codex",
+  "date": "2026-02-20",
+  "scope_summary": "Update homepage messaging to accurately state build/private-beta status, remove implied live/trial positioning, and add a no-login, no-storage scaffold preview generator that runs fully client-side.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Copy now avoids misleading availability claims and explicitly marks preview status.",
+      "evidence": [
+        "index.html hero/status copy updated to active development + private beta",
+        "No legal policy routes changed"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Preview tool runs in-browser only and does not persist or transmit user input.",
+      "evidence": [
+        "assets/js/scaffold-preview.js contains no fetch/XHR/storage calls",
+        "Index disclaimer states nothing entered is saved"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Language remains productivity-focused without diagnosis/treatment claims.",
+      "evidence": [
+        "No medical claims added in homepage copy"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Preview scaffolds reduce activation friction via small-step framing and energy-adaptive pacing.",
+      "evidence": [
+        "Step generation adapts chunk sizes and break frequency by energy"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Copy and preview model cognitive load and variable capacity instead of enforcing rigid productivity norms.",
+      "evidence": [
+        "Definition of zig and anchor/scaffold framing added",
+        "Energy and mood selectors shape output"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users get an honest status update and a usable interactive demo without signup or data risk.",
+      "evidence": [
+        "Two explicit CTAs: early access and preview tool",
+        "No account requirements for preview"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Voice is direct and concrete with full tagline and explicit status claims.",
+      "evidence": [
+        "Tagline updated to full line",
+        "No fake-trial language promise included"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Inputs are labeled, contrast remains theme-compliant, and interaction works with standard controls.",
+      "evidence": [
+        "Labeled task/energy/mood fields",
+        "No auto-submission or hidden interactions"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Static asset additions only; new local paths validated with HTTP 200 checks.",
+      "evidence": [
+        "index/assets/partials paths tested locally with no 404s",
+        "No backend/runtime changes"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "No monetization flow added; CTAs are transparent and non-coercive.",
+      "evidence": [
+        "Early access CTA points to contact route",
+        "Preview CTA is free, no-login utility"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Deploy and verify homepage renders new copy and scaffold preview tool without missing assets."
+  }
+}

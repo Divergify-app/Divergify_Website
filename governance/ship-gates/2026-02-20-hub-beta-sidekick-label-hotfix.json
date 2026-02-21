@@ -1,0 +1,92 @@
+{
+  "feature_id": "2026-02-20-hub-beta-sidekick-label-hotfix",
+  "feature_name": "Hub beta sidekick naming and label language hotfix",
+  "owner": "Codex",
+  "date": "2026-02-20",
+  "scope_summary": "Rename visible Hub beta behavior labels to named sidekicks and replace persona wording in user-facing copy while preserving existing internal mode keys.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "n_a",
+      "rationale": "No policy/legal terms changed and no new regulated claims added.",
+      "evidence": []
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Only display strings changed; storage keys and local-only behavior are unchanged.",
+      "evidence": [
+        "Internal keys remain calm/coach/drill/friend",
+        "No network or telemetry code touched"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical guidance or diagnostic language introduced.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Named sidekicks reduce interpretation overhead versus abstract labels.",
+      "evidence": [
+        "Visible labels now use Takota/Avery/Aria/Rex",
+        "Behavior mode copy replaced with Choose a sidekick"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Concrete naming lowers cognitive load and reduces ambiguity in mode selection.",
+      "evidence": [
+        "Stats panel now says Sidekick selected",
+        "No additional choices added; still four options"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Benefit is clarity and consistency; risk is minimal because logic and persistence are unchanged.",
+      "evidence": [
+        "Only text labels and bundle hash changed",
+        "Source tests and production build passed before deploy sync"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy is direct and concrete, matching sidekick language guidance.",
+      "evidence": [
+        "UI now uses Sidekick wording",
+        "Removed Persona selected and Behavior mode text"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Control count and interaction patterns are unchanged, and naming is more literal.",
+      "evidence": [
+        "ARIA label updated from Persona to Sidekicks",
+        "No route or control removals"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Rebuilt from clean source commit and synced bundle/index references together.",
+      "evidence": [
+        "hub/beta/index.html references existing hashed assets",
+        "No JavaScript runtime logic changes to storage schema"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No paywall or conversion flows changed.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify /hub/beta loads with named sidekick chips and no persona wording in visible labels."
+  }
+}

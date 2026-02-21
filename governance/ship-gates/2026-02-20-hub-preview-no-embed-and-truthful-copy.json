@@ -1,0 +1,94 @@
+{
+  "feature_id": "2026-02-20-hub-preview-no-embed-and-truthful-copy",
+  "feature_name": "Hub preview hardening: remove inline embed and tighten truthful copy",
+  "owner": "Codex",
+  "date": "2026-02-20",
+  "scope_summary": "Remove the broken inline Hub app embed from hub.html, keep explicit preview entry buttons, and update Hub/App Beta copy to in-development language with no false live/trial claims.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Copy now clarifies preview status and avoids potentially misleading availability claims.",
+      "evidence": [
+        "hub.html no longer implies installed/live product",
+        "hub-beta.html now labels environment as in-development preview"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No data collection behavior or storage scope changed.",
+      "evidence": [
+        "Only static page copy and links changed",
+        "No script or network integration changes"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "No medical claims added; existing non-medical language remains.",
+      "evidence": [
+        "Hub page continues to state it is not a diagnosis or treatment product"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Removes a broken visual element that added confusion and preserves clear next-step actions.",
+      "evidence": [
+        "Black-box embed removed",
+        "Clear CTA: Open preview app"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "More explicit and literal status language reduces ambiguity and expectation mismatch.",
+      "evidence": [
+        "Copy explicitly says active development and preview environment"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users avoid a broken embed and get accurate status messaging plus working navigation.",
+      "evidence": [
+        "Removed stale inline asset references in hub.html",
+        "Internal link/asset path checks passed for changed pages"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Language is direct and non-hype; avoids false promises.",
+      "evidence": [
+        "No fake trial/app-store claims copy added to hub preview section"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Simpler static content removes an unnecessary embedded app region and keeps keyboard-accessible links.",
+      "evidence": [
+        "CTA links remain standard buttons/anchors"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Eliminates stale hashed asset dependencies from the hub marketing page.",
+      "evidence": [
+        "Removed stale /hub/beta/assets/* inline references from hub.html",
+        "Verified hub/beta entry assets exist and referenced hashes resolve"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "No pricing or conversion flow changes.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship and verify /hub.html and /hub-beta.html render truthful preview messaging and /hub/beta/ opens via CTA without embed artifacts."
+  }
+}
