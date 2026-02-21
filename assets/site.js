@@ -52,7 +52,7 @@ const INLINE_HEADER_PARTIAL = `
       <a href="/hub.html">The Hub</a>
       <a href="/guide.html">Guide</a>
       <a href="/field-notes/">Field Notes</a>
-      <a href="/dopamine-depot.html">Dopamine Depot</a>
+      <a href="https://dopamine-depot-2.myshopify.com" target="_blank" rel="noopener">Dopamine Depot</a>
       <a href="/divergipedia.html">Divergipedia</a>
       <a href="/contact.html">Contact</a>
     </nav>

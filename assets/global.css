@@ -88,8 +88,20 @@ html, body {
 
 * { box-sizing: border-box; }
 
-a { color: var(--color-link); text-decoration: none; }
-a:hover, a:focus { text-decoration: underline; }
+a,
+a:visited {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--color-link);
+}
 
 img { max-width: 100%; height: auto; }
 
@@ -150,11 +162,16 @@ p { margin: 0 0 var(--space-4); }
   user-select: none;
 }
 
+.button:visited {
+  color: inherit;
+}
+
 .button-primary {
   background: var(--color-action-green);
   color: var(--color-brand-navy);
   border-color: var(--color-action-green);
 }
+.button-primary:visited { color: var(--color-brand-navy); }
 .button-primary:hover { transform: translateY(-1px); border-color: var(--color-border); text-decoration: none; }
 
 .button-ghost {
@@ -162,6 +179,7 @@ p { margin: 0 0 var(--space-4); }
   color: var(--color-text);
   border-color: var(--color-border);
 }
+.button-ghost:visited { color: var(--color-text); }
 .button-ghost:hover { background: var(--color-surface-strong); text-decoration: none; }
 
 /* Header -------------------------------------------------- */
@@ -235,11 +253,17 @@ p { margin: 0 0 var(--space-4); }
   border: 1px solid transparent;
   white-space: nowrap;
 }
+.nav a:visited {
+  color: var(--color-text-muted);
+}
 .nav a.active {
   color: var(--color-text);
   background: var(--color-surface);
   border-color: var(--color-border);
   text-decoration: none;
+}
+.nav a.active:visited {
+  color: var(--color-text);
 }
 
 .header-right {
