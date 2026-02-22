@@ -3,7 +3,7 @@
   "feature_name": "Sidekick name spelling normalization to TAKOTA",
   "owner": "Codex",
   "date": "2026-02-22",
-  "scope_summary": "Normalize visible sidekick spelling from Takoda/Tacoma/Dakota to TAKOTA in user-facing copy and comments.",
+  "scope_summary": "Normalize legacy sidekick spellings to TAKOTA in user-facing copy and comments.",
   "risk_level": "low",
   "touches": {
     "user_data": false,
@@ -84,6 +84,6 @@
   },
   "ship_decision": {
     "ready": true,
-    "conditions": "Verify no occurrences of Takoda/Tacoma/Dakota remain in the repo."
+    "conditions": "Verify no occurrences of legacy sidekick misspellings remain in the repo."
   }
 }
