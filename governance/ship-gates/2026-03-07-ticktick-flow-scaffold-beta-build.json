@@ -1,9 +1,9 @@
 {
   "feature_id": "2026-03-07-ticktick-flow-scaffold-beta-build",
-  "feature_name": "TickTick-style flow scaffold beta build update",
+  "feature_name": "TickTick-style adaptive onboarding scaffold beta build update",
   "owner": "Divergify Team",
   "date": "2026-03-07",
-  "scope_summary": "Updates the hub beta app build to include onboarding-to-kickoff flow, planner scaffolding, and clearer next-step navigation for users.",
+  "scope_summary": "Updates the hub beta app build to include adaptive onboarding intake (goal, overwhelm, anchor task), onboarding-to-kickoff flow, planner scaffolding, and clearer next-step navigation for users.",
   "risk_level": "medium",
   "touches": {
     "user_data": true,
@@ -25,7 +25,7 @@
       "status": "pass",
       "rationale": "The flow changes are client-side and maintain local-first storage behavior without silent data exfiltration.",
       "evidence": [
-        "State is persisted through existing local storage app data model.",
+        "Onboarding profile state is persisted through the existing local storage app data model.",
         "No new external API calls were added in hub beta route updates."
       ]
     },
@@ -41,6 +41,7 @@
       "status": "pass",
       "rationale": "The flow reduces choice overload through explicit next-step sequencing and anchor-task guidance.",
       "evidence": [
+        "Onboarding intake captures the user's why, primary goal, and anchor task before entering the planner.",
         "Kickoff checklist enforces a small ordered setup path.",
         "Today view surfaces a single next-step recommendation."
       ]
@@ -49,6 +50,7 @@
       "status": "pass",
       "rationale": "Overwhelm-based pacing is preserved so task load scales with user-reported capacity.",
       "evidence": [
+        "Onboarding captures self-reported stimulation/overwhelm to tune first-step planning.",
         "Daily task cap logic remains coupled to check-in overwhelm value.",
         "Anchor-task prioritization avoids multi-task overload by default."
       ]
