@@ -1,0 +1,101 @@
+{
+  "feature_id": "2026-03-08-homepage-mission-copy-and-waitlist-simplification",
+  "feature_name": "Homepage mission reset and simplified waitlist flow",
+  "owner": "Codex",
+  "date": "2026-03-08",
+  "scope_summary": "Restore homepage to mission-first messaging without preview CTA buttons, add explicit legal-safe boundaries, lightly introduce modes/node tracking language, and simplify signup into a single waitlist form with a thank-you state for repeat visitors.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": true,
+    "third_party_network": true,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Copy now clearly scopes the product as in-development productivity support and avoids regulated clinical claims.",
+      "evidence": [
+        "index.html legal boundary section explicitly states no diagnosis/treatment/care",
+        "contact.html legal boundary text warns against submitting sensitive medical or crisis information"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Waitlist handling uses explicit consent checkbox and no hidden data collection; only a localStorage boolean is used for duplicate thank-you UX.",
+      "evidence": [
+        "contact.html waitlist form requires consent_to_process",
+        "contact.html stores only divergify_waitlist_joined in localStorage"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Language is bounded to productivity support and explicitly excludes diagnosis, treatment, and clinical services.",
+      "evidence": [
+        "index.html legal and safety boundaries section",
+        "contact.html legal boundary paragraph"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Homepage reduces cognitive load and hype by removing preview CTA clutter and focusing on clear mission framing.",
+      "evidence": [
+        "index.html removes scaffold preview tool and CTA button block",
+        "index.html uses concise sectioning for mission, build status, and safety"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Copy centers state-aware support, friction reduction, and non-shaming language consistent with ND-support design intent.",
+      "evidence": [
+        "index.html describes mode matching, node tracking, and temporal context",
+        "index.html avoids cure/fix framing"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users get clearer orientation, lower-friction signup, and stronger safety disclosures; foreseeable harm from overclaiming is reduced.",
+      "evidence": [
+        "contact.html single-form waitlist with thank-you state",
+        "index.html mission-first copy and explicit safety boundaries"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Tone is direct and human without marketing-style pressure while still inviting hub/waitlist/store participation.",
+      "evidence": [
+        "index.html section 'Join the build, not a pitch funnel'",
+        "partials/header.html and assets/site.js rename nav item from Contact to Waitlist"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Form labels are explicit, keyboard-native controls are preserved, and copy is chunked into shorter sections.",
+      "evidence": [
+        "contact.html waitlist inputs include associated labels",
+        "assets/global.css adds focused input styles and readable consent layout"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Changes are static-content and CSS updates with no new privileged scripts or backend behavior.",
+      "evidence": [
+        "No dependency or build pipeline changes",
+        "No auth, secret, or server endpoint modifications"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Store support language is transparent and optional; no coercive UX pattern or gated functionality introduced.",
+      "evidence": [
+        "index.html store mention is plain-text invitation",
+        "No paywall or forced conversion components added"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ship now; monitor live submissions to confirm the waitlist thank-you state works across browsers."
+  }
+}

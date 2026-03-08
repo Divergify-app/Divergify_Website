@@ -492,6 +492,61 @@ p { margin: 0 0 var(--space-4); }
   color: var(--color-text-muted);
 }
 
+/* Waitlist form ------------------------------------------ */
+
+.waitlist-form {
+  max-width: 640px;
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.waitlist-form label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.waitlist-form input[type="text"],
+.waitlist-form input[type="email"],
+.waitlist-form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  color: var(--color-text);
+  outline: none;
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+}
+
+.waitlist-form input[type="text"]:focus,
+.waitlist-form input[type="email"]:focus,
+.waitlist-form textarea:focus {
+  border-color: var(--color-action-green);
+  box-shadow: 0 0 0 2px rgba(205, 169, 119, 0.18);
+}
+
+.waitlist-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.waitlist-consent input[type="checkbox"] {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.waitlist-thanks {
+  max-width: 640px;
+  margin-top: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  padding: var(--space-4);
+}
+
 /* Mode guide ----------------------------------------------- */
 
 .mode-guide .text-muted {
