@@ -1,0 +1,102 @@
+{
+  "feature_id": "2026-03-25-hub-beta-north-star-sync",
+  "feature_name": "Hub beta North Star branding sync",
+  "owner": "Divergify Team",
+  "date": "2026-03-25",
+  "scope_summary": "Refreshes the website-attached hub beta build from the latest hub app so the hosted preview matches the current Android release, including the approved North Star icon, the clearer Today entry state, and the current hosted assist wiring.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": true,
+    "third_party_network": true,
+    "monetization_or_payments": false,
+    "ai_processing": true
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "This is a website-attached beta asset refresh only; it does not add new legal claims, policy promises, or hidden data flows.",
+      "evidence": [
+        "The synced beta build still routes users to the same public privacy and contact pages.",
+        "No new medical, diagnostic, or treatment claims were introduced in the beta sync."
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "The hosted beta still defaults to local-first behavior and preserves the local-only path through Tinfoil Hat, while optional assist continues to use an explicit hosted HTTPS backend.",
+      "evidence": [
+        "The beta rebuild was run with VITE_API_BASE_URL set to https://divergify-hub-beta-jess.netlify.app.",
+        "The current app still blocks cloud assist when Tinfoil Hat is enabled and falls back locally when assist is unavailable."
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "The refresh changes branding and app-state clarity only and keeps the product framed as planning and execution support.",
+      "evidence": [
+        "The synced beta still exposes existing productivity-support wording and legal boundaries.",
+        "No new outcome claims or therapeutic promises were introduced in the website sync."
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "The hosted beta now reflects the lower-friction Today entry state that starts with guidance before forcing full task editing.",
+      "evidence": [
+        "The synced build includes the new Start here state on Today before task selection.",
+        "The refresh reduces immediate cognitive load instead of adding more prompts or pressure."
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "The update better matches neurodivergent-friendly product goals by making the first action clearer and keeping the calmer North Star identity consistent across app surfaces.",
+      "evidence": [
+        "Today now opens into a simpler guidance state before detail editing.",
+        "The app icon and attached beta branding now use the approved North Star icon from the brand guide."
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users benefit from a more recognizable icon and a clearer first-use state, with low risk because the change is a rebuild from the existing app source rather than a new feature branch on the website.",
+      "evidence": [
+        "The hub beta bundle was rebuilt from the current clean hub app commit feac1b6c.",
+        "A browser check confirmed the /hub/beta build loads successfully under the website base path."
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "The refresh aligns the hosted beta with the current brand guide, which says icon usage should use the North Star or wordmark rather than the older constellation-style app icon.",
+      "evidence": [
+        "The rebuilt beta now ships the North Star launcher/icon assets under /hub/beta/.",
+        "No marketing copy or protected homepage tagline was rewritten in this sync."
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "The synced build preserves the existing accessibility structure while reducing ambiguity about where to start in the app.",
+      "evidence": [
+        "The beta still loads with skip link, semantic headings, and existing support controls.",
+        "The clearer Start here state lowers immediate overwhelm for first-use and overload cases."
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "The attached beta was rebuilt from a clean temporary worktree, verified locally, and only the generated /hub/beta assets are being committed in the website repo.",
+      "evidence": [
+        "The rebuild used build_app_into_site.sh with a clean detached worktree as APP_SOURCE.",
+        "A local browser check confirmed /hub/beta/ loads successfully after the sync.",
+        "The hub app had already passed npm test, npm run build, and the Android release build before this sync."
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "This sync does not add payments, conversion prompts, or manipulative engagement patterns.",
+      "evidence": [
+        "No monetization flows changed in the website-attached beta.",
+        "The update is limited to app asset sync, icon branding, and first-screen clarity."
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ready to commit and push for website beta sync. Real-device phone checks are still required before final Play submission."
+  }
+}
