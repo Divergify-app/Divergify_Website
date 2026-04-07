@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-04-06-shopify-removal-and-page-optimization",
+  "feature_name": "Remove Shopify links and optimize page load",
+  "owner": "jessibelle",
+  "date": "2026-04-06",
+  "scope_summary": "Replace all Shopify store links with local Dopamine Depot landing page (store cancelled). Remove 52KB divergipedia-data.js from non-divergipedia pages to improve load time. No functional changes to existing features.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "No new legal exposure. Removing a dead external link to a cancelled Shopify store. No new claims added.",
+      "evidence": ["Shopify subscription cancelled by owner", "No new external service dependencies introduced"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Removes an external link (Shopify). Replaces with local page. Net improvement to privacy posture.",
+      "evidence": ["All Dopamine Depot links now point to /dopamine-depot.html on the same domain"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "No medical content changed. Merch page copy contains no health claims.",
+      "evidence": ["Dopamine Depot page describes merch only"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "No behavioral changes. Page load optimization reduces friction.",
+      "evidence": ["Removed 52KB unnecessary JS from 11 pages"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "No ND-related content changed. Merch page and navigation updates only.",
+      "evidence": ["No changes to field notes, divergipedia, or app content"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users no longer land on a dead Shopify store. Pages load faster. Clear messaging that store is being rebuilt.",
+      "evidence": ["Dopamine Depot page now shows coming-soon with waitlist CTA"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "New Dopamine Depot copy matches existing brand voice. No hype, no false urgency.",
+      "evidence": ["Copy: 'The store is being rebuilt with new designs and a simpler checkout.'"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "No accessibility regressions. Replaced external links with internal ones (no new tab confusion).",
+      "evidence": ["Removed target=_blank from Dopamine Depot links"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Removed external dependency (Shopify domain). Reduced JS payload. No new scripts or services.",
+      "evidence": ["Net reduction: 52KB JS removed from 11 pages, 1 external domain removed"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "No monetization changes. Store link replaced with informational page and optional waitlist. No coercive CTA.",
+      "evidence": ["CTA is 'Join the waitlist' — voluntary, no countdown, no pressure"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All filters pass. Low-risk infrastructure change with net positive for users."
+  }
+}
