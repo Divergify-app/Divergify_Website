@@ -6,28 +6,28 @@
 
 :root {
   /* Brand core */
-  --color-brand-navy: #232147;
-  --color-muted-blue: #918FA2;
+  --color-brand-navy: #0e0e10;
+  --color-muted-blue: #b5ad9a;
   --color-soft-lime: #CDA977;
   --color-action-green: #CDA977;
 
   /* Surfaces */
   --color-bg: var(--color-brand-navy);
-  --color-surface: rgba(249,238,210,0.06);
-  --color-surface-strong: rgba(249,238,210,0.10);
+  --color-surface: rgba(255,255,255,0.02);
+  --color-surface-strong: rgba(255,255,255,0.04);
 
   /* Text */
-  --color-text: #F9EED2;
-  --color-text-muted: #918FA2;
-  --color-link: var(--color-muted-blue);
+  --color-text: #f5f1e8;
+  --color-text-muted: #b5ad9a;
+  --color-link: #cda977;
 
   /* Accents */
-  --color-tag-bg: rgba(145,143,162,0.18);
+  --color-tag-bg: rgba(205,169,119,0.10);
   --color-active-bg: rgba(205,169,119,0.18);
   --color-switch-on: rgba(205,169,119,0.35);
 
   /* Borders */
-  --color-border: rgba(249,238,210,0.18);
+  --color-border: rgba(255,255,255,0.08);
 
   /* Typography */
   --font-heading: "Poppins", system-ui, sans-serif;

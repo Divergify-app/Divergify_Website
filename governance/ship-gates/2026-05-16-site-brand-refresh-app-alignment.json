@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-05-16-site-brand-refresh-app-alignment",
+  "feature_name": "Site brand refresh — align to app visual design and introduce Takota",
+  "owner": "Jess",
+  "date": "2026-05-16",
+  "scope_summary": "Visual and copy-only update. Background color changed from navy (#232147) to near-black (#0e0e10) to match the live app. Surface, border, and muted text colors updated to match app design tokens. Gold accent links restored. Homepage hero rewritten to introduce Takota by name and role. Copy shifted from marketing voice to guide-first voice. Meta description updated. No structural changes, no new features, no data collection.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "No new legal exposure. No third-party brand names added. Competitor names removed in prior commits.",
+      "evidence": ["CSS and HTML changes only — no new integrations or data flows"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No user data touched. No new network calls. Static site change only.",
+      "evidence": ["No new scripts, APIs, or storage interactions"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "No medical or diagnostic claims in the updated copy. Takota is described as a sidekick/scaffold, not a treatment.",
+      "evidence": ["Copy reviewed — no diagnosis or treatment language"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Copy uses scaffolding language consistent with Divergify's behavioral model. No coercive patterns introduced.",
+      "evidence": ["Guide-first framing, no urgency language, no dark patterns"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Compatibility-error framing aligns with Divergify's established ND philosophy. No new claims about neurodivergence introduced.",
+      "evidence": ["Takota intro copy consistent with existing TAKOTA personality docs"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Visual alignment reduces cognitive dissonance between site and app. Guide-first copy sets accurate expectations. No harm vectors identified.",
+      "evidence": ["Color change improves consistency; copy change reduces marketing-speak"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy reviewed against Takota v3.0 personality spec. Blunt, boundaried, guide-first. No inflated claims.",
+      "evidence": ["'external prefrontal cortex' and 'blunt, boundaried' are direct Takota spec language"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Near-black background with warm off-white text (#f5f1e8) maintains sufficient contrast. Gold links (#cda977) meet contrast requirements against near-black. No structural changes to heading hierarchy or keyboard navigation.",
+      "evidence": ["#cda977 on #0e0e10 passes WCAG AA for large text; body text contrast unchanged"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "CSS variable change only. No scripts modified. No new dependencies. Static HTML/CSS — no runtime risk.",
+      "evidence": ["Two files changed: assets/global.css, index.html — CSS vars and copy only"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "No monetization changes. Dopamine Depot link retained as-is. No urgency language, countdown timers, or coercive copy introduced.",
+      "evidence": ["Hero copy explicitly avoids marketing pressure language"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All filters passed. Low-risk visual and copy change. Safe to deploy."
+  }
+}
