@@ -46,6 +46,17 @@ Shades mode (low-stim / overload):
 - Standard mode: "late night genius hour" vibe.
 - Shades mode: zero motion, reduced contrast, lower sensory load.
 
+## Proportion system (the golden ratio filter)
+- Spec rule: every layout, spacing, type size, radius, and motion duration derives from φ (phi = 1.618). No arbitrary pixel values.
+- Why it is a spec, not a style: the brain parses proportion before content. Consistent φ rhythm lowers the parsing load when the system is already running hot.
+- Base units: spacing base = 8px, type base = 16px. Steps scale by φ.
+- Spacing scale (px): xxs 2, xs 3, sm 5, md 8, lg 13, xl 21, xxl 34, xxxl 55.
+- Type scale (px): xs 10, sm 13, md 16, lg 20, xl 26, xxl 33, xxxl 42.
+- Line height: tight 1.2, normal 1.5, loose 1.618.
+- Radius (px): sm 5, md 8, lg 13, xl 21, pill 9999. Motion (ms): fast 120, base 200, slow 324.
+- Reference implementation (source of these values): `divergify-hub/apps/divergify-hub-app/src/design/tokens.ts` (exports `PHI` + the scales). Structured copy: `branding/brand.json` → `brand.proportion`.
+- Filter check: any new screen or page is non-compliant if it introduces spacing/type/radius values outside this scale without a documented reason.
+
 ## Safety and accessibility rules
 - No flashing or strobing effects.
 - In Shades mode: reduce motion and contrast.

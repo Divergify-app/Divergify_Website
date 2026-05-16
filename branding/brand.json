@@ -15,6 +15,17 @@
         "accent_gold": "#8C7A5E",
         "motion": "none"
       }
+    },
+    "proportion": {
+      "phi": 1.618033988749895,
+      "note": "All layout, spacing, type, radius, and motion derive from phi. Source implementation: divergify-hub/apps/divergify-hub-app/src/design/tokens.ts",
+      "base_spacing_px": 8,
+      "base_font_px": 16,
+      "spacing_px": { "xxs": 2, "xs": 3, "sm": 5, "md": 8, "lg": 13, "xl": 21, "xxl": 34, "xxxl": 55 },
+      "font_size_px": { "xs": 10, "sm": 13, "md": 16, "lg": 20, "xl": 26, "xxl": 33, "xxxl": 42 },
+      "line_height": { "tight": 1.2, "normal": 1.5, "loose": 1.618033988749895 },
+      "radius_px": { "sm": 5, "md": 8, "lg": 13, "xl": 21, "pill": 9999 },
+      "motion_ms": { "instant": 0, "fast": 120, "base": 200, "slow": 324 }
     }
   }
 }

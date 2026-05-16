@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-05-15-hub-golden-ratio-and-today-braindump-screens",
+  "feature_name": "Golden ratio design system + TodayScreen + local-only BrainDumpScreen",
+  "owner": "jessibelle",
+  "date": "2026-05-15",
+  "scope_summary": "divergify-hub commit 224bb690. Wired new TodayScreen (φ-based capacity meter, derived from the daily overwhelm check-in) above the existing TaskWorkspace at '/'. Replaced the AI-sort/planner-import BrainDump at '/brain-dump' with a new local-storage-only BrainDumpScreen (single large text area on a 61.8/38.2 golden-ratio split, optional tag, optional reversible line sort, warm non-judgmental copy). Removed old routes/Today.tsx and routes/BrainDump.tsx. NOTE: this is a deliberate feature reduction at /brain-dump — AI sort, voice capture, and planner import are gone; the prior in-progress credit-cost work was preserved as a recoverable patch, not deleted.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": true,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "No new legal exposure. BrainDumpScreen stores only what the user types, on-device via localStorage. No accounts, no network, no new claims.",
+      "evidence": ["No fetch/XHR in BrainDumpScreen.tsx", "Storage key divergify.brainDump.v1 is local only"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Strengthens the local-first promise: the new BrainDump removed the optional cloud AI sort path entirely. Thought content never leaves the device.",
+      "evidence": ["BrainDumpScreen has no aiClient import", "Save writes to window.localStorage only"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "ADHD/neurodivergence context only. Copy is supportive ('get it out of your head'), makes no diagnostic or treatment claims. New Proportion Protocol in the brand spec explicitly states the φ grid is a layout discipline, not a medical claim.",
+      "evidence": ["No clinical language in BrainDumpScreen.tsx", "NEUROSCHEMA v2.1 Compatibility Note"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Zero-friction capture with no forced organization matches ADHD-supportive design. Sorting is opt-in and reversible; the default leaves the dump untouched.",
+      "evidence": ["Sort defaults to 'Leave it messy'", "No required fields before saving"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Externalizing working memory without imposing structure is a recognized ND-supportive pattern. TodayScreen capacity meter reflects the existing overwhelm/support model rather than inventing a new metric.",
+      "evidence": ["capacityPercent = 100 - overwhelm, reuses existing session state"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Net benefit for zero-friction capture and a calmer Today view. Harm flagged honestly: users who relied on the old /brain-dump AI sort and planner-import lose that flow. Passes because this is an intentional, mitigated scope decision (not a regression) — the prior work is preserved as a recoverable patch and the tradeoff is recorded in ship_decision.conditions.",
+      "evidence": ["Old BrainDump.tsx removed", "Credit-cost work preserved at apps/divergify-hub-app/BrainDump.credit-cost.uncommitted.patch"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy matches NEUROSCHEMA voice (blunt, warm, no toxic positivity, no shame). Layout conforms to the new v2.1 Proportion Protocol (φ grid).",
+      "evidence": ["BrainDumpScreen copy: 'No order, no spelling, no judgement'", "61.8/38.2 split + tokens.ts φ scales"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Text area and progressbar carry aria labels/roles. No flashing. φ rhythm lowers visual parsing load. Shades-mode sensory protocol still takes precedence over proportional polish.",
+      "evidence": ["aria-label on textarea", "role=progressbar with aria-valuenow on TodayScreen", "no animation on dump UI"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Smaller attack surface — removed the AI/network path from /brain-dump. localStorage access is wrapped in try/catch so storage failure does not crash the screen. Typecheck passes.",
+      "evidence": ["tsc -p tsconfig.app.json --noEmit exits 0", "try/catch around localStorage in BrainDumpScreen.tsx"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "No monetization. No coercive CTAs, countdowns, or pressure. Save is a single neutral action.",
+      "evidence": ["No paywall or upsell in changed files"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ships as a low-risk, privacy-positive change. One accepted tradeoff: /brain-dump loses AI sort + planner import by design; revisit if the credit-cost feature is resumed from the preserved patch."
+  }
+}
