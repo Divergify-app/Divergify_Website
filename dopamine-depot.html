@@ -152,6 +152,35 @@
       max-width: 640px;
     }
 
+    /* Filter bar */
+    .depot-filters {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+    }
+    .filter-btn {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      padding: 6px 16px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background var(--anim-fast), border-color var(--anim-fast), color var(--anim-fast);
+    }
+    .filter-btn:hover {
+      border-color: rgba(205,169,119,0.4);
+      color: var(--color-text);
+    }
+    .filter-btn.active {
+      background: rgba(205,169,119,0.15);
+      border-color: var(--color-soft-lime);
+      color: var(--color-soft-lime);
+    }
+
     @media (max-width: 600px) {
       .product-grid {
         grid-template-columns: 1fr;
@@ -177,21 +206,34 @@
     </div>
 
     <!-- ============================================================
-         PRODUCT GRID
+         PRODUCT GRID — 30 products
          TODO: Replace each href="#" with the Printful product URL
                once your Printful Store is enabled.
          ============================================================ -->
 
-    <div class="product-grid">
+    <!-- FILTER BAR -->
+    <div class="depot-filters" role="navigation" aria-label="Filter by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="shirt">Shirts</button>
+      <button class="filter-btn" data-filter="hoodie">Hoodies</button>
+      <button class="filter-btn" data-filter="mug">Mugs</button>
+      <button class="filter-btn" data-filter="sticker">Stickers</button>
+      <button class="filter-btn" data-filter="tote">Totes</button>
+      <button class="filter-btn" data-filter="hat">Hats</button>
+      <button class="filter-btn" data-filter="other">Other</button>
+    </div>
 
-      <article class="product-card">
+    <div class="product-grid" id="product-grid">
+
+      <!-- ── EXEC DYSFUNCTION ──────────────────────────────────── -->
+      <article class="product-card" data-category="shirt">
         <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dysfunction.png" alt="Executive Dysfunction raglan shirt — white body with navy sleeves" loading="lazy" />
+          <img src="/assets/merch/exec-dysfunction.png" alt="Executive Dysfunction raglan — white body, navy sleeves" loading="lazy" />
         </div>
         <div class="product-body">
-          <span class="product-tag">Shirt</span>
+          <span class="product-tag">Raglan Shirt</span>
           <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">You know what you need to do. Your brain just filed the request and went on break. Raglan cut, baseball sleeve, built for humans who are trying.</p>
+          <p class="product-desc">You know what needs doing. Your brain filed the request and went on break. Baseball sleeve, relaxed cut.</p>
           <div class="product-footer">
             <span class="product-price">$34</span>
             <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
@@ -199,14 +241,75 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="hoodie">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction zip hoodie design" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Zip Hoodie</span>
+          <h2 class="product-name">Executive Dysfunction</h2>
+          <p class="product-desc">Same brain, different layer. Full zip, front pocket, for the days when you need an exit strategy built in.</p>
+          <div class="product-footer">
+            <span class="product-price">$58</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tote">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction tote bag" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Tote Bag</span>
+          <h2 class="product-name">Executive Dysfunction</h2>
+          <p class="product-desc">Carry your unfinished tasks in style. Heavy canvas, reinforced handles, fits everything you meant to deal with last week.</p>
+          <div class="product-footer">
+            <span class="product-price">$24</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="hat">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction dad hat" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Dad Hat</span>
+          <h2 class="product-name">Executive Dysfunction</h2>
+          <p class="product-desc">Wear the diagnosis on your head. Unstructured, adjustable, low-profile. No eye contact required.</p>
+          <div class="product-footer">
+            <span class="product-price">$32</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="other">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction journal" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Journal</span>
+          <h2 class="product-name">Executive Dysfunction</h2>
+          <p class="product-desc">For the thoughts that make it out of your head. Lined pages, lay-flat binding, 120 pages of potential.</p>
+          <div class="product-footer">
+            <span class="product-price">$24</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── ADHD LOADING ──────────────────────────────────────── -->
+      <article class="product-card" data-category="hoodie">
         <div class="product-img-wrap">
           <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading hoodie in black" loading="lazy" />
         </div>
         <div class="product-body">
           <span class="product-tag">Hoodie</span>
           <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">Still buffering. Please do not close the tab. Heavy-blend hoodie, low-noise front print, pockets for all your unfinished projects.</p>
+          <p class="product-desc">Still buffering. Please do not close the tab. Heavy-blend, kangaroo pocket, pockets for all your unfinished projects.</p>
           <div class="product-footer">
             <span class="product-price">$52</span>
             <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
@@ -214,14 +317,75 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/adhd-loading-navy.png" alt="ADHD Loading t-shirt in navy" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">T-Shirt</span>
+          <h2 class="product-name">ADHD Loading</h2>
+          <p class="product-desc">The loading screen nobody asked for and nobody can skip. Unisex comfort fit, preshrunk.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading long sleeve shirt" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Long Sleeve</span>
+          <h2 class="product-name">ADHD Loading</h2>
+          <p class="product-desc">Still loading. Extra coverage for extra-long buffer times. Midweight, soft, doesn't scratch.</p>
+          <div class="product-footer">
+            <span class="product-price">$34</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="hat">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading beanie" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Beanie</span>
+          <h2 class="product-name">ADHD Loading</h2>
+          <p class="product-desc">Warm skull, buffering brain. Soft acrylic, ribbed cuff, one size. Good for cold days and slower processing speeds.</p>
+          <div class="product-footer">
+            <span class="product-price">$26</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="sticker">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading sticker pack" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Sticker Pack</span>
+          <h2 class="product-name">ADHD Loading</h2>
+          <p class="product-desc">5 stickers. Laptop, water bottle, journal, therapy notebook, the back of your phone that you've been meaning to replace. Weatherproof vinyl.</p>
+          <div class="product-footer">
+            <span class="product-price">$12</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── BEAT YOUR BASELINE ────────────────────────────────── -->
+      <article class="product-card" data-category="shirt">
         <div class="product-img-wrap">
           <img src="/assets/merch/beat-your-baseline.png" alt="Beat Your Baseline t-shirt in black" loading="lazy" />
         </div>
         <div class="product-body">
-          <span class="product-tag">Shirt</span>
+          <span class="product-tag">T-Shirt</span>
           <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">Not racing anyone else. Just trying to edge out yesterday's version of yourself — even slightly. Unisex tee, comfort cut.</p>
+          <p class="product-desc">Not racing anyone else. Just trying to edge out yesterday's version of you — even slightly. Unisex, comfort cut.</p>
           <div class="product-footer">
             <span class="product-price">$28</span>
             <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
@@ -229,74 +393,44 @@
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="shirt">
         <div class="product-img-wrap">
-          <img src="/assets/merch/chaos-goblin.png" alt="Chaos Goblin shirt front print" loading="lazy" />
+          <img src="/assets/merch/beat-your-baseline-white.png" alt="Beat Your Baseline sweatshirt in white" loading="lazy" />
         </div>
         <div class="product-body">
-          <span class="product-tag">Shirt</span>
-          <h2 class="product-name">Chaos Goblin</h2>
-          <p class="product-desc">Not disorganized. Running an alternate operating system that doesn't have a manual yet. Claim the title. Own the chaos.</p>
+          <span class="product-tag">Sweatshirt</span>
+          <h2 class="product-name">Beat Your Baseline</h2>
+          <p class="product-desc">Crewneck. No hood to hide under. Just you, the design, and whatever you managed to do today. That counts.</p>
           <div class="product-footer">
-            <span class="product-price">$28</span>
+            <span class="product-price">$48</span>
             <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
           </div>
         </div>
       </article>
 
-      <article class="product-card">
+      <article class="product-card" data-category="mug">
         <div class="product-img-wrap">
-          <img src="/assets/merch/tabs-open.png" alt="400 Tabs Open shirt front print" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Shirt</span>
-          <h2 class="product-name">400 Tabs Open</h2>
-          <p class="product-desc">Brain at capacity. All tabs are important. None of them are getting closed. This is fine. Classic cut, minimal print.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/tinfoil-mode.png" alt="Tinfoil Mode shirt front print" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Shirt</span>
-          <h2 class="product-name">Tinfoil Mode</h2>
-          <p class="product-desc">Privacy-first. Tracking-optional. Data stays on-device. Inspired by Divergify's zero-surveillance operating mode for when you don't trust the system.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/brains-that-zig.png" alt="Brains That Zig shirt front print" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Shirt</span>
-          <h2 class="product-name">Brains That Zig</h2>
-          <p class="product-desc">When the world zags. You didn't get the wrong brain — you got a different one. The world just hasn't caught up yet.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/started-it-mug.png" alt="Started It mug" loading="lazy" />
+          <img src="/assets/merch/started-it-mug.png" alt="Beat Your Baseline mug" loading="lazy" />
         </div>
         <div class="product-body">
           <span class="product-tag">Mug</span>
-          <h2 class="product-name">Started It</h2>
-          <p class="product-desc">Finishing is optional. Starting is the whole win. 11 oz ceramic mug, dishwasher safe, for the person who has seventeen things in progress right now.</p>
+          <h2 class="product-name">Beat Your Baseline</h2>
+          <p class="product-desc">Morning reminder that today's bar is just slightly above yesterday's floor. 15 oz, dishwasher safe, holds exactly enough coffee.</p>
+          <div class="product-footer">
+            <span class="product-price">$22</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="other">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/beat-your-baseline.png" alt="Beat Your Baseline poster" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Poster</span>
+          <h2 class="product-name">Beat Your Baseline</h2>
+          <p class="product-desc">For the wall you stare at when you're supposed to be working. Matte finish, 18×24, ships rolled in a tube.</p>
           <div class="product-footer">
             <span class="product-price">$18</span>
             <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
@@ -304,7 +438,267 @@
         </div>
       </article>
 
+      <article class="product-card" data-category="other">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/beat-your-baseline-white.png" alt="Beat Your Baseline phone case" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Phone Case</span>
+          <h2 class="product-name">Beat Your Baseline</h2>
+          <p class="product-desc">The thing you look at 200 times a day. Might as well have a reminder on it. Slim hard shell, fits iPhone and Samsung models.</p>
+          <div class="product-footer">
+            <span class="product-price">$22</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CHAOS IS MY CO-PILOT ──────────────────────────────── -->
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot t-shirt design" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">T-Shirt</span>
+          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
+          <p class="product-desc">Not flying blind. Flying with a co-pilot who has never read a manual and loves turbulence. Unisex, soft ring-spun cotton.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="hoodie">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot hoodie" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Hoodie</span>
+          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
+          <p class="product-desc">Same crew, warmer layer. Pullover, kangaroo pocket, mid-weight fleece lining. Buckle up.</p>
+          <div class="product-footer">
+            <span class="product-price">$52</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tote">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot tote bag" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Tote Bag</span>
+          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
+          <p class="product-desc">Carry the chaos with you. Heavy canvas, dual handles, no apologies. Fits a laptop, a water bottle, and whatever today throws at you.</p>
+          <div class="product-footer">
+            <span class="product-price">$24</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="sticker">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot sticker pack" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Sticker Pack</span>
+          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
+          <p class="product-desc">5 weatherproof vinyl stickers. Put them where people can see them. Let them know what they're dealing with.</p>
+          <div class="product-footer">
+            <span class="product-price">$12</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="mug">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/started-it-mug.png" alt="Chaos Is My Co-Pilot mug" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Mug</span>
+          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
+          <p class="product-desc">Pre-flight coffee. 11 oz ceramic, microwave safe. The chaos is already in the cockpit. Might as well caffeinate.</p>
+          <div class="product-footer">
+            <span class="product-price">$18</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── LOW STIM MODE ─────────────────────────────────────── -->
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated t-shirt design" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">T-Shirt</span>
+          <h2 class="product-name">Low Stim Mode: Activated</h2>
+          <p class="product-desc">Sensory processing at minimum viable settings. Please speak softly and dim the lights. Unisex, 100% soft cotton.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="hoodie">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated hoodie" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Hoodie</span>
+          <h2 class="product-name">Low Stim Mode: Activated</h2>
+          <p class="product-desc">The hoodie is the sensory regulation tool. This one just has a name for it. Drawstring, kangaroo pocket, retreating is valid.</p>
+          <div class="product-footer">
+            <span class="product-price">$52</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="hat">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated hat" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Dad Hat</span>
+          <h2 class="product-name">Low Stim Mode: Activated</h2>
+          <p class="product-desc">Brim down. Eyes forward. Blocking exactly enough of the world. Unstructured, adjustable, universally applicable.</p>
+          <div class="product-footer">
+            <span class="product-price">$32</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="other">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated poster" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Poster</span>
+          <h2 class="product-name">Low Stim Mode: Activated</h2>
+          <p class="product-desc">For the quiet room. A reminder that this is a valid setting, not a failure. Matte finish, 18×24.</p>
+          <div class="product-footer">
+            <span class="product-price">$18</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="other">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated socks" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Socks</span>
+          <h2 class="product-name">Low Stim Mode: Activated</h2>
+          <p class="product-desc">The one sensory input you can control. Soft mid-calf, seamless toe, because scratchy socks are the enemy.</p>
+          <div class="product-footer">
+            <span class="product-price">$16</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── I WAS PRODUCTIVE IN MY HEAD ───────────────────────── -->
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head t-shirt design" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">T-Shirt</span>
+          <h2 class="product-name">I Was Productive (In My Head)</h2>
+          <p class="product-desc">The full planning session happened. In your brain. Very detailed. Extremely productive. Nothing was written down. Unisex comfort cut.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="shirt">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head sweatshirt" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Sweatshirt</span>
+          <h2 class="product-name">I Was Productive (In My Head)</h2>
+          <p class="product-desc">Crewneck. Warm. For the days when the planning was thorough and the doing was theoretical. That still counts as something.</p>
+          <div class="product-footer">
+            <span class="product-price">$48</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="mug">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/started-it-mug.png" alt="Started It mug — I Was Productive in My Head" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Mug</span>
+          <h2 class="product-name">Started It</h2>
+          <p class="product-desc">Finishing is optional. Starting is the whole win. 11 oz ceramic, dishwasher safe. For the person who has seventeen things in progress right now.</p>
+          <div class="product-footer">
+            <span class="product-price">$18</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="tote">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head tote bag" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Tote Bag</span>
+          <h2 class="product-name">I Was Productive (In My Head)</h2>
+          <p class="product-desc">For carrying the things you meant to do. Heavy canvas, practical size, accurate description.</p>
+          <div class="product-footer">
+            <span class="product-price">$24</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="sticker">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head sticker pack" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Sticker Pack</span>
+          <h2 class="product-name">I Was Productive (In My Head)</h2>
+          <p class="product-desc">5 weatherproof vinyl stickers. Stick them on things you also meant to deal with. The irony is intentional.</p>
+          <div class="product-footer">
+            <span class="product-price">$12</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
     </div>
+
+    <script>
+      (function() {
+        var btns = document.querySelectorAll('.filter-btn');
+        var cards = document.querySelectorAll('.product-card');
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            btns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            cards.forEach(function(card) {
+              card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+            });
+          });
+        });
+      })();
+    </script>
 
     <hr class="section-divider" />
 
