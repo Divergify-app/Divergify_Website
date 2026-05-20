@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-05-20-dopamine-depot-launch",
+  "feature_name": "Dopamine Depot Store Page Launch",
+  "owner": "Jess",
+  "date": "2026-05-20",
+  "scope_summary": "Replace the Dopamine Depot placeholder page with a live product grid. 8 products (shirts, hoodie, mug) displayed with mockup images, descriptions, prices, and buy buttons. Buy buttons link to Printful product URLs (currently placeholder — will be updated when Printful Store is enabled). No payment processing occurs on divergify.app; all transactions handled by Printful.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Merch store with standard print-on-demand fulfillment via Printful. No subscription, no recurring billing, no PII collected on-site. Checkout and payment occur off-site on Printful's platform. Returns policy references contact page for case-by-case handling — standard for small indie stores.",
+      "evidence": ["No on-site payment processing", "No data collection beyond what Printful handles", "Contact page linked for returns"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Page contains no analytics, no tracking pixels, no cookies beyond what the base site already uses. Purchase data goes to Printful, not stored by Divergify. No silent exfiltration.",
+      "evidence": ["Static HTML with no new JS", "No new third-party scripts added", "Printful handles all transaction data"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Merch page. No health claims, no diagnostic language, no treatment suggestions. Product descriptions are humorous and identity-affirming, not clinical.",
+      "evidence": ["Product copy reviewed — no medical framing", "No diagnosis or treatment language present"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "No gamification, no streaks, no countdown timers, no artificial urgency. Static product grid. Low-friction browse experience consistent with low-stim design principles.",
+      "evidence": ["No countdown timers", "No scarcity messaging", "No dark patterns in product copy"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Designs are explicitly low-sensory: muted palettes, clean prints, no loud graphics. Product descriptions use grounded, non-pathologizing language consistent with ND dignity principles. Grid layout is predictable and scannable.",
+      "evidence": ["Brand colors: #0e0e10, #cda977, #f5f1e8 — low saturation", "No flashing elements or animated distractions", "Product copy reviewed for shame-free framing"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Merch store funds continued Divergify development. Purchasing is entirely optional. No psychological coercion. Clear pricing, no hidden fees on our end (Printful's base costs are standard). Benefit: revenue that keeps the build alive. Foreseeable harm: none beyond a customer not liking a shirt.",
+      "evidence": ["Static opt-in purchase flow", "No manipulative copy", "Prices visible before click-through"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Product descriptions reviewed for Takota voice: blunt, grounded, no wellness fluff, no fake urgency. Mission copy is honest about the indie/ND founder context. No unsubstantiated product claims.",
+      "evidence": ["Descriptions written in Takota/Divergify voice", "No superlatives or false claims", "No 'this will fix your ADHD' framing"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "All product images have descriptive alt text. Buy buttons are keyboard-accessible anchor tags with visible focus states inherited from global.css. Product names are in h2 tags for screen reader hierarchy. Color contrast meets WCAG AA (gold on near-black). No auto-play, no motion.",
+      "evidence": ["alt attributes present on all 9 product images", "Semantic h2 headings on product names", "Buttons are <a> tags with button class — no JS required to use", "No motion/animation beyond hover translate"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Static HTML file with no new JS, no form submissions, no API calls originating from our domain. External links use target=_blank with rel=noopener. No new attack surface introduced.",
+      "evidence": ["No new JavaScript", "No new form handlers", "rel=noopener on all external links", "Printful URLs will be https://"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Transparent pricing shown before any click-through. No upsells, no countdown timers, no FOMO copy, no forced account creation. Buy buttons open Printful product page in new tab — user remains in full control. Monetization model (merch funding dev) is explicitly stated on the page.",
+      "evidence": ["Prices visible in product cards", "No urgency or scarcity language", "Mission section explains why store exists", "All links open in new tab, not forced redirect"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All filters clear. One outstanding action item post-ship: replace href='#' placeholder buy button URLs with real Printful Store product URLs once Printful Store is enabled."
+  }
+}

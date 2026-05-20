@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dopamine Depot | Divergify Merch</title>
-      <meta name="description" content="Shop Divergify&#x27;s Dopamine Depot for low-stim merch that funds our mission. Clean designs with no noisy chaos." />
+  <meta name="description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense. Every purchase funds the Divergify build." />
 
   <!-- SEO-META:START -->
   <link rel="canonical" href="https://divergify.app/dopamine-depot.html" />
@@ -12,16 +12,17 @@
   <meta property="og:site_name" content="Divergify" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dopamine Depot | Divergify Merch" />
-  <meta property="og:description" content="Shop Divergify&#x27;s Dopamine Depot for low-stim merch that funds our mission. Clean designs with no noisy chaos." />
+  <meta property="og:description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense." />
   <meta property="og:url" content="https://divergify.app/dopamine-depot.html" />
   <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dopamine Depot | Divergify Merch" />
-  <meta name="twitter:description" content="Shop Divergify&#x27;s Dopamine Depot for low-stim merch that funds our mission. Clean designs with no noisy chaos." />
+  <meta name="twitter:description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners." />
   <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dopamine Depot | Divergify Merch", "description": "Shop Divergify's Dopamine Depot for low-stim merch that funds our mission. Clean designs with no noisy chaos.", "url": "https://divergify.app/dopamine-depot.html", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dopamine Depot | Divergify Merch", "description": "Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense.", "url": "https://divergify.app/dopamine-depot.html", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
   <!-- SEO-META:END -->
-<meta name="theme-color" content="#232147" />
+
+  <meta name="theme-color" content="#0e0e10" />
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -30,30 +31,294 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/global.css" />
-  
+
+  <style>
+    /* Depot-specific overrides */
+    .depot-hero {
+      padding: var(--space-8) 0 var(--space-7);
+      max-width: 680px;
+    }
+    .depot-hero h1 {
+      margin-bottom: var(--space-2);
+    }
+    .depot-hero .subhead {
+      font-size: var(--text-xl);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      font-family: var(--font-heading);
+      font-weight: 600;
+    }
+    .depot-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-3);
+      border-left: 2px solid rgba(205,169,119,0.3);
+      padding-left: var(--space-4);
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-7);
+    }
+
+    .product-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--anim-med) ease, transform var(--anim-med) ease;
+    }
+    .product-card:hover {
+      border-color: rgba(205,169,119,0.35);
+      transform: translateY(-2px);
+    }
+
+    .product-img-wrap {
+      background: rgba(255,255,255,0.03);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-body {
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      flex: 1;
+    }
+
+    .product-tag {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-soft-lime);
+      font-weight: 600;
+    }
+
+    .product-name {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .product-desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      margin: 0;
+      flex: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-top: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .product-price {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: var(--space-9) 0 var(--space-7);
+    }
+
+    .depot-mission {
+      max-width: 640px;
+    }
+
+    @media (max-width: 600px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <div data-partial="header"></div>
 
   <main id="main" class="page-shell">
-    <h1>Dopamine Depot</h1>
 
-    <h2>Merch that funds the build.</h2>
+    <div class="depot-hero">
+      <div class="section-kicker">Merch</div>
+      <h1>Dopamine Depot</h1>
+      <p class="subhead">Merch that funds the build.</p>
+      <p class="text-muted">
+        For neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense. Every purchase goes directly toward keeping Divergify running.
+      </p>
+      <p class="depot-note">
+        Fulfilled by Printful. Ships worldwide. No minimum order. Returns handled case by case — reach out via the <a href="/contact.html">contact page</a>.
+      </p>
+    </div>
 
-<p class="text-muted">
-  Dopamine Depot is merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense.
-</p>
+    <!-- ============================================================
+         PRODUCT GRID
+         TODO: Replace each href="#" with the Printful product URL
+               once your Printful Store is enabled.
+         ============================================================ -->
 
-<p class="text-muted">
-  The store is being rebuilt with new designs and a simpler checkout. If you want to know when it opens, join the waitlist.
-</p>
+    <div class="product-grid">
 
-<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px;">
-  <a class="button button-primary" href="/contact.html">
-    Join the waitlist
-  </a>
-  <a class="button button-ghost" href="/">Back to Divergify</a>
-</div>
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/exec-dysfunction.png" alt="Executive Dysfunction raglan shirt — white body with navy sleeves" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">Executive Dysfunction</h2>
+          <p class="product-desc">You know what you need to do. Your brain just filed the request and went on break. Raglan cut, baseball sleeve, built for humans who are trying.</p>
+          <div class="product-footer">
+            <span class="product-price">$34</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading hoodie in black" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Hoodie</span>
+          <h2 class="product-name">ADHD Loading</h2>
+          <p class="product-desc">Still buffering. Please do not close the tab. Heavy-blend hoodie, low-noise front print, pockets for all your unfinished projects.</p>
+          <div class="product-footer">
+            <span class="product-price">$52</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/beat-your-baseline.png" alt="Beat Your Baseline t-shirt in black" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">Beat Your Baseline</h2>
+          <p class="product-desc">Not racing anyone else. Just trying to edge out yesterday's version of yourself — even slightly. Unisex tee, comfort cut.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/chaos-goblin.png" alt="Chaos Goblin shirt front print" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">Chaos Goblin</h2>
+          <p class="product-desc">Not disorganized. Running an alternate operating system that doesn't have a manual yet. Claim the title. Own the chaos.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/tabs-open.png" alt="400 Tabs Open shirt front print" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">400 Tabs Open</h2>
+          <p class="product-desc">Brain at capacity. All tabs are important. None of them are getting closed. This is fine. Classic cut, minimal print.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/tinfoil-mode.png" alt="Tinfoil Mode shirt front print" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">Tinfoil Mode</h2>
+          <p class="product-desc">Privacy-first. Tracking-optional. Data stays on-device. Inspired by Divergify's zero-surveillance operating mode for when you don't trust the system.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/brains-that-zig.png" alt="Brains That Zig shirt front print" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Shirt</span>
+          <h2 class="product-name">Brains That Zig</h2>
+          <p class="product-desc">When the world zags. You didn't get the wrong brain — you got a different one. The world just hasn't caught up yet.</p>
+          <div class="product-footer">
+            <span class="product-price">$28</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="/assets/merch/started-it-mug.png" alt="Started It mug" loading="lazy" />
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Mug</span>
+          <h2 class="product-name">Started It</h2>
+          <p class="product-desc">Finishing is optional. Starting is the whole win. 11 oz ceramic mug, dishwasher safe, for the person who has seventeen things in progress right now.</p>
+          <div class="product-footer">
+            <span class="product-price">$18</span>
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <hr class="section-divider" />
+
+    <div class="depot-mission">
+      <div class="section-kicker">Why this exists</div>
+      <h2>Merch that means something.</h2>
+      <p class="text-muted">
+        Divergify is an independent project built by a neurodivergent founder. No VC. No brand deals. No ads. Dopamine Depot is how the build stays funded — which means every purchase is a direct vote for more tools, more Field Notes, and more Takota.
+      </p>
+      <p class="text-muted">
+        Designs are low-sensory by default: muted palettes, clean prints, no loud graphics. Because the people buying these shirts probably have enough going on already.
+      </p>
+      <a class="button button-ghost" href="/contact.html">Questions? Reach out.</a>
+    </div>
 
   </main>
 
