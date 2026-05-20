@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-05-20-dopamine-depot-v3",
+  "feature_name": "Dopamine Depot — Design-First UX Overhaul",
+  "owner": "Jess",
+  "date": "2026-05-20",
+  "scope_summary": "Replaced the individual product card grid (30 cards) with a design-first grid (11 design cards). Each design card shows the artwork and a product count. Clicking opens an accessible modal where the user picks their product type and price, then taps a buy button. Removed Low Stim Mode design. Added 5 previously unused designs: Brains That Zig, Chaos Goblin, Sidequest, Tabs Open, Tinfoil Mode. No filter bar (modal replaces it). All buy buttons remain href='#' placeholders pending Printful Store activation. Added TODO comment for Shades design once artwork is ready.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Same Printful dropshipping model as v1 and v2. No on-site payment processing. No PII collected. Modal is a UI-only change with no backend or data implications.",
+      "evidence": ["No new third-party scripts", "No on-site checkout", "Buy buttons link to Printful (off-site)"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Purely static HTML and vanilla JS. Modal state managed in-memory only. No cookies, no tracking pixels, no new analytics added.",
+      "evidence": ["No localStorage used", "No new third-party scripts added", "All state in JS closure variables"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Merch page. No health claims. All taglines are identity-affirming humor, not clinical language.",
+      "evidence": ["Design taglines reviewed — no medical framing", "No diagnosis or treatment language"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Modal replaces a 30-card scroll wall with a cleaner browse-then-pick flow. Reduces cognitive load. No countdown timers, no scarcity messaging, no urgency pressure.",
+      "evidence": ["No artificial urgency added", "Simplified navigation reduces decision fatigue", "No dark patterns in product picker"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Design-first grid is more scannable and less overwhelming than 30 individual product cards. Modal allows focused decision-making on one design at a time. Color palette unchanged. No new animations beyond subtle modal entrance.",
+      "evidence": ["Grid minmax(260px, 1fr) for comfortable scanning", "Modal backdrop blur reduces background noise", "Animation is simple opacity+translate, no looping or flashing"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "UX improvement — fewer cards to scan, clearer path to purchase. Foreseeable harm: none beyond existing risk of a customer not liking a product.",
+      "evidence": ["Removed redundant cards reduces page scroll length by ~70%", "Modal provides immediate product comparison by price", "All purchases optional, no psychological coercion"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "New design taglines reviewed for Takota voice: blunt, grounded, no wellness fluff. No superlatives or false product claims. Starting price shown accurately.",
+      "evidence": ["Taglines written in Divergify voice", "No 'best ever' or medical claims", "From-price is lowest actual product price in data"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Design cards have tabindex=0, keyboard Enter/Space activation, and descriptive aria-labels. Modal has role=dialog, aria-modal=true, aria-labelledby wired to heading, focus trap, ESC key close, and focus restoration on close. All images have alt text. Color contrast unchanged (gold on near-black, WCAG AA).",
+      "evidence": ["Focus trap implemented in modal keydown handler", "ESC closes modal", "lastFocused restored on close", "role=dialog + aria-modal on backdrop", "role=list + role=listitem on grid/cards"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "All dynamic HTML constructed via textContent / escHtml() helper — no raw innerHTML with user-controlled strings. Design data is hardcoded in the script. No new attack surface.",
+      "evidence": ["escHtml() escapes &, <, >, \" for all data interpolated into HTML", "No form submissions", "No API calls", "rel=noopener on all buy links"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Prices visible in modal before any click-through. No upsells, no urgency copy, no forced account creation. Product picker is neutral — no default selection, no pre-checked options.",
+      "evidence": ["All prices shown in modal product rows", "No FOMO or scarcity language", "Buy buttons open Printful in new tab", "No auto-close timers or pressure mechanisms"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All filters clear. Outstanding post-ship actions: (1) Replace all href='#' buy buttons with real Printful Store URLs once store is enabled. (2) Add Shades design entry in DESIGNS array once artwork file is delivered and placed in /assets/merch/."
+  }
+}

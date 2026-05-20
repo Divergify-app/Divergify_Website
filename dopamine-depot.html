@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="/assets/global.css" />
 
   <style>
-    /* Depot-specific overrides */
+    /* ── Hero ─────────────────────────────────────────────── */
     .depot-hero {
       padding: var(--space-8) 0 var(--space-7);
       max-width: 680px;
@@ -56,60 +56,62 @@
       padding-left: var(--space-4);
     }
 
-    /* Product grid */
-    .product-grid {
+    /* ── Design grid ──────────────────────────────────────── */
+    .design-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: var(--space-6);
       margin-top: var(--space-7);
     }
 
-    .product-card {
+    .design-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       overflow: hidden;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
-      transition: border-color var(--anim-med) ease, transform var(--anim-med) ease;
+      transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      text-align: left;
     }
-    .product-card:hover {
-      border-color: rgba(205,169,119,0.35);
-      transform: translateY(-2px);
+    .design-card:hover,
+    .design-card:focus-visible {
+      border-color: rgba(205,169,119,0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      outline: none;
+    }
+    .design-card:focus-visible {
+      outline: 2px solid var(--color-soft-lime);
+      outline-offset: 2px;
     }
 
-    .product-img-wrap {
-      background: rgba(255,255,255,0.03);
+    .design-img-wrap {
       aspect-ratio: 1 / 1;
+      background: rgba(255,255,255,0.03);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .product-img-wrap img {
+    .design-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 300ms ease;
+    }
+    .design-card:hover .design-img-wrap img {
+      transform: scale(1.04);
     }
 
-    .product-body {
+    .design-body {
       padding: var(--space-5);
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: var(--space-2);
       flex: 1;
     }
 
-    .product-tag {
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--color-soft-lime);
-      font-weight: 600;
-    }
-
-    .product-name {
+    .design-name {
       font-family: var(--font-heading);
       font-size: var(--text-lg);
       font-weight: 700;
@@ -118,71 +120,255 @@
       line-height: 1.3;
     }
 
-    .product-desc {
+    .design-tagline {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
       margin: 0;
       flex: 1;
     }
 
-    .product-footer {
+    .design-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: var(--space-3);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .design-count {
+      font-size: var(--text-xs);
+      color: var(--color-soft-lime);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .design-cta {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 150ms ease;
+    }
+    .design-card:hover .design-cta {
+      color: var(--color-soft-lime);
+    }
+    .design-cta-arrow {
+      display: inline-block;
+      transition: transform 150ms ease;
+    }
+    .design-card:hover .design-cta-arrow {
+      transform: translateX(3px);
+    }
+
+    /* ── Modal ────────────────────────────────────────────── */
+    .depot-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 900;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .depot-modal-backdrop.open {
+      display: flex;
+    }
+
+    .depot-modal {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      animation: modalIn 200ms ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      z-index: 10;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      color: var(--color-text);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+    .modal-close:hover {
+      background: rgba(205,169,119,0.2);
+      border-color: var(--color-soft-lime);
+    }
+
+    .modal-image-col {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+      background: rgba(255,255,255,0.03);
+    }
+    .modal-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-info-col {
+      padding: var(--space-7) var(--space-6) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      overflow-y: auto;
+    }
+
+    .modal-design-name {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0;
+      line-height: 1.2;
+      padding-right: 40px; /* clear close btn */
+    }
+
+    .modal-tagline {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .modal-picker-label {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      color: var(--color-soft-lime);
+      margin-top: var(--space-2);
+    }
+
+    .modal-product-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      flex: 1;
+    }
+
+    .modal-product-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-3);
-      margin-top: var(--space-2);
-      flex-wrap: wrap;
+      padding: var(--space-3) var(--space-4);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: border-color 150ms ease, background 150ms ease;
+    }
+    .modal-product-row:hover {
+      border-color: rgba(205,169,119,0.4);
+      background: rgba(205,169,119,0.05);
     }
 
-    .product-price {
-      font-family: var(--font-heading);
-      font-size: var(--text-lg);
-      font-weight: 700;
+    .modal-product-type {
+      font-weight: 600;
+      font-size: var(--text-sm);
       color: var(--color-text);
     }
 
+    .modal-product-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-shrink: 0;
+    }
+
+    .modal-product-price {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    .modal-buy-btn {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-navy, #0e0e10);
+      background: var(--color-soft-lime);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 6px 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 150ms ease, transform 150ms ease;
+      white-space: nowrap;
+    }
+    .modal-buy-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    /* ── Mission section ──────────────────────────────────── */
     .section-divider {
       border: none;
       border-top: 1px solid var(--color-border);
       margin: var(--space-9) 0 var(--space-7);
     }
-
     .depot-mission {
       max-width: 640px;
     }
 
-    /* Filter bar */
-    .depot-filters {
-      display: flex;
-      gap: var(--space-2);
-      flex-wrap: wrap;
-      margin-top: var(--space-6);
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .design-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+      .design-body {
+        padding: var(--space-3);
+      }
+      .design-name {
+        font-size: var(--text-base);
+      }
+      .depot-modal {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+      }
+      .modal-image-col {
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        max-height: 240px;
+      }
+      .modal-info-col {
+        padding: var(--space-5);
+      }
     }
-    .filter-btn {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-pill);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      font-weight: 600;
-      padding: 6px 16px;
-      cursor: pointer;
-      font-family: var(--font-body);
-      transition: background var(--anim-fast), border-color var(--anim-fast), color var(--anim-fast);
-    }
-    .filter-btn:hover {
-      border-color: rgba(205,169,119,0.4);
-      color: var(--color-text);
-    }
-    .filter-btn.active {
-      background: rgba(205,169,119,0.15);
-      border-color: var(--color-soft-lime);
-      color: var(--color-soft-lime);
-    }
-
-    @media (max-width: 600px) {
-      .product-grid {
+    @media (max-width: 400px) {
+      .design-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -206,499 +392,41 @@
     </div>
 
     <!-- ============================================================
-         PRODUCT GRID — 30 products
-         TODO: Replace each href="#" with the Printful product URL
-               once your Printful Store is enabled.
+         DESIGN GRID
+         Each card = one design. Click to pick your product type.
+         TODO: Replace each href="#" in DESIGNS_DATA below with the
+               real Printful Store product URL once your store is live.
+         TODO: Add "Shades" design here once the artwork file is ready.
+               Copy any existing entry, set id:"shades", update name,
+               tagline, image path, and product list.
          ============================================================ -->
 
-    <!-- FILTER BAR -->
-    <div class="depot-filters" role="navigation" aria-label="Filter by category">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="shirt">Shirts</button>
-      <button class="filter-btn" data-filter="hoodie">Hoodies</button>
-      <button class="filter-btn" data-filter="mug">Mugs</button>
-      <button class="filter-btn" data-filter="sticker">Stickers</button>
-      <button class="filter-btn" data-filter="tote">Totes</button>
-      <button class="filter-btn" data-filter="hat">Hats</button>
-      <button class="filter-btn" data-filter="other">Other</button>
+    <div class="design-grid" id="design-grid" role="list">
+      <!-- Cards are rendered by the script below -->
     </div>
 
-    <div class="product-grid" id="product-grid">
-
-      <!-- ── EXEC DYSFUNCTION ──────────────────────────────────── -->
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dysfunction.png" alt="Executive Dysfunction raglan — white body, navy sleeves" loading="lazy" />
+    <!-- ── MODAL ──────────────────────────────────────────── -->
+    <div
+      class="depot-modal-backdrop"
+      id="depot-modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-design-name"
+      tabindex="-1"
+    >
+      <div class="depot-modal" id="depot-modal">
+        <button class="modal-close" id="modal-close-btn" aria-label="Close product picker">&times;</button>
+        <div class="modal-image-col">
+          <img id="modal-img" src="" alt="" loading="eager" />
         </div>
-        <div class="product-body">
-          <span class="product-tag">Raglan Shirt</span>
-          <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">You know what needs doing. Your brain filed the request and went on break. Baseball sleeve, relaxed cut.</p>
-          <div class="product-footer">
-            <span class="product-price">$34</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
+        <div class="modal-info-col">
+          <h2 class="modal-design-name" id="modal-design-name"></h2>
+          <p class="modal-tagline" id="modal-tagline"></p>
+          <div class="modal-picker-label">Pick your merch</div>
+          <div class="modal-product-list" id="modal-product-list"></div>
         </div>
-      </article>
-
-      <article class="product-card" data-category="hoodie">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction zip hoodie design" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Zip Hoodie</span>
-          <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">Same brain, different layer. Full zip, front pocket, for the days when you need an exit strategy built in.</p>
-          <div class="product-footer">
-            <span class="product-price">$58</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="tote">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction tote bag" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Tote Bag</span>
-          <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">Carry your unfinished tasks in style. Heavy canvas, reinforced handles, fits everything you meant to deal with last week.</p>
-          <div class="product-footer">
-            <span class="product-price">$24</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="hat">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction dad hat" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Dad Hat</span>
-          <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">Wear the diagnosis on your head. Unstructured, adjustable, low-profile. No eye contact required.</p>
-          <div class="product-footer">
-            <span class="product-price">$32</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="other">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/exec-dys-clean.png" alt="Executive Dysfunction journal" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Journal</span>
-          <h2 class="product-name">Executive Dysfunction</h2>
-          <p class="product-desc">For the thoughts that make it out of your head. Lined pages, lay-flat binding, 120 pages of potential.</p>
-          <div class="product-footer">
-            <span class="product-price">$24</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── ADHD LOADING ──────────────────────────────────────── -->
-      <article class="product-card" data-category="hoodie">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading hoodie in black" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Hoodie</span>
-          <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">Still buffering. Please do not close the tab. Heavy-blend, kangaroo pocket, pockets for all your unfinished projects.</p>
-          <div class="product-footer">
-            <span class="product-price">$52</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/adhd-loading-navy.png" alt="ADHD Loading t-shirt in navy" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">T-Shirt</span>
-          <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">The loading screen nobody asked for and nobody can skip. Unisex comfort fit, preshrunk.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading long sleeve shirt" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Long Sleeve</span>
-          <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">Still loading. Extra coverage for extra-long buffer times. Midweight, soft, doesn't scratch.</p>
-          <div class="product-footer">
-            <span class="product-price">$34</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="hat">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading beanie" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Beanie</span>
-          <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">Warm skull, buffering brain. Soft acrylic, ribbed cuff, one size. Good for cold days and slower processing speeds.</p>
-          <div class="product-footer">
-            <span class="product-price">$26</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="sticker">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/adhd-loading.png" alt="ADHD Loading sticker pack" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Sticker Pack</span>
-          <h2 class="product-name">ADHD Loading</h2>
-          <p class="product-desc">5 stickers. Laptop, water bottle, journal, therapy notebook, the back of your phone that you've been meaning to replace. Weatherproof vinyl.</p>
-          <div class="product-footer">
-            <span class="product-price">$12</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── BEAT YOUR BASELINE ────────────────────────────────── -->
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/beat-your-baseline.png" alt="Beat Your Baseline t-shirt in black" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">T-Shirt</span>
-          <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">Not racing anyone else. Just trying to edge out yesterday's version of you — even slightly. Unisex, comfort cut.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/beat-your-baseline-white.png" alt="Beat Your Baseline sweatshirt in white" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Sweatshirt</span>
-          <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">Crewneck. No hood to hide under. Just you, the design, and whatever you managed to do today. That counts.</p>
-          <div class="product-footer">
-            <span class="product-price">$48</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="mug">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/started-it-mug.png" alt="Beat Your Baseline mug" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Mug</span>
-          <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">Morning reminder that today's bar is just slightly above yesterday's floor. 15 oz, dishwasher safe, holds exactly enough coffee.</p>
-          <div class="product-footer">
-            <span class="product-price">$22</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="other">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/beat-your-baseline.png" alt="Beat Your Baseline poster" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Poster</span>
-          <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">For the wall you stare at when you're supposed to be working. Matte finish, 18×24, ships rolled in a tube.</p>
-          <div class="product-footer">
-            <span class="product-price">$18</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="other">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/beat-your-baseline-white.png" alt="Beat Your Baseline phone case" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Phone Case</span>
-          <h2 class="product-name">Beat Your Baseline</h2>
-          <p class="product-desc">The thing you look at 200 times a day. Might as well have a reminder on it. Slim hard shell, fits iPhone and Samsung models.</p>
-          <div class="product-footer">
-            <span class="product-price">$22</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── CHAOS IS MY CO-PILOT ──────────────────────────────── -->
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot t-shirt design" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">T-Shirt</span>
-          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
-          <p class="product-desc">Not flying blind. Flying with a co-pilot who has never read a manual and loves turbulence. Unisex, soft ring-spun cotton.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="hoodie">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot hoodie" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Hoodie</span>
-          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
-          <p class="product-desc">Same crew, warmer layer. Pullover, kangaroo pocket, mid-weight fleece lining. Buckle up.</p>
-          <div class="product-footer">
-            <span class="product-price">$52</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="tote">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot tote bag" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Tote Bag</span>
-          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
-          <p class="product-desc">Carry the chaos with you. Heavy canvas, dual handles, no apologies. Fits a laptop, a water bottle, and whatever today throws at you.</p>
-          <div class="product-footer">
-            <span class="product-price">$24</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="sticker">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/chaos-is-my-co-pilot.png" alt="Chaos Is My Co-Pilot sticker pack" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Sticker Pack</span>
-          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
-          <p class="product-desc">5 weatherproof vinyl stickers. Put them where people can see them. Let them know what they're dealing with.</p>
-          <div class="product-footer">
-            <span class="product-price">$12</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="mug">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/started-it-mug.png" alt="Chaos Is My Co-Pilot mug" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Mug</span>
-          <h2 class="product-name">Chaos Is My Co-Pilot</h2>
-          <p class="product-desc">Pre-flight coffee. 11 oz ceramic, microwave safe. The chaos is already in the cockpit. Might as well caffeinate.</p>
-          <div class="product-footer">
-            <span class="product-price">$18</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── LOW STIM MODE ─────────────────────────────────────── -->
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated t-shirt design" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">T-Shirt</span>
-          <h2 class="product-name">Low Stim Mode: Activated</h2>
-          <p class="product-desc">Sensory processing at minimum viable settings. Please speak softly and dim the lights. Unisex, 100% soft cotton.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="hoodie">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated hoodie" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Hoodie</span>
-          <h2 class="product-name">Low Stim Mode: Activated</h2>
-          <p class="product-desc">The hoodie is the sensory regulation tool. This one just has a name for it. Drawstring, kangaroo pocket, retreating is valid.</p>
-          <div class="product-footer">
-            <span class="product-price">$52</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="hat">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated hat" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Dad Hat</span>
-          <h2 class="product-name">Low Stim Mode: Activated</h2>
-          <p class="product-desc">Brim down. Eyes forward. Blocking exactly enough of the world. Unstructured, adjustable, universally applicable.</p>
-          <div class="product-footer">
-            <span class="product-price">$32</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="other">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated poster" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Poster</span>
-          <h2 class="product-name">Low Stim Mode: Activated</h2>
-          <p class="product-desc">For the quiet room. A reminder that this is a valid setting, not a failure. Matte finish, 18×24.</p>
-          <div class="product-footer">
-            <span class="product-price">$18</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="other">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/low-stim-mode-activated.png" alt="Low Stim Mode Activated socks" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Socks</span>
-          <h2 class="product-name">Low Stim Mode: Activated</h2>
-          <p class="product-desc">The one sensory input you can control. Soft mid-calf, seamless toe, because scratchy socks are the enemy.</p>
-          <div class="product-footer">
-            <span class="product-price">$16</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── I WAS PRODUCTIVE IN MY HEAD ───────────────────────── -->
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head t-shirt design" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">T-Shirt</span>
-          <h2 class="product-name">I Was Productive (In My Head)</h2>
-          <p class="product-desc">The full planning session happened. In your brain. Very detailed. Extremely productive. Nothing was written down. Unisex comfort cut.</p>
-          <div class="product-footer">
-            <span class="product-price">$28</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="shirt">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head sweatshirt" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Sweatshirt</span>
-          <h2 class="product-name">I Was Productive (In My Head)</h2>
-          <p class="product-desc">Crewneck. Warm. For the days when the planning was thorough and the doing was theoretical. That still counts as something.</p>
-          <div class="product-footer">
-            <span class="product-price">$48</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="mug">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/started-it-mug.png" alt="Started It mug — I Was Productive in My Head" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Mug</span>
-          <h2 class="product-name">Started It</h2>
-          <p class="product-desc">Finishing is optional. Starting is the whole win. 11 oz ceramic, dishwasher safe. For the person who has seventeen things in progress right now.</p>
-          <div class="product-footer">
-            <span class="product-price">$18</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="tote">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head tote bag" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Tote Bag</span>
-          <h2 class="product-name">I Was Productive (In My Head)</h2>
-          <p class="product-desc">For carrying the things you meant to do. Heavy canvas, practical size, accurate description.</p>
-          <div class="product-footer">
-            <span class="product-price">$24</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="sticker">
-        <div class="product-img-wrap">
-          <img src="/assets/merch/i-was-productive-in-my-head.png" alt="I Was Productive In My Head sticker pack" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <span class="product-tag">Sticker Pack</span>
-          <h2 class="product-name">I Was Productive (In My Head)</h2>
-          <p class="product-desc">5 weatherproof vinyl stickers. Stick them on things you also meant to deal with. The irony is intentional.</p>
-          <div class="product-footer">
-            <span class="product-price">$12</span>
-            <a class="button button-primary" href="#" target="_blank" rel="noopener">Shop →</a>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </div>
-
-    <script>
-      (function() {
-        var btns = document.querySelectorAll('.filter-btn');
-        var cards = document.querySelectorAll('.product-card');
-        btns.forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            btns.forEach(function(b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-            var filter = btn.dataset.filter;
-            cards.forEach(function(card) {
-              card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
-            });
-          });
-        });
-      })();
-    </script>
 
     <hr class="section-divider" />
 
@@ -717,7 +445,311 @@
   </main>
 
   <div data-partial="footer"></div>
-
   <script src="/assets/site.js"></script>
+
+  <script>
+  (function () {
+
+    /* ================================================================
+       DESIGN DATA
+       To add a new design: copy an object, update the fields.
+       To add Shades: copy an entry, set id:"shades", add the image
+       path and product list below, then remove the TODO comment.
+       ================================================================ */
+    var DESIGNS = [
+      {
+        id: 'exec-dysfunction',
+        name: 'Executive Dysfunction',
+        tagline: 'You know what needs doing. Your brain filed the request and went on break.',
+        image: '/assets/merch/exec-dysfunction.png',
+        alt: 'Executive Dysfunction illustrated design',
+        products: [
+          { type: 'Raglan Shirt',  price: '$34', href: '#' },
+          { type: 'Zip Hoodie',    price: '$58', href: '#' },
+          { type: 'Tote Bag',      price: '$24', href: '#' },
+          { type: 'Dad Hat',       price: '$32', href: '#' },
+          { type: 'Journal',       price: '$24', href: '#' }
+        ]
+      },
+      {
+        id: 'adhd-loading',
+        name: 'ADHD Loading',
+        tagline: 'Still buffering. Please do not close the tab.',
+        image: '/assets/merch/adhd-loading.png',
+        alt: 'ADHD Loading illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Long Sleeve',   price: '$34', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Beanie',        price: '$26', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      },
+      {
+        id: 'chaos-pilot',
+        name: 'Chaos Is My Co-Pilot',
+        tagline: "Flying with a co-pilot who has never read a manual and loves turbulence.",
+        image: '/assets/merch/chaos-is-my-co-pilot.png',
+        alt: 'Chaos Is My Co-Pilot illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Tote Bag',      price: '$24', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' },
+          { type: 'Mug',           price: '$18', href: '#' }
+        ]
+      },
+      {
+        id: 'beat-your-baseline',
+        name: 'Beat Your Baseline',
+        tagline: "Not racing anyone else. Just trying to edge out yesterday's version of you.",
+        image: '/assets/merch/beat-your-baseline.png',
+        alt: 'Beat Your Baseline illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Sweatshirt',    price: '$48', href: '#' },
+          { type: 'Mug',           price: '$22', href: '#' },
+          { type: 'Poster',        price: '$18', href: '#' },
+          { type: 'Phone Case',    price: '$22', href: '#' }
+        ]
+      },
+      {
+        id: 'chaos-goblin',
+        name: 'Chaos Goblin',
+        tagline: 'Fully feral. Deeply functional. Definitely not taking notes.',
+        image: '/assets/merch/chaos-goblin.png',
+        alt: 'Chaos Goblin illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Tote Bag',      price: '$24', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      },
+      {
+        id: 'productive-head',
+        name: 'I Was Productive (In My Head)',
+        tagline: 'The planning session happened. Very detailed. Nothing was written down.',
+        image: '/assets/merch/i-was-productive-in-my-head.png',
+        alt: 'I Was Productive In My Head illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Sweatshirt',    price: '$48', href: '#' },
+          { type: 'Tote Bag',      price: '$24', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      },
+      {
+        id: 'tabs-open',
+        name: 'Tabs Open',
+        tagline: '47 tabs. Each one critical. None of them will be closed.',
+        image: '/assets/merch/tabs-open.png',
+        alt: 'Tabs Open illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Sweatshirt',    price: '$48', href: '#' },
+          { type: 'Mug',           price: '$18', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      },
+      {
+        id: 'brains-that-zig',
+        name: 'Brains That Zig',
+        tagline: 'Everyone else zagged. You zigged. Statistically, you were right.',
+        image: '/assets/merch/brains-that-zig.png',
+        alt: 'Brains That Zig illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' },
+          { type: 'Tote Bag',      price: '$24', href: '#' }
+        ]
+      },
+      {
+        id: 'sidequest',
+        name: 'Sidequest',
+        tagline: 'The main objective is still there. This just seemed more urgent.',
+        image: '/assets/merch/sidequest.png',
+        alt: 'Sidequest illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' },
+          { type: 'Phone Case',    price: '$22', href: '#' }
+        ]
+      },
+      {
+        id: 'tinfoil-mode',
+        name: 'Tinfoil Mode',
+        tagline: 'Not paranoid. Just aware. The hat is efficient signal management.',
+        image: '/assets/merch/tinfoil-mode.png',
+        alt: 'Tinfoil Mode illustrated design',
+        products: [
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Hoodie',        price: '$52', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      },
+      {
+        id: 'started-it',
+        name: 'Started It',
+        tagline: 'Finishing is optional. Starting is the whole win.',
+        image: '/assets/merch/started-it-mug.png',
+        alt: 'Started It mug design',
+        products: [
+          { type: 'Mug',           price: '$18', href: '#' },
+          { type: 'T-Shirt',       price: '$28', href: '#' },
+          { type: 'Sticker Pack',  price: '$12', href: '#' }
+        ]
+      }
+      /* TODO: Add Shades Mode design here once artwork file is ready.
+         Drop the file at: /assets/merch/shades-mode.png
+         Then paste this entry (remove this comment block):
+         {
+           id: 'shades-mode',
+           name: 'Shades Mode',
+           tagline: '...',
+           image: '/assets/merch/shades-mode.png',
+           alt: 'Shades Mode illustrated design',
+           products: [
+             { type: 'T-Shirt',      price: '$28', href: '#' },
+             { type: 'Hoodie',       price: '$52', href: '#' },
+             { type: 'Dad Hat',      price: '$32', href: '#' },
+             { type: 'Socks',        price: '$16', href: '#' },
+             { type: 'Sticker Pack', price: '$12', href: '#' }
+           ]
+         }
+      */
+    ];
+
+    /* ================================================================
+       RENDER DESIGN CARDS
+       ================================================================ */
+    var grid = document.getElementById('design-grid');
+
+    DESIGNS.forEach(function (design) {
+      var count = design.products.length;
+      var fromPrice = design.products.reduce(function (min, p) {
+        return Math.min(min, parseInt(p.price.replace('$', ''), 10));
+      }, Infinity);
+
+      var card = document.createElement('div');
+      card.className = 'design-card';
+      card.setAttribute('role', 'listitem');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', design.name + ' — click to pick a product');
+      card.dataset.id = design.id;
+
+      card.innerHTML =
+        '<div class="design-img-wrap">' +
+          '<img src="' + design.image + '" alt="' + escHtml(design.alt) + '" loading="lazy" />' +
+        '</div>' +
+        '<div class="design-body">' +
+          '<h2 class="design-name">' + escHtml(design.name) + '</h2>' +
+          '<p class="design-tagline">' + escHtml(design.tagline) + '</p>' +
+          '<div class="design-meta">' +
+            '<span class="design-count">' + count + ' product' + (count !== 1 ? 's' : '') + ' &bull; from $' + fromPrice + '</span>' +
+            '<span class="design-cta">Pick yours <span class="design-cta-arrow">&#8594;</span></span>' +
+          '</div>' +
+        '</div>';
+
+      card.addEventListener('click', function () { openModal(design); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(design); }
+      });
+
+      grid.appendChild(card);
+    });
+
+    /* ================================================================
+       MODAL
+       ================================================================ */
+    var backdrop  = document.getElementById('depot-modal-backdrop');
+    var closeBtn  = document.getElementById('modal-close-btn');
+    var modalImg  = document.getElementById('modal-img');
+    var modalName = document.getElementById('modal-design-name');
+    var modalTag  = document.getElementById('modal-tagline');
+    var modalList = document.getElementById('modal-product-list');
+    var lastFocused = null;
+
+    function openModal(design) {
+      lastFocused = document.activeElement;
+
+      modalImg.src = design.image;
+      modalImg.alt = design.alt;
+      modalName.textContent = design.name;
+      modalTag.textContent  = design.tagline;
+
+      modalList.innerHTML = '';
+      design.products.forEach(function (p) {
+        var row = document.createElement('div');
+        row.className = 'modal-product-row';
+        row.innerHTML =
+          '<span class="modal-product-type">' + escHtml(p.type) + '</span>' +
+          '<div class="modal-product-right">' +
+            '<span class="modal-product-price">' + escHtml(p.price) + '</span>' +
+            '<a class="modal-buy-btn" href="' + escHtml(p.href) + '" target="_blank" rel="noopener">' +
+              'Get it' +
+            '</a>' +
+          '</div>';
+        modalList.appendChild(row);
+      });
+
+      backdrop.classList.add('open');
+      backdrop.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Focus the close button
+      setTimeout(function () { closeBtn.focus(); }, 50);
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocused) { lastFocused.focus(); }
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    backdrop.addEventListener('click', function (e) {
+      if (e.target === backdrop) { closeModal(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    // Focus trap inside modal
+    document.getElementById('depot-modal').addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var focusable = Array.from(this.querySelectorAll(
+        'a[href], button, [tabindex]:not([tabindex="-1"])'
+      ));
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last  = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    /* ================================================================
+       UTILITY
+       ================================================================ */
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+  })();
+  </script>
+
 </body>
 </html>
