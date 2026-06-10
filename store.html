@@ -160,10 +160,19 @@
                 <div class="product-price">$28</div>
                 <button class="buy-button" onclick="buyProduct('tinfoil-mode-shirt')">Buy Now</button>
             </div>
+            
+            <!-- Coming Soon: More designs -->
+            <div class="product-card" style="opacity: 0.6;">
+                <h3>More Coming Soon</h3>
+                <p>New designs based on community feedback.</p>
+                <div class="product-price">TBA</div>
+                <button class="buy-button" disabled>Coming Soon</button>
+            </div>
         </div>
     </div>
     
     <script src="js/mode-toggles.js"></script>
+    <script src="https://cdn.printful.com/embed.js"></script>
     <script>
         // Initialize mode toggles header
         document.addEventListener('DOMContentLoaded', function() {
@@ -173,11 +182,23 @@
             }
         });
         
-        // Placeholder for Printful integration
+        // Printful product mapping (store ID: 17829329)
+        const productMap = {
+            'chaos-clocking-shirt': 'https://printful.com/embed/17829329/chaos-clocking',
+            'exec-dysfunction-shirt': 'https://printful.com/embed/17829329/exec-dysfunction',
+            'tabs-open-shirt': 'https://printful.com/embed/17829329/tabs-open',
+            'brains-zig-shirt': 'https://printful.com/embed/17829329/brains-zig',
+            'chaos-goblin-shirt': 'https://printful.com/embed/17829329/chaos-goblin',
+            'tinfoil-mode-shirt': 'https://printful.com/embed/17829329/tinfoil-mode'
+        };
+        
         function buyProduct(productId) {
-            // This will be replaced with Printful Embed integration
-            alert('Store is being set up. Coming soon!');
-            console.log('Product selected:', productId);
+            const url = productMap[productId];
+            if (url) {
+                window.open(url, 'printful-checkout', 'width=800,height=600');
+            } else {
+                console.log('Product not found:', productId);
+            }
         }
     </script>
 </body>
