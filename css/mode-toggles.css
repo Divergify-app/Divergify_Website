@@ -1,0 +1,96 @@
+/* Mode Toggle Bar */
+.mode-toggle-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-brand-navy-dark);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.mode-toggles {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.mode-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: none; /* No animations */
+}
+
+.mode-btn:hover {
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}
+
+.mode-btn.active {
+  background: var(--color-brand-gold);
+  color: var(--color-brand-navy-dark);
+  border-color: var(--color-brand-gold);
+  font-weight: 600;
+}
+
+.mode-status {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Low Stim Mode: Remove animations globally */
+:root.mode-low-stim,
+:root.mode-tin-foil-hat {
+  --anim-fast: 0ms;
+  --anim-med: 0ms;
+}
+
+:root.mode-low-stim * {
+  animation: none !important;
+  transition: none !important;
+}
+
+:root.mode-tin-foil-hat * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Low Stim: Reduce visual complexity */
+:root.mode-low-stim .card,
+:root.mode-tin-foil-hat .card {
+  border: none;
+  box-shadow: none;
+}
+
+:root.mode-low-stim .section,
+:root.mode-tin-foil-hat .section {
+  margin-bottom: var(--space-7);
+}
+
+/* Tin Foil Hat: Minimal visual design */
+:root.mode-tin-foil-hat {
+  --color-brand-gold: #6a6a5a;
+}
+
+:root.mode-tin-foil-hat .hero-panel {
+  display: none; /* Reduce visual noise */
+}
+
+:root.mode-tin-foil-hat a {
+  text-decoration: underline;
+  color: var(--color-text-muted);
+}
+
+/* Accessibility: Ensure text remains readable in all modes */
+:root.mode-low-stim body,
+:root.mode-tin-foil-hat body {
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}

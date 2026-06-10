@@ -98,6 +98,7 @@ body > .section {
   padding: 6px 10px;
   cursor: pointer;
   display: inline-flex;
+  transition: none;
   align-items: center;
   gap: 10px;
   font: inherit;

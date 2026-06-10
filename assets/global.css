@@ -5,35 +5,35 @@
 ------------------------------------------------------ */
 
 :root {
-  /* Brand core */
-  --color-brand-navy: #0e0e10;
-  --color-muted-blue: #b5ad9a;
-  --color-soft-lime: #CDA977;
-  --color-action-green: #CDA977;
+  /* Brand core: Navy, Periwinkle, Gold */
+  --color-brand-navy: #1a2a4d;
+  --color-brand-periwinkle: #7b8cde;
+  --color-brand-gold: #d4a853;
+  --color-brand-navy-dark: #0f1829;
 
-  /* Surfaces */
-  --color-bg: var(--color-brand-navy);
-  --color-surface: rgba(255,255,255,0.02);
-  --color-surface-strong: rgba(255,255,255,0.04);
+  /* Surfaces (low-stim: minimal contrast) */
+  --color-bg: var(--color-brand-navy-dark);
+  --color-surface: rgba(123, 140, 222, 0.06);
+  --color-surface-strong: rgba(123, 140, 222, 0.10);
 
-  /* Text */
-  --color-text: #f5f1e8;
-  --color-text-muted: #b5ad9a;
-  --color-link: #cda977;
+  /* Text (peaceful, readable) */
+  --color-text: #e8e6e1;
+  --color-text-muted: #9ca3af;
+  --color-link: var(--color-brand-gold);
 
-  /* Accents */
-  --color-tag-bg: rgba(205,169,119,0.10);
-  --color-active-bg: rgba(205,169,119,0.18);
-  --color-switch-on: rgba(205,169,119,0.35);
+  /* Accents (gold only for key moments) */
+  --color-tag-bg: rgba(212, 168, 83, 0.08);
+  --color-active-bg: rgba(123, 140, 222, 0.12);
+  --color-switch-on: rgba(212, 168, 83, 0.25);
 
-  /* Borders */
-  --color-border: rgba(255,255,255,0.08);
+  /* Borders (subtle) */
+  --color-border: rgba(123, 140, 222, 0.10);
 
   /* Typography */
   --font-heading: "Poppins", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 
-  /* Type scale */
+  /* Type scale (golden ratio: 1.618) */
   --text-xs: 12px;
   --text-sm: 14px;
   --text-md: 16px;
@@ -47,29 +47,28 @@
   --content-width: 1120px;
   --content-pad-x: 20px;
 
-  /* Spacing */
+  /* Spacing (golden ratio: 1.618 progression) */
   --space-0: 0;
   --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
+  --space-2: 6px;
+  --space-3: 10px;
   --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-7: 32px;
-  --space-8: 40px;
-  --space-9: 56px;
-  --space-10: 72px;
+  --space-5: 26px;
+  --space-6: 42px;
+  --space-7: 68px;
+  --space-8: 110px;
 
-  /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  /* Radii (soft, low-stim) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 26px;
   --radius-pill: 999px;
 
-  /* Motion */
-  --anim-fast: 140ms;
-  --anim-med: 220ms;
+  /* Motion (NONE by default — low-stim for autistic users) */
+  --anim-fast: 0ms;
+  --anim-med: 0ms;
+  --transition-none: none;
 }
 
 /* Base --------------------------------------------------- */
@@ -156,7 +155,7 @@ p { margin: 0 0 var(--space-4); }
   font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--anim-fast) ease, border-color var(--anim-fast) ease, transform var(--anim-fast) ease;
+  transition: none;
   border: 1px solid transparent;
   min-height: 44px;
   user-select: none;
@@ -172,7 +171,7 @@ p { margin: 0 0 var(--space-4); }
   border-color: var(--color-action-green);
 }
 .button-primary:visited { color: var(--color-brand-navy); }
-.button-primary:hover { transform: translateY(-1px); border-color: var(--color-border); text-decoration: none; }
+.button-primary:hover { border-color: var(--color-border); text-decoration: none; }
 
 .button-ghost {
   background: var(--color-surface);
