@@ -164,6 +164,93 @@
       transform: translateX(3px);
     }
 
+    /* ── Filter Bar ─────────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    .filter-label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      flex: 1;
+    }
+    .filter-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+      white-space: nowrap;
+    }
+    .filter-pill:hover {
+      border-color: rgba(205,169,119,0.5);
+      color: var(--color-text);
+    }
+    .filter-pill.active {
+      background: rgba(205,169,119,0.15);
+      border-color: rgba(205,169,119,0.6);
+      color: var(--color-text);
+      font-weight: 600;
+    }
+    .filter-sort {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .sort-select {
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      font-family: inherit;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23687076' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+    }
+    .sort-select:focus {
+      outline: 2px solid rgba(205,169,119,0.5);
+      outline-offset: 2px;
+    }
+    .filter-count {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      min-width: 60px;
+      text-align: right;
+    }
+    .design-card.hidden { display: none; }
+    @media (max-width: 600px) {
+      .filter-sort { margin-left: 0; width: 100%; }
+      .sort-select { flex: 1; }
+    }
+
     /* ── Modal ────────────────────────────────────────────── */
     .depot-modal-backdrop {
       display: none;
@@ -401,6 +488,26 @@
                tagline, image path, and product list.
          ============================================================ -->
 
+    <!-- Filter + Sort Bar -->
+    <div class="filter-bar" id="filter-bar" role="toolbar" aria-label="Filter and sort designs">
+      <span class="filter-label">Series</span>
+      <div class="filter-pills" id="filter-pills">
+        <button class="filter-pill active" data-series="all">All (14)</button>
+        <button class="filter-pill" data-series="divergipedia">Divergipedia</button>
+        <button class="filter-pill" data-series="autistic">Autistic Community</button>
+        <button class="filter-pill" data-series="viral">Viral / Humor</button>
+      </div>
+      <div class="filter-sort">
+        <select class="sort-select" id="sort-select" aria-label="Sort order">
+          <option value="default">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">A → Z</option>
+        </select>
+        <span class="filter-count" id="filter-count">14 designs</span>
+      </div>
+    </div>
+
     <div class="design-grid" id="design-grid" role="list">
       <!-- Cards are rendered by the script below -->
     </div>
@@ -462,6 +569,7 @@
       // ── DIVERGIPEDIA SERIES ──────────────────────────────────
       {
         id: 'chaos-clocking',
+        series: 'divergipedia',
         name: 'Chaos Clocking — Divergipedia',
         tagline: "A time-tracking tool that meets a brain where it's at. Simple clock symbols represent sessions, no timestamps required. Turn circles into data after the fact, when you're calm.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/xOpqXnLiFGQiJxVh.png',
@@ -472,6 +580,7 @@
       },
       {
         id: 'taskache',
+        series: 'divergipedia',
         name: 'Taskache — Divergipedia',
         tagline: "The low-grade discomfort caused by holding too many tasks in mind without externalizing them. Internal pressure builds; offloading reduces load and frees attention.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/opDqiUJmGKirfPaY.png',
@@ -482,6 +591,7 @@
       },
       {
         id: 'gremlin-mode',
+        series: 'divergipedia',
         name: 'Gremlin Mode — Divergipedia',
         tagline: "A dysregulated state marked by impulsivity, irritability, and reduced executive oversight. Typically resolves as regulation returns.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/HVvwBXhJoWPhrMKl.png',
@@ -492,6 +602,7 @@
       },
       {
         id: 'dopamine-breadcrumbs',
+        series: 'divergipedia',
         name: 'Dopamine Breadcrumbs — Divergipedia',
         tagline: "Tiny rewarding markers scattered throughout a task to maintain motivation. Turns daunting work into an engaging trail.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/pWAOvKgNXDjjIgYs.png',
@@ -502,6 +613,7 @@
       },
       {
         id: 'escape-velocity',
+        series: 'divergipedia',
         name: 'Escape Velocity — Divergipedia',
         tagline: "The minimum activation energy required to overcome cognitive inertia and enter sustained task engagement. Small starter steps convert inertia into forward motion.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/uItLJLSVxtydSCYW.png',
@@ -513,6 +625,7 @@
       // ── AUTISTIC COMMUNITY SERIES ────────────────────────────
       {
         id: 'masking-tax',
+        series: 'autistic',
         name: 'Masking Tax — Divergipedia',
         tagline: "The cumulative energy cost of suppressing natural responses and performing neurotypicality. Paid invisibly throughout the day; collected at day's end as exhaustion or shutdown.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/bIqRZklGflPZJfGg.png',
@@ -523,6 +636,7 @@
       },
       {
         id: 'monotropic-mind',
+        series: 'autistic',
         name: 'Monotropic Mind — Divergipedia',
         tagline: "A cognitive style characterized by deep, narrow attentional focus. Interest flows like a river into a single channel. Depth over breadth; immersion over multitasking.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/MWiOrPLjMJotInXu.png',
@@ -533,6 +647,7 @@
       },
       {
         id: 'shutdown-protocol',
+        series: 'autistic',
         name: 'Shutdown Protocol — Divergipedia',
         tagline: "An involuntary withdrawal of processing capacity in response to overwhelm. From the outside: stillness, silence. From the inside: a necessary system pause. Not absence — recovery.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/VrKTGltdDdJTBoYf.png',
@@ -543,6 +658,7 @@
       },
       {
         id: 'sensory-budget',
+        series: 'autistic',
         name: 'Sensory Budget — Divergipedia',
         tagline: "The finite daily allocation of sensory processing capacity. Each input — sound, light, texture, crowd, temperature — draws from a limited reserve. When the budget runs out, the nervous system closes for business.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/drxShYoxeBoaBINB.png',
@@ -554,6 +670,7 @@
       // ── VIRAL / HUMOR SERIES ─────────────────────────────────
       {
         id: 'adhd-brain-loading',
+        series: 'viral',
         name: 'ADHD Brain Loading… 3%',
         tagline: "Error: Too Many Tabs Open. If you know, you know.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/iRnUlgvOPEiXlaaV.png',
@@ -564,6 +681,7 @@
       },
       {
         id: 'exec-dysfunction-champ',
+        series: 'viral',
         name: 'Executive Dysfunction World Champion',
         tagline: "You showed up. You tried. You absolutely deserve this trophy.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/ZiRqwPPyHcWMGaSm.png',
@@ -574,6 +692,7 @@
       },
       {
         id: 'brain-sidequests',
+        series: 'viral',
         name: 'My Brain Has Sidequests',
         tagline: "Main quest: ignored. Sidequests: 47 active.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/LFtFPYmfPyYEChyG.png',
@@ -584,6 +703,7 @@
       },
       {
         id: 'currently-unavailable',
+        series: 'viral',
         name: 'Brain: Status Currently Unavailable',
         tagline: "Please try again after coffee, a snack, or a 4-hour hyperfocus session.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/NUditnjKRWuDPGiW.png',
@@ -594,6 +714,7 @@
       },
       {
         id: 'chaos-copilot',
+        series: 'viral',
         name: 'Chaos Is My Co-Pilot — Divergify',
         tagline: "For the brains that fly sideways and still land somewhere interesting.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/IqcXbrHjIAmHynhC.png',
@@ -605,10 +726,17 @@
     ];
 
     /* ================================================================
-       RENDER DESIGN CARDS
+       RENDER + FILTER + SORT
        ================================================================ */
-    var grid = document.getElementById('design-grid');
+    var grid        = document.getElementById('design-grid');
+    var filterCount = document.getElementById('filter-count');
+    var sortSelect  = document.getElementById('sort-select');
+    var pills       = document.querySelectorAll('.filter-pill');
+    var activeSeries = 'all';
+    var activeSort   = 'default';
 
+    // Build all cards once
+    var cards = [];
     DESIGNS.forEach(function (design) {
       var count = design.products.length;
       var fromPrice = design.products.reduce(function (min, p) {
@@ -621,6 +749,9 @@
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', design.name + ' — click to pick a product');
       card.dataset.id = design.id;
+      card.dataset.series = design.series || 'divergipedia';
+      card.dataset.price = fromPrice;
+      card.dataset.name = design.name.toLowerCase();
 
       card.innerHTML =
         '<div class="design-img-wrap">' +
@@ -641,7 +772,51 @@
       });
 
       grid.appendChild(card);
+      cards.push({ card: card, design: design, price: fromPrice });
     });
+
+    function applyFilterSort() {
+      // Sort a copy
+      var sorted = cards.slice();
+      if (activeSort === 'price-asc') {
+        sorted.sort(function (a, b) { return a.price - b.price; });
+      } else if (activeSort === 'price-desc') {
+        sorted.sort(function (a, b) { return b.price - a.price; });
+      } else if (activeSort === 'name-asc') {
+        sorted.sort(function (a, b) { return a.design.name.localeCompare(b.design.name); });
+      }
+
+      // Re-append in sorted order and show/hide
+      var visible = 0;
+      sorted.forEach(function (item) {
+        var show = activeSeries === 'all' || item.design.series === activeSeries;
+        item.card.classList.toggle('hidden', !show);
+        if (show) {
+          grid.appendChild(item.card);
+          visible++;
+        }
+      });
+      filterCount.textContent = visible + ' design' + (visible !== 1 ? 's' : '');
+    }
+
+    // Pill clicks
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        pills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        activeSeries = pill.dataset.series;
+        applyFilterSort();
+      });
+    });
+
+    // Sort change
+    sortSelect.addEventListener('change', function () {
+      activeSort = sortSelect.value;
+      applyFilterSort();
+    });
+
+    // Initial render
+    applyFilterSort();
 
     /* ================================================================
        MODAL
