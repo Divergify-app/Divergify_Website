@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-06-21-founder-story-link",
+  "feature_name": "Quiet founder-story link on homepage",
+  "owner": "Jessibelle Starr",
+  "date": "2026-06-21",
+  "scope_summary": "Adds one understated, opt-in line in the homepage 'Build status' section linking to the existing personal field note 'Living Slightly Out of Sync'. Fills the 'who is behind this' trust gap without front-and-center marketing. No new data, claims, scripts, or payments.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Internal link to an existing first-party essay published under the owner's chosen public name; introduces no new legal obligation or data collection.",
+      "evidence": ["index.html anchor to /field-notes/living-slightly-out-of-sync/", "no forms, scripts, or third-party calls added"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Static internal anchor; collects and transmits nothing, adds no tracking.",
+      "evidence": ["plain <a> tag, no JS, no analytics added"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Founder-bio line makes no diagnosis or treatment claim; existing page disclaimer remains intact.",
+      "evidence": ["page retains 'Divergify does not diagnose, treat, or replace professional care.'"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Opt-in, low-pressure disclosure; reduces trust friction without coercion or dark pattern.",
+      "evidence": ["link is passive and user-initiated, not a modal/interstitial"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Understated placement honors ND preference for low-stimulus, non-intrusive information that can be sought when capacity allows.",
+      "evidence": ["placed in quiet Build-status section, not the hero; 'if you want the story' framing keeps it optional"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Adds founder transparency/trust; purely additive link with no foreseeable harm.",
+      "evidence": ["no removal or alteration of existing content/flows"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy matches existing warm, non-salesy voice and makes no inflated claim.",
+      "evidence": ["'Built by one neurodivergent brain, for the rest of ours.'"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Keyboard-accessible text link reusing existing .text-muted style; low cognitive load.",
+      "evidence": ["semantic <a> within <p class=\"text-muted\">"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Static markup only; no new scripts or network; site continues to build and serve.",
+      "evidence": ["one anchor element added, no runtime changes"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "Change introduces no monetization element or purchase pressure.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All pillars pass or n_a; change is additive, static, and non-data-touching."
+  }
+}
