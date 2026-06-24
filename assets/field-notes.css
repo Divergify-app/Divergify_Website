@@ -97,6 +97,12 @@ body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-arti
   outline-offset: 2px;
 }
 
+/* Legacy imports often repeated the same "This is Divergify" signoff inside the article and again in the CTA box. Keep the CTA box. Hide the stray inline copy. */
+body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-article > h3.text-2xl.font-bold.mb-2:last-of-type,
+body[data-field-notes="true"][data-field-notes-view="article"] .field-notes-article > h3.text-2xl.font-bold.mb-2:last-of-type + p.text-gray-400.mb-6 {
+  display: none !important;
+}
+
 body[data-field-notes="true"] .page-shell .card h3 a,
 body[data-field-notes="true"] .page-shell .card h3 a:visited {
   color: var(--color-text);
