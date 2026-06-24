@@ -1,0 +1,103 @@
+{
+  "feature_id": "2026-06-24-homepage-field-notes-voice",
+  "feature_name": "Homepage voice and Field Notes navigation tweaks",
+  "owner": "Jessibelle Starr",
+  "date": "2026-06-24",
+  "scope_summary": "Adds one sharper brand-voice line to the homepage hero, adds a quiet latest-build note, adds reader-path cards to the Field Notes index, reorders Field Notes so grounded orientation posts appear first, and hides duplicated legacy Field Notes signoff text through scoped CSS. No new data collection, claims, scripts, payments, integrations, or clinical functionality.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Static first-party copy and navigation changes only. The medical disclaimer remains visible on the homepage, and no regulated product claims or professional advice are added.",
+      "evidence": [
+        "index.html retains 'Divergify does not diagnose, treat, or replace professional care.'",
+        "changes are limited to copy, internal links, ordering, and scoped CSS"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No data capture, tracking, storage, form fields, analytics, or third-party calls are introduced.",
+      "evidence": [
+        "index.html static copy only",
+        "field-notes/index.html internal anchors only",
+        "assets/field-notes.css display rule only"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "The language references neurodivergence, overload, shame, and support as brand/context language, not diagnosis, treatment, cure, prevention, or clinical advice.",
+      "evidence": [
+        "homepage disclaimer remains present",
+        "Field Notes paths point to existing educational/context essays",
+        "no diagnostic or treatment instruction added"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Reader paths reduce cognitive load and choice overload without coercion. Copy uses opt-in internal navigation rather than pressure, gamification, scarcity, or dark patterns.",
+      "evidence": [
+        "Start here if... cards organize existing content",
+        "No modal, countdown, forced path, or manipulative CTA added"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Changes improve orientation, reduce ambiguity, and preserve low-stimulus navigation. The homepage voice adds recognition without turning neurodivergence into a cure/superpower claim.",
+      "evidence": [
+        "Grounded posts moved before higher-voltage manifesto posts",
+        "Brain Dump path clearly identified for overloaded users"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Benefit is clearer brand trust, easier content entry, and less duplicated legacy copy. Foreseeable harm is low because no functionality, data flow, or purchase pressure changes.",
+      "evidence": [
+        "Field Notes page adds clearer reading order",
+        "CSS hides duplicate signoff while preserving CTA"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Restores Divergify's blunt, human, lightly sarcastic voice while avoiding inflated 'genius/superpower' positioning on the front door.",
+      "evidence": [
+        "Homepage line: 'Your brain is not the problem. The interface is.'",
+        "Older manifesto posts remain available but no longer lead the Field Notes list"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Uses semantic sections, headings, cards, and standard internal links. No inaccessible interactive control or visual-only information added.",
+      "evidence": [
+        "field-notes/index.html uses aria-labelledby on new sections",
+        "links remain standard anchor elements"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "No new JavaScript, dependencies, network calls, auth changes, secrets, or build process changes. CSS rule is scoped to Field Notes article pages.",
+      "evidence": [
+        "No script tags or imports added",
+        "CSS selector is scoped to body[data-field-notes='true'][data-field-notes-view='article']"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Dopamine Depot link was already present and no new purchase pressure, scarcity, urgency, subscription, payment, or upsell mechanism was added.",
+      "evidence": [
+        "No new payment link or checkout flow",
+        "No scarcity or countdown language"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All pillars pass. Change is static, additive, low risk, and aligned with Divergify's low-shame, low-stimulus positioning."
+  }
+}
