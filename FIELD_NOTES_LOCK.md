@@ -1,5 +1,5 @@
 # Field Notes Integrity Lock
-Generated on: Wed Jun 24 23:26:38 UTC 2026
+Generated on: Wed Jun 24 23:27:06 UTC 2026
 
 80f1be1e76f426e019e0fe8ee299fffbba2dac45c193e45d9fdf0158a5bd62bd  field-notes/healthy-momentum/index.html
 260b3a1b242556c7c9ba1e59eb5fdaa86b95522b19a13f6fd9a921e9c96792dd  field-notes/the-spiral-bar/index.html
@@ -7,6 +7,6 @@ Generated on: Wed Jun 24 23:26:38 UTC 2026
 c87e8d24d0ada31cd350071f84608bc2743e7881e0e4766b66ae7336bc71d335  field-notes/living-slightly-out-of-sync/index.html
 d11c431b785b3b0edf3466d10eb4d2aa154255ec7005362248edda3f58f493c6  field-notes/validation-and-sandwiches/index.html
 6221b22306fbae13a4dd29bdc1b513e45df89461b4e65ae0777b881d312f16fd  field-notes/designing-without-shame/index.html
-bf4616005f62bb951b523689f415bb3a9986af93b4a44ee2c73a1dcd06124eaa  field-notes/index.html
+5c5343d39965d405c45a6cba7311bd8df22f814c692d7808b5302f6521fed7d0  field-notes/index.html
 7c2aa18b66e276f519b562ff3570ad29fa63816376e2f901f058b7575316c63f  field-notes/the-quiet-expectation/index.html
 b603676f4aab5157970b7ad901832ce81860164dbd97719f8790cb7f2603fdda  field-notes/dippable-hot-dog-bun-french-toast/index.html
