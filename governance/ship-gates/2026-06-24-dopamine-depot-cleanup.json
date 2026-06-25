@@ -1,0 +1,102 @@
+{
+  "feature_id": "2026-06-24-dopamine-depot-cleanup",
+  "feature_name": "Dopamine Depot layout and link cleanup",
+  "owner": "Jessibelle Starr",
+  "date": "2026-06-24",
+  "scope_summary": "Removes identity-based merch filtering from Dopamine Depot, removes the 'Autistic Community' store section label, changes product language from 'pick your merch' to mockup/status language, improves contrast for design images, removes direct Printful purchase links that were causing 404s, and adds a simple coming-next section for future formats. No new data collection, checkout flow, tracking, scripts, or clinical claims are introduced.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The update reduces risk by removing broken external purchase links and avoiding identity-based merch segmentation. It does not add regulated claims, checkout, payment collection, or professional advice.",
+      "evidence": [
+        "Dopamine Depot now marks checkout links as pending instead of linking to potentially invalid Printful URLs",
+        "No purchase flow or payment processing added"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Static front-end copy and markup only. No data capture, tracking, analytics, forms, storage, or new third-party scripts are added.",
+      "evidence": [
+        "No new JavaScript dependency or analytics script",
+        "No form fields added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "The page still uses neurodivergent context as brand language, but avoids diagnosis-specific merchandising categories and makes no treatment, cure, diagnostic, prevention, or clinical benefit claims.",
+      "evidence": [
+        "Removed 'Autistic Community' category label",
+        "No new medical promises or therapeutic claims"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "The update reduces cognitive friction by removing unnecessary category decisions and replacing broken buy CTAs with honest status language. No urgency, scarcity, pressure, or dark-pattern mechanic is used.",
+      "evidence": [
+        "No countdowns, limited-time prompts, or forced checkout path",
+        "Single collection grid replaces identity-based filters"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "The change avoids singling out autistic users as a public merch aisle and improves low-stimulus visual access with stronger image-background contrast. This better supports dignity, clarity, and sensory readability.",
+      "evidence": [
+        "Identity category filter removed",
+        "Design images now sit on a warm light background with contain-fit instead of blending into dark surfaces"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "User benefit is a clearer, less embarrassing store experience with fewer dead ends. Harm is reduced by disabling broken outbound purchase links until verified.",
+      "evidence": [
+        "Broken external Printful CTAs replaced with 'Link pending' status",
+        "Store copy explains checkout is paused while links are verified"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Copy restores Dopamine Depot personality while avoiding humiliating or overly diagnostic labeling. Tone remains blunt and funny without making identity the category structure.",
+      "evidence": [
+        "New copy: 'No identity-based aisles. No awkward labels. Just the collection.'",
+        "New copy: 'No glittery diagnostic billboards.'"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "The update uses semantic headings, standard buttons, keyboard-openable cards, modal escape handling, alt text, and improved visual contrast for design previews.",
+      "evidence": [
+        "Cards retain tabindex and keyboard activation",
+        "Image previews use light contrast background and object-fit: contain",
+        "Modal retains aria-modal and labelled title"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Removing unverified external links reduces broken navigation risk. No new dependencies, secrets, network calls, or runtime integrations are added.",
+      "evidence": [
+        "No new external scripts",
+        "Direct Printful product links removed until verified"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "The page becomes less commercially aggressive by pausing checkout CTAs until links are verified. It does not add scarcity, urgency, upsell, subscription, or payment pressure.",
+      "evidence": [
+        "Checkout buttons replaced by disabled 'Link pending' labels",
+        "Future formats described as coming next, not sold as currently available"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "All pillars pass. Change is static, reduces broken-link risk, removes identity-based merchandising, and keeps checkout paused until product links are verified."
+  }
+}
