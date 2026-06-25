@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dopamine Depot | Divergify Merch</title>
-  <meta name="description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense. Every purchase funds the Divergify build." />
+  <meta name="description" content="Dopamine Depot is the merch corner of Divergify: low-stim designs, glossary jokes, and chaos-friendly goods that help fund the build." />
 
   <!-- SEO-META:START -->
   <link rel="canonical" href="https://divergify.app/dopamine-depot.html" />
@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="Divergify" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dopamine Depot | Divergify Merch" />
-  <meta property="og:description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense." />
+  <meta property="og:description" content="Low-stim merch, glossary jokes, and chaos-friendly goods that help fund the Divergify build." />
   <meta property="og:url" content="https://divergify.app/dopamine-depot.html" />
   <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dopamine Depot | Divergify Merch" />
-  <meta name="twitter:description" content="Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners." />
+  <meta name="twitter:description" content="Low-stim merch, glossary jokes, and chaos-friendly goods that help fund the Divergify build." />
   <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dopamine Depot | Divergify Merch", "description": "Merch for neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense.", "url": "https://divergify.app/dopamine-depot.html", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Dopamine Depot | Divergify Merch","description":"Dopamine Depot is the merch corner of Divergify: low-stim designs, glossary jokes, and chaos-friendly goods that help fund the build.","url":"https://divergify.app/dopamine-depot.html","isPartOf":{"@type":"WebSite","name":"Divergify","url":"https://divergify.app"}}</script>
   <!-- SEO-META:END -->
 
   <meta name="theme-color" content="#0e0e10" />
@@ -33,14 +33,15 @@
   <link rel="stylesheet" href="/assets/global.css" />
 
   <style>
-    /* ── Hero ─────────────────────────────────────────────── */
     .depot-hero {
-      padding: var(--space-8) 0 var(--space-7);
-      max-width: 680px;
+      padding: var(--space-8) 0 var(--space-6);
+      max-width: 760px;
     }
+
     .depot-hero h1 {
       margin-bottom: var(--space-2);
     }
+
     .depot-hero .subhead {
       font-size: var(--text-xl);
       color: var(--color-text-muted);
@@ -48,15 +49,57 @@
       font-family: var(--font-heading);
       font-weight: 600;
     }
-    .depot-note {
+
+    .depot-note,
+    .depot-status-note {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
       margin-top: var(--space-3);
       border-left: 2px solid rgba(205,169,119,0.3);
       padding-left: var(--space-4);
+      line-height: 1.55;
     }
 
-    /* ── Design grid ──────────────────────────────────────── */
+    .depot-status-note strong {
+      color: var(--color-text);
+    }
+
+    .depot-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+
+    .depot-toolbar p {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
+    .sort-select {
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-size: var(--text-sm);
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .sort-select:focus {
+      outline: 2px solid rgba(205,169,119,0.5);
+      outline-offset: 2px;
+    }
+
     .design-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -75,6 +118,7 @@
       transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
       text-align: left;
     }
+
     .design-card:hover,
     .design-card:focus-visible {
       border-color: rgba(205,169,119,0.5);
@@ -82,6 +126,7 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
       outline: none;
     }
+
     .design-card:focus-visible {
       outline: 2px solid var(--color-soft-lime);
       outline-offset: 2px;
@@ -89,16 +134,23 @@
 
     .design-img-wrap {
       aspect-ratio: 1 / 1;
-      background: rgba(255,255,255,0.03);
+      background: #f8efd8;
+      border-bottom: 1px solid rgba(35,33,71,0.18);
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
     }
+
     .design-img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
       transition: transform 300ms ease;
     }
+
     .design-card:hover .design-img-wrap img {
       transform: scale(1.04);
     }
@@ -132,6 +184,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: var(--space-3);
       margin-top: var(--space-3);
       padding-top: var(--space-3);
       border-top: 1px solid var(--color-border);
@@ -141,117 +194,24 @@
       font-size: var(--text-xs);
       color: var(--color-soft-lime);
       font-weight: 600;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
     }
 
     .design-cta {
       font-size: var(--text-sm);
       font-weight: 600;
       color: var(--color-text-muted);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 4px;
+      white-space: nowrap;
       transition: color 150ms ease;
     }
+
     .design-card:hover .design-cta {
       color: var(--color-soft-lime);
     }
-    .design-cta-arrow {
-      display: inline-block;
-      transition: transform 150ms ease;
-    }
-    .design-card:hover .design-cta-arrow {
-      transform: translateX(3px);
-    }
 
-    /* ── Filter Bar ─────────────────────────────────────── */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-3);
-      margin-top: var(--space-6);
-      padding: var(--space-4) var(--space-5);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-    }
-    .filter-label {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      white-space: nowrap;
-    }
-    .filter-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      flex: 1;
-    }
-    .filter-pill {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--color-border);
-      background: transparent;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
-      white-space: nowrap;
-    }
-    .filter-pill:hover {
-      border-color: rgba(205,169,119,0.5);
-      color: var(--color-text);
-    }
-    .filter-pill.active {
-      background: rgba(205,169,119,0.15);
-      border-color: rgba(205,169,119,0.6);
-      color: var(--color-text);
-      font-weight: 600;
-    }
-    .filter-sort {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-    .sort-select {
-      padding: 6px 12px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      background: transparent;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      font-family: inherit;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23687076' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-      padding-right: 30px;
-    }
-    .sort-select:focus {
-      outline: 2px solid rgba(205,169,119,0.5);
-      outline-offset: 2px;
-    }
-    .filter-count {
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-      white-space: nowrap;
-      min-width: 60px;
-      text-align: right;
-    }
-    .design-card.hidden { display: none; }
-    @media (max-width: 600px) {
-      .filter-sort { margin-left: 0; width: 100%; }
-      .sort-select { flex: 1; }
-    }
-
-    /* ── Modal ────────────────────────────────────────────── */
     .depot-modal-backdrop {
       display: none;
       position: fixed;
@@ -264,6 +224,7 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
     }
+
     .depot-modal-backdrop.open {
       display: flex;
     }
@@ -273,7 +234,7 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       width: 100%;
-      max-width: 800px;
+      max-width: 820px;
       max-height: 90vh;
       overflow-y: auto;
       display: grid;
@@ -281,6 +242,7 @@
       position: relative;
       animation: modalIn 200ms ease;
     }
+
     @keyframes modalIn {
       from { opacity: 0; transform: translateY(16px) scale(0.98); }
       to   { opacity: 1; transform: translateY(0) scale(1); }
@@ -303,8 +265,8 @@
       align-items: center;
       justify-content: center;
       line-height: 1;
-      transition: background 150ms ease, border-color 150ms ease;
     }
+
     .modal-close:hover {
       background: rgba(205,169,119,0.2);
       border-color: var(--color-soft-lime);
@@ -314,12 +276,17 @@
       aspect-ratio: 1 / 1;
       overflow: hidden;
       border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-      background: rgba(255,255,255,0.03);
+      background: #f8efd8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
     }
+
     .modal-image-col img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
@@ -338,10 +305,11 @@
       color: var(--color-text);
       margin: 0;
       line-height: 1.2;
-      padding-right: 40px; /* clear close btn */
+      padding-right: 40px;
     }
 
-    .modal-tagline {
+    .modal-tagline,
+    .modal-note {
       font-size: var(--text-sm);
       color: var(--color-text-muted);
       line-height: 1.6;
@@ -373,11 +341,6 @@
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
-      transition: border-color 150ms ease, background 150ms ease;
-    }
-    .modal-product-row:hover {
-      border-color: rgba(205,169,119,0.4);
-      background: rgba(205,169,119,0.05);
     }
 
     .modal-product-type {
@@ -402,34 +365,61 @@
 
     .modal-buy-btn {
       font-size: var(--text-sm);
-      font-weight: 600;
+      font-weight: 700;
       color: var(--color-navy, #0e0e10);
       background: var(--color-soft-lime);
       border: none;
       border-radius: var(--radius-pill);
-      padding: 6px 16px;
+      padding: 7px 16px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: opacity 150ms ease, transform 150ms ease;
       white-space: nowrap;
     }
-    .modal-buy-btn:hover {
-      opacity: 0.88;
-      transform: translateY(-1px);
+
+    .modal-buy-btn[aria-disabled="true"] {
+      cursor: not-allowed;
+      opacity: 0.72;
+      background: rgba(249,238,210,0.7);
+      color: #232147;
     }
 
-    /* ── Mission section ──────────────────────────────────── */
+    .coming-next {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+
+    .coming-next-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+    }
+
+    .coming-next-card h3 {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-2);
+    }
+
+    .coming-next-card p {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
     .section-divider {
       border: none;
       border-top: 1px solid var(--color-border);
       margin: var(--space-9) 0 var(--space-7);
     }
+
     .depot-mission {
-      max-width: 640px;
+      max-width: 760px;
     }
 
-    /* ── Responsive ───────────────────────────────────────── */
     @media (max-width: 640px) {
       .design-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -448,12 +438,19 @@
       .modal-image-col {
         aspect-ratio: 4 / 3;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-        max-height: 240px;
+        max-height: 260px;
       }
       .modal-info-col {
         padding: var(--space-5);
       }
+      .design-meta,
+      .modal-product-row,
+      .modal-product-right {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
+
     @media (max-width: 400px) {
       .design-grid {
         grid-template-columns: 1fr;
@@ -465,54 +462,38 @@
   <div data-partial="header"></div>
 
   <main id="main" class="page-shell">
-
     <div class="depot-hero">
       <div class="section-kicker">Merch</div>
       <h1>Dopamine Depot</h1>
-      <p class="subhead">Merch that funds the build.</p>
+      <p class="subhead">Low-stim goods for brains with too many tabs open.</p>
       <p class="text-muted">
-        For neurodivergent people, by neurodivergent people. Low-stim designs, no flashing banners, no countdown-clock nonsense. Every purchase goes directly toward keeping Divergify running.
+        This is the merch corner of Divergify: glossary jokes, chaos-friendly designs, and useful little artifacts for people who do not need their nervous system yelled at by a shirt.
+      </p>
+      <p class="depot-status-note">
+        <strong>Status:</strong> Designs are staged as mockups while checkout links are being verified. No more 404 treasure hunts. Civilization has suffered enough.
       </p>
       <p class="depot-note">
-        Fulfilled by Printful. Ships worldwide. No minimum order. Returns handled case by case — reach out via the <a href="/contact.html">contact page</a>.
+        When checkout is live, fulfillment will run through Printful. Every purchase helps fund the Divergify build.
       </p>
     </div>
 
-    <!-- ============================================================
-         DESIGN GRID
-         Each card = one design. Click to pick your product type.
-         TODO: Replace each href="#" in DESIGNS_DATA below with the
-               real Printful Store product URL once your store is live.
-         TODO: Add "Shades" design here once the artwork file is ready.
-               Copy any existing entry, set id:"shades", update name,
-               tagline, image path, and product list.
-         ============================================================ -->
-
-    <!-- Filter + Sort Bar -->
-    <div class="filter-bar" id="filter-bar" role="toolbar" aria-label="Filter and sort designs">
-      <span class="filter-label">Series</span>
-      <div class="filter-pills" id="filter-pills">
-        <button class="filter-pill active" data-series="all">All (14)</button>
-        <button class="filter-pill" data-series="divergipedia">Divergipedia</button>
-        <button class="filter-pill" data-series="autistic">Autistic Community</button>
-        <button class="filter-pill" data-series="viral">Viral / Humor</button>
-      </div>
-      <div class="filter-sort">
-        <select class="sort-select" id="sort-select" aria-label="Sort order">
+    <div class="depot-toolbar" aria-label="Store controls">
+      <p><strong>14 designs staged.</strong> No identity-based aisles. No awkward labels. Just the collection.</p>
+      <label>
+        <span class="sr-only">Sort designs</span>
+        <select class="sort-select" id="sort-select" aria-label="Sort designs">
           <option value="default">Featured</option>
+          <option value="name-asc">A → Z</option>
           <option value="price-asc">Price: Low to High</option>
           <option value="price-desc">Price: High to Low</option>
-          <option value="name-asc">A → Z</option>
         </select>
-        <span class="filter-count" id="filter-count">14 designs</span>
-      </div>
+      </label>
     </div>
 
-    <div class="design-grid" id="design-grid" role="list">
+    <div class="design-grid" id="design-grid" role="list" aria-label="Dopamine Depot design collection">
       <!-- Cards are rendered by the script below -->
     </div>
 
-    <!-- ── MODAL ──────────────────────────────────────────── -->
     <div
       class="depot-modal-backdrop"
       id="depot-modal-backdrop"
@@ -522,18 +503,47 @@
       tabindex="-1"
     >
       <div class="depot-modal" id="depot-modal">
-        <button class="modal-close" id="modal-close-btn" aria-label="Close product picker">&times;</button>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close design details">&times;</button>
         <div class="modal-image-col">
           <img id="modal-img" src="" alt="" loading="eager" />
         </div>
         <div class="modal-info-col">
           <h2 class="modal-design-name" id="modal-design-name"></h2>
           <p class="modal-tagline" id="modal-tagline"></p>
-          <div class="modal-picker-label">Pick your merch</div>
+          <div class="modal-picker-label">Current mockup</div>
           <div class="modal-product-list" id="modal-product-list"></div>
+          <p class="modal-note">Checkout is paused until each product link is confirmed live. Better a staged shop than a little digital trapdoor into 404 country.</p>
         </div>
       </div>
     </div>
+
+    <hr class="section-divider" />
+
+    <section class="depot-mission" aria-labelledby="next-title">
+      <div class="section-kicker">Coming next</div>
+      <h2 id="next-title">More than shirts, once the links behave.</h2>
+      <p class="text-muted">
+        The current mockups are mostly T-shirts. That is not the final shape of Dopamine Depot. The better store structure is design-first: one idea, multiple useful formats when the production links are ready.
+      </p>
+      <div class="coming-next">
+        <article class="coming-next-card">
+          <h3>Soft shirts</h3>
+          <p>The baseline format. Easy, wearable, not trying to become a sensory crime scene.</p>
+        </article>
+        <article class="coming-next-card">
+          <h3>Hoodies</h3>
+          <p>For people who use fabric as a nervous-system negotiation tool. Which is a lot of us.</p>
+        </article>
+        <article class="coming-next-card">
+          <h3>Stickers</h3>
+          <p>Low-commitment dopamine for laptops, notebooks, water bottles, and other portable coping objects.</p>
+        </article>
+        <article class="coming-next-card">
+          <h3>Mugs & desk goods</h3>
+          <p>Because apparently caffeine vessels are now emotional infrastructure. Fine. Correct, but still absurd.</p>
+        </article>
+      </div>
+    </section>
 
     <hr class="section-divider" />
 
@@ -541,14 +551,13 @@
       <div class="section-kicker">Why this exists</div>
       <h2>Merch that means something.</h2>
       <p class="text-muted">
-        Divergify is an independent project built by a neurodivergent founder. No VC. No brand deals. No ads. Dopamine Depot is how the build stays funded — which means every purchase is a direct vote for more tools, more Field Notes, and more Takota.
+        Divergify is an independent project built by a neurodivergent founder. No VC. No brand deals. No ads. Dopamine Depot is one way the build stays funded.
       </p>
       <p class="text-muted">
-        Designs are low-sensory by default: muted palettes, clean prints, no loud graphics. Because the people buying these shirts probably have enough going on already.
+        Designs should feel recognizable without being humiliatingly specific. No identity callouts as store sections. No glittery diagnostic billboards. Just smart, useful, slightly feral merch.
       </p>
       <a class="button button-ghost" href="/contact.html">Questions? Reach out.</a>
     </div>
-
   </main>
 
   <div data-partial="footer"></div>
@@ -556,189 +565,154 @@
 
   <script>
   (function () {
-
-    /* ================================================================
-       DESIGN DATA
-       To add a new design: copy an object, update the fields.
-       To add Shades: copy an entry, set id:"shades", add the image
-       path and product list below, then remove the TODO comment.
-       ================================================================ */
-    // Printful Dopamine Depot — 14 live products
-    var S = 'https://www.printful.com/a/18311430/product/';
     var DESIGNS = [
-      // ── DIVERGIPEDIA SERIES ──────────────────────────────────
       {
         id: 'chaos-clocking',
-        series: 'divergipedia',
         name: 'Chaos Clocking — Divergipedia',
         tagline: "A time-tracking tool that meets a brain where it's at. Simple clock symbols represent sessions, no timestamps required. Turn circles into data after the fact, when you're calm.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/xOpqXnLiFGQiJxVh.png',
-        alt: 'Chaos Clocking Divergipedia encyclopedia entry shirt design — black ink on white',
+        alt: 'Chaos Clocking Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907353' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'taskache',
-        series: 'divergipedia',
         name: 'Taskache — Divergipedia',
         tagline: "The low-grade discomfort caused by holding too many tasks in mind without externalizing them. Internal pressure builds; offloading reduces load and frees attention.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/opDqiUJmGKirfPaY.png',
-        alt: 'Taskache Divergipedia encyclopedia entry shirt design',
+        alt: 'Taskache Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907356' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'gremlin-mode',
-        series: 'divergipedia',
         name: 'Gremlin Mode — Divergipedia',
         tagline: "A dysregulated state marked by impulsivity, irritability, and reduced executive oversight. Typically resolves as regulation returns.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/HVvwBXhJoWPhrMKl.png',
-        alt: 'Gremlin Mode Divergipedia encyclopedia entry shirt design',
+        alt: 'Gremlin Mode Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907363' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'dopamine-breadcrumbs',
-        series: 'divergipedia',
         name: 'Dopamine Breadcrumbs — Divergipedia',
         tagline: "Tiny rewarding markers scattered throughout a task to maintain motivation. Turns daunting work into an engaging trail.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/pWAOvKgNXDjjIgYs.png',
-        alt: 'Dopamine Breadcrumbs Divergipedia encyclopedia entry shirt design',
+        alt: 'Dopamine Breadcrumbs Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907369' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'escape-velocity',
-        series: 'divergipedia',
         name: 'Escape Velocity — Divergipedia',
         tagline: "The minimum activation energy required to overcome cognitive inertia and enter sustained task engagement. Small starter steps convert inertia into forward motion.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/uItLJLSVxtydSCYW.png',
-        alt: 'Escape Velocity Divergipedia encyclopedia entry shirt design',
+        alt: 'Escape Velocity Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907385' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
-      // ── AUTISTIC COMMUNITY SERIES ────────────────────────────
       {
         id: 'masking-tax',
-        series: 'autistic',
         name: 'Masking Tax — Divergipedia',
-        tagline: "The cumulative energy cost of suppressing natural responses and performing neurotypicality. Paid invisibly throughout the day; collected at day's end as exhaustion or shutdown.",
+        tagline: "The cumulative energy cost of suppressing natural responses and performing whatever version of normal keeps the room comfortable. Paid invisibly throughout the day; collected later as exhaustion or shutdown.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/bIqRZklGflPZJfGg.png',
-        alt: 'Masking Tax Divergipedia encyclopedia entry shirt design',
+        alt: 'Masking Tax Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907396' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'monotropic-mind',
-        series: 'autistic',
         name: 'Monotropic Mind — Divergipedia',
         tagline: "A cognitive style characterized by deep, narrow attentional focus. Interest flows like a river into a single channel. Depth over breadth; immersion over multitasking.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/MWiOrPLjMJotInXu.png',
-        alt: 'Monotropic Mind Divergipedia encyclopedia entry shirt design',
+        alt: 'Monotropic Mind Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907398' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'shutdown-protocol',
-        series: 'autistic',
         name: 'Shutdown Protocol — Divergipedia',
-        tagline: "An involuntary withdrawal of processing capacity in response to overwhelm. From the outside: stillness, silence. From the inside: a necessary system pause. Not absence — recovery.",
+        tagline: "An involuntary withdrawal of processing capacity in response to overwhelm. From the outside: stillness, silence. From the inside: a necessary system pause. Not absence. Recovery.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/VrKTGltdDdJTBoYf.png',
-        alt: 'Shutdown Protocol Divergipedia encyclopedia entry shirt design',
+        alt: 'Shutdown Protocol Divergipedia encyclopedia entry design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907406' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
       {
         id: 'sensory-budget',
-        series: 'autistic',
         name: 'Sensory Budget — Divergipedia',
-        tagline: "The finite daily allocation of sensory processing capacity. Each input — sound, light, texture, crowd, temperature — draws from a limited reserve. When the budget runs out, the nervous system closes for business.",
+        tagline: "The finite daily allocation of sensory processing capacity. Each input draws from a limited reserve. When the budget runs out, the nervous system closes for business.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/drxShYoxeBoaBINB.png',
-        alt: 'Sensory Budget Divergipedia encyclopedia entry shirt design with gauge meter',
+        alt: 'Sensory Budget Divergipedia encyclopedia entry design with gauge meter',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$29.99', href: S + '439907445' }
+          { type: 'Unisex T-Shirt mockup', price: '$29.99' }
         ]
       },
-      // ── VIRAL / HUMOR SERIES ─────────────────────────────────
       {
         id: 'adhd-brain-loading',
-        series: 'viral',
         name: 'ADHD Brain Loading… 3%',
         tagline: "Error: Too Many Tabs Open. If you know, you know.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/iRnUlgvOPEiXlaaV.png',
-        alt: 'ADHD Brain Loading 3 percent Error Too Many Tabs Open shirt design',
+        alt: 'ADHD Brain Loading 3 percent Error Too Many Tabs Open design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$27.99', href: S + '439907461' }
+          { type: 'Unisex T-Shirt mockup', price: '$27.99' }
         ]
       },
       {
         id: 'exec-dysfunction-champ',
-        series: 'viral',
         name: 'Executive Dysfunction World Champion',
         tagline: "You showed up. You tried. You absolutely deserve this trophy.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/ZiRqwPPyHcWMGaSm.png',
-        alt: 'Executive Dysfunction World Champion trophy shirt design on black',
+        alt: 'Executive Dysfunction World Champion trophy design',
         products: [
-          { type: 'Unisex T-Shirt Black (S–3XL)', price: '$27.99', href: S + '439908138' }
+          { type: 'Unisex T-Shirt mockup', price: '$27.99' }
         ]
       },
       {
         id: 'brain-sidequests',
-        series: 'viral',
         name: 'My Brain Has Sidequests',
         tagline: "Main quest: ignored. Sidequests: 47 active.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/LFtFPYmfPyYEChyG.png',
-        alt: 'My Brain Has Sidequests RPG quest log shirt design',
+        alt: 'My Brain Has Sidequests RPG quest log design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$27.99', href: S + '439908155' }
+          { type: 'Unisex T-Shirt mockup', price: '$27.99' }
         ]
       },
       {
         id: 'currently-unavailable',
-        series: 'viral',
         name: 'Brain: Status Currently Unavailable',
         tagline: "Please try again after coffee, a snack, or a 4-hour hyperfocus session.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/NUditnjKRWuDPGiW.png',
-        alt: 'Brain Status Currently Unavailable error message shirt design',
+        alt: 'Brain Status Currently Unavailable error message design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$27.99', href: S + '439908189' }
+          { type: 'Unisex T-Shirt mockup', price: '$27.99' }
         ]
       },
       {
         id: 'chaos-copilot',
-        series: 'viral',
         name: 'Chaos Is My Co-Pilot — Divergify',
         tagline: "For the brains that fly sideways and still land somewhere interesting.",
         image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/IqcXbrHjIAmHynhC.png',
-        alt: 'Chaos Is My Co-Pilot vintage aviation instrument panel patch shirt design',
+        alt: 'Chaos Is My Co-Pilot vintage aviation instrument panel patch design',
         products: [
-          { type: 'Unisex T-Shirt (S–3XL)', price: '$27.99', href: S + '439908228' }
+          { type: 'Unisex T-Shirt mockup', price: '$27.99' }
         ]
       }
     ];
 
-    /* ================================================================
-       RENDER + FILTER + SORT
-       ================================================================ */
-    var grid        = document.getElementById('design-grid');
-    var filterCount = document.getElementById('filter-count');
-    var sortSelect  = document.getElementById('sort-select');
-    var pills       = document.querySelectorAll('.filter-pill');
-    var activeSeries = 'all';
-    var activeSort   = 'default';
-
-    // Build all cards once
+    var grid = document.getElementById('design-grid');
+    var sortSelect = document.getElementById('sort-select');
     var cards = [];
+
     DESIGNS.forEach(function (design) {
-      var count = design.products.length;
       var fromPrice = design.products.reduce(function (min, p) {
         return Math.min(min, parseInt(p.price.replace('$', ''), 10));
       }, Infinity);
@@ -747,9 +721,8 @@
       card.className = 'design-card';
       card.setAttribute('role', 'listitem');
       card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', design.name + ' — click to pick a product');
+      card.setAttribute('aria-label', design.name + ' — view design details');
       card.dataset.id = design.id;
-      card.dataset.series = design.series || 'divergipedia';
       card.dataset.price = fromPrice;
       card.dataset.name = design.name.toLowerCase();
 
@@ -761,8 +734,8 @@
           '<h2 class="design-name">' + escHtml(design.name) + '</h2>' +
           '<p class="design-tagline">' + escHtml(design.tagline) + '</p>' +
           '<div class="design-meta">' +
-            '<span class="design-count">' + count + ' product' + (count !== 1 ? 's' : '') + ' &bull; from $' + fromPrice + '</span>' +
-            '<span class="design-cta">Pick yours <span class="design-cta-arrow">&#8594;</span></span>' +
+            '<span class="design-count">T-shirt mockup · from $' + fromPrice + '</span>' +
+            '<span class="design-cta">View design <span aria-hidden="true">→</span></span>' +
           '</div>' +
         '</div>';
 
@@ -775,69 +748,34 @@
       cards.push({ card: card, design: design, price: fromPrice });
     });
 
-    function applyFilterSort() {
-      // Sort a copy
+    sortSelect.addEventListener('change', function () {
       var sorted = cards.slice();
-      if (activeSort === 'price-asc') {
+      if (sortSelect.value === 'price-asc') {
         sorted.sort(function (a, b) { return a.price - b.price; });
-      } else if (activeSort === 'price-desc') {
+      } else if (sortSelect.value === 'price-desc') {
         sorted.sort(function (a, b) { return b.price - a.price; });
-      } else if (activeSort === 'name-asc') {
+      } else if (sortSelect.value === 'name-asc') {
         sorted.sort(function (a, b) { return a.design.name.localeCompare(b.design.name); });
       }
-
-      // Re-append in sorted order and show/hide
-      var visible = 0;
-      sorted.forEach(function (item) {
-        var show = activeSeries === 'all' || item.design.series === activeSeries;
-        item.card.classList.toggle('hidden', !show);
-        if (show) {
-          grid.appendChild(item.card);
-          visible++;
-        }
-      });
-      filterCount.textContent = visible + ' design' + (visible !== 1 ? 's' : '');
-    }
-
-    // Pill clicks
-    pills.forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        pills.forEach(function (p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        activeSeries = pill.dataset.series;
-        applyFilterSort();
-      });
+      sorted.forEach(function (item) { grid.appendChild(item.card); });
     });
 
-    // Sort change
-    sortSelect.addEventListener('change', function () {
-      activeSort = sortSelect.value;
-      applyFilterSort();
-    });
-
-    // Initial render
-    applyFilterSort();
-
-    /* ================================================================
-       MODAL
-       ================================================================ */
-    var backdrop  = document.getElementById('depot-modal-backdrop');
-    var closeBtn  = document.getElementById('modal-close-btn');
-    var modalImg  = document.getElementById('modal-img');
+    var backdrop = document.getElementById('depot-modal-backdrop');
+    var closeBtn = document.getElementById('modal-close-btn');
+    var modalImg = document.getElementById('modal-img');
     var modalName = document.getElementById('modal-design-name');
-    var modalTag  = document.getElementById('modal-tagline');
+    var modalTag = document.getElementById('modal-tagline');
     var modalList = document.getElementById('modal-product-list');
     var lastFocused = null;
 
     function openModal(design) {
       lastFocused = document.activeElement;
-
       modalImg.src = design.image;
       modalImg.alt = design.alt;
       modalName.textContent = design.name;
-      modalTag.textContent  = design.tagline;
-
+      modalTag.textContent = design.tagline;
       modalList.innerHTML = '';
+
       design.products.forEach(function (p) {
         var row = document.createElement('div');
         row.className = 'modal-product-row';
@@ -845,9 +783,7 @@
           '<span class="modal-product-type">' + escHtml(p.type) + '</span>' +
           '<div class="modal-product-right">' +
             '<span class="modal-product-price">' + escHtml(p.price) + '</span>' +
-            '<a class="modal-buy-btn" href="' + escHtml(p.href) + '" target="_blank" rel="noopener">' +
-              'Get it' +
-            '</a>' +
+            '<span class="modal-buy-btn" aria-disabled="true">Link pending</span>' +
           '</div>';
         modalList.appendChild(row);
       });
@@ -855,8 +791,6 @@
       backdrop.classList.add('open');
       backdrop.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
-
-      // Focus the close button
       setTimeout(function () { closeBtn.focus(); }, 50);
     }
 
@@ -867,7 +801,6 @@
     }
 
     closeBtn.addEventListener('click', closeModal);
-
     backdrop.addEventListener('click', function (e) {
       if (e.target === backdrop) { closeModal(); }
     });
@@ -878,25 +811,19 @@
       }
     });
 
-    // Focus trap inside modal
     document.getElementById('depot-modal').addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
-      var focusable = Array.from(this.querySelectorAll(
-        'a[href], button, [tabindex]:not([tabindex="-1"])'
-      ));
+      var focusable = Array.from(this.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])'));
       if (!focusable.length) return;
       var first = focusable[0];
-      var last  = focusable[focusable.length - 1];
+      var last = focusable[focusable.length - 1];
       if (e.shiftKey) {
         if (document.activeElement === first) { e.preventDefault(); last.focus(); }
       } else {
-        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
 
-    /* ================================================================
-       UTILITY
-       ================================================================ */
     function escHtml(str) {
       return String(str)
         .replace(/&/g, '&amp;')
@@ -904,9 +831,7 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
     }
-
   })();
   </script>
-
 </body>
 </html>
