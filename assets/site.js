@@ -49,7 +49,7 @@ const INLINE_HEADER_PARTIAL = `
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/">Divergify</a>
-      <a href="/hub.html">The Hub</a>
+      <a href="/takota.html">Takota</a>
       <a href="/guide.html">Guide</a>
       <a href="/field-notes/">Field Notes</a>
       <a href="/dopamine-depot.html">Dopamine Depot</a>
@@ -387,11 +387,7 @@ function writeLocalStorage(key, value) {
 
 function renderZeroTrackingBanner() {
   const path = (location.pathname || "").toLowerCase();
-  const isHubSurface =
-    path === "/hub" ||
-    path === "/hub/" ||
-    path === "/hub.html" ||
-    path.startsWith("/hub/beta");
+  const isHubSurface = false;
   if (isHubSurface) return;
   if (readLocalStorage(COMPLIANCE_KEYS.zeroTrackingBannerDismissed) === "1") return;
   if (qs("[data-zero-tracking-banner]")) return;
