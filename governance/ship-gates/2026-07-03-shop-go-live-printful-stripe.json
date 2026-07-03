@@ -66,6 +66,6 @@
   },
   "ship_decision": {
     "ready": true,
-    "conditions": "Jess approved scope, pricing, and Stripe usage in-session on 2026-07-03. Follow-ups tracked: (1) paste Stripe payment links into checkout-links.json once a valid Stripe key is issued, (2) sales tax + refund policy review before scale, (3) V2 webhook auto-fulfillment."
+    "conditions": "Jess approved scope, pricing, and Stripe usage in-session on 2026-07-03. Update same day: all 14 Stripe Payment Links created (live mode, $29.99 + $4.99 US shipping, size dropdown S-3XL) and wired into shop/checkout-links.json — checkout is live. Remaining follow-ups: (1) sales tax + refund policy review before scale, (2) V2 webhook auto-fulfillment (manual Printful order placement until then)."
   }
 }
