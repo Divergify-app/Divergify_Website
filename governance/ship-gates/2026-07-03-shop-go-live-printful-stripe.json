@@ -66,6 +66,6 @@
   },
   "ship_decision": {
     "ready": true,
-    "conditions": "Jess approved scope, pricing, and Stripe usage in-session on 2026-07-03. Update same day: all 14 Stripe Payment Links created (live mode, $29.99 + $4.99 US shipping, size dropdown S-3XL) and wired into shop/checkout-links.json — checkout is live. Remaining follow-ups: (1) sales tax + refund policy review before scale, (2) V2 webhook auto-fulfillment (manual Printful order placement until then)."
+    "conditions": "Jess approved scope, pricing, and Stripe usage in-session on 2026-07-03. Update same day: all 14 Stripe Payment Links created (live mode, $29.99 + $4.99 US shipping, size dropdown S-3XL) and wired into shop/checkout-links.json — checkout is live. Remaining follow-ups: (1) sales tax + refund policy review before scale, (2) V2 webhook auto-fulfillment (manual Printful order placement until then). Same-day patch: shop image surfaces switched to white so transparent print files with dark ink (Chaos Clocking) are visible — accessibility/visibility fix, no behavior change."
   }
 }
