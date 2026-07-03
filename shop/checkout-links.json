@@ -1,0 +1,9 @@
+{
+  "_README": "Maps a Printful product ID (or 'productId:variantId') to a checkout URL (Stripe Payment Link, Ko-fi, gumroad, etc.). Get product/variant IDs from /shop/products.json after the first build. Add entries here as you create checkout links. Until an entry exists, the product page shows an 'email to order' fallback.",
+  "_example_product_level": {
+    "12345678": "https://buy.stripe.com/your-payment-link-here"
+  },
+  "_example_variant_level": {
+    "12345678:98765432": "https://buy.stripe.com/your-variant-specific-link"
+  }
+}

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loading… | Dopamine Depot</title>
+  <meta name="description" content="A Dopamine Depot product. Low-stim merch for neurodivergent humans." />
+  <meta name="theme-color" content="#0f1829" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/global.css" />
+  <link rel="stylesheet" href="/assets/shop.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" class="product-wrap">
+    <a class="shop-back" href="/shop/">← Back to Shop</a>
+
+    <section id="product-root" aria-live="polite">
+      <p style="color: var(--color-text-muted);">Loading…</p>
+    </section>
+  </main>
+
+  <script type="module">
+    const root = document.getElementById("product-root");
+
+    function getId() {
+      const u = new URL(window.location.href);
+      return u.searchParams.get("id");
+    }
+
+    function fmtMoney(amount, currency) {
+      if (amount == null) return "";
+      const sym = currency === "USD" ? "$" : (currency || "");
+      const n = parseFloat(amount);
+      if (!Number.isFinite(n)) return "";
+      return `${sym}${n.toFixed(2)}`;
+    }
+
+    function unique(arr) { return Array.from(new Set(arr.filter(Boolean))); }
+
+    function renderEmpty(msg) {
+      root.innerHTML = `
+        <div class="shop-empty" style="margin-top: 0;">
+          <h2>Couldn't find that product.</h2>
+          <p>${msg || "It may have been removed or the link is stale."}</p>
+          <p><a href="/shop/">Back to shop</a></p>
+        </div>
+      `;
+    }
+
+    async function load() {
+      const id = getId();
+      if (!id) { renderEmpty("No product ID in the URL."); return; }
+
+      let data, checkoutLinks = {};
+      try {
+        const [r1, r2] = await Promise.all([
+          fetch("/shop/products.json", { cache: "no-cache" }),
+          fetch("/shop/checkout-links.json", { cache: "no-cache" }).catch(() => null),
+        ]);
+        if (!r1.ok) throw new Error(`products.json ${r1.status}`);
+        data = await r1.json();
+        if (r2 && r2.ok) {
+          checkoutLinks = await r2.json().catch(() => ({}));
+        }
+      } catch (err) {
+        renderEmpty(`Catalog didn't load: ${err.message}`);
+        return;
+      }
+
+      const product = (data?.products || []).find((p) => String(p.id) === String(id));
+      if (!product) { renderEmpty(); return; }
+
+      document.title = `${product.name} | Dopamine Depot`;
+
+      const variants = product.variants || [];
+      const colors = unique(variants.map((v) => v.color));
+      const sizes = unique(variants.map((v) => v.size));
+
+      // Pick a default selection: first available variant
+      const firstAvail = variants.find((v) => v.is_available) || variants[0];
+      let selColor = firstAvail?.color || colors[0] || null;
+      let selSize = firstAvail?.size || sizes[0] || null;
+
+      function findVariant() {
+        return variants.find(
+          (v) =>
+            (selColor ? v.color === selColor : true) &&
+            (selSize ? v.size === selSize : true)
+        );
+      }
+
+      function checkoutUrlFor(v) {
+        if (!v) return null;
+        // Lookup priority: product+variant -> product -> none
+        const productKey = String(product.id);
+        const variantKey = `${productKey}:${v.id}`;
+        return checkoutLinks[variantKey] || checkoutLinks[productKey] || null;
+      }
+
+      function render() {
+        const v = findVariant();
+        const heroImg = v?.image || product.thumbnail || "";
+        const price = v?.retail_price
+          ? fmtMoney(v.retail_price, v.currency)
+          : (product.pricing?.min != null
+              ? `from ${fmtMoney(product.pricing.min, product.pricing.currency)}`
+              : "");
+        const checkoutUrl = checkoutUrlFor(v);
+        const buyDisabled = !v || !v.is_available || !checkoutUrl;
+
+        root.innerHTML = `
+          <header style="margin-bottom: var(--space-4);">
+            <h1 style="font-family: var(--font-heading); font-size: var(--text-3xl); margin: 0; line-height: 1.15;">${product.name}</h1>
+          </header>
+
+          <div class="product-grid">
+            <div>
+              <div class="product-media">
+                ${heroImg ? `<img id="hero" src="${heroImg}" alt="${product.name}" />` : `<span style="color: var(--color-text-muted);">No mockup yet</span>`}
+              </div>
+            </div>
+
+            <div class="product-info">
+              <p class="product-price">${price}</p>
+
+              ${colors.length > 1 ? `
+                <div class="variant-group">
+                  <span class="variant-label">Color</span>
+                  <div class="variant-options" id="opt-color"></div>
+                </div>` : ""}
+
+              ${sizes.length > 1 ? `
+                <div class="variant-group">
+                  <span class="variant-label">Size</span>
+                  <div class="variant-options" id="opt-size"></div>
+                </div>` : ""}
+
+              <div style="margin-top: var(--space-5);">
+                ${checkoutUrl
+                  ? `<a class="buy-btn" href="${checkoutUrl}" target="_blank" rel="noopener noreferrer">Buy now</a>`
+                  : `<button class="buy-btn disabled" type="button" aria-disabled="true" disabled>Buy now</button>`}
+                <p class="buy-note">
+                  ${checkoutUrl
+                    ? `Checkout opens in a new tab via our payment processor. Fulfilled by Printful.`
+                    : `Checkout link isn't wired up for this variant yet. <a href="mailto:chaoscontrol@divergify.app?subject=${encodeURIComponent('Order: ' + product.name)}">Email to order</a> and I'll set it up manually.`}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Color chips
+        const colorBox = document.getElementById("opt-color");
+        if (colorBox) {
+          colors.forEach((c) => {
+            const btn = document.createElement("button");
+            btn.className = "variant-chip" + (c === selColor ? " selected" : "");
+            btn.type = "button";
+            btn.textContent = c;
+            btn.addEventListener("click", () => {
+              selColor = c;
+              // Snap size to one that's actually available in this color
+              const ok = variants.find((v) => v.color === c && v.size === selSize && v.is_available);
+              if (!ok) {
+                const any = variants.find((v) => v.color === c && v.is_available) || variants.find((v) => v.color === c);
+                if (any) selSize = any.size;
+              }
+              render();
+            });
+            colorBox.appendChild(btn);
+          });
+        }
+
+        // Size chips
+        const sizeBox = document.getElementById("opt-size");
+        if (sizeBox) {
+          sizes.forEach((s) => {
+            const avail = variants.some((v) => v.size === s && (selColor ? v.color === selColor : true) && v.is_available);
+            const btn = document.createElement("button");
+            btn.className = "variant-chip"
+              + (s === selSize ? " selected" : "")
+              + (!avail ? " unavailable" : "");
+            btn.type = "button";
+            btn.textContent = s;
+            if (!avail) btn.setAttribute("aria-disabled", "true");
+            btn.addEventListener("click", () => {
+              if (!avail) return;
+              selSize = s;
+              render();
+            });
+            sizeBox.appendChild(btn);
+          });
+        }
+      }
+
+      render();
+    }
+
+    load();
+  </script>
+</body>
+</html>

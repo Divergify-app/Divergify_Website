@@ -1,0 +1,13 @@
+{
+  "name": "divergify-website",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Divergify marketing site + Dopamine Depot shop (static, Netlify-hosted).",
+  "scripts": {
+    "build:shop": "node scripts/fetch-printful-products.mjs",
+    "build": "npm run build:shop"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

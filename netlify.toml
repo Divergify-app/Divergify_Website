@@ -1,5 +1,11 @@
 [build]
   publish = "."
+  command = "npm run build:shop"
+
+  [build.environment]
+    # PRINTFUL_API_TOKEN is read from Netlify Site settings -> Environment variables.
+    # Node 18+ is required for the global fetch() used by the shop build script.
+    NODE_VERSION = "20"
 
   [build.processing]
     ignore_html_forms = false
@@ -225,19 +231,7 @@
   force = true
 
 [[redirects]]
-  from = "/shop.html"
-  to = "/"
-  status = 410
-  force = true
-
-[[redirects]]
   from = "/about"
-  to = "/"
-  status = 410
-  force = true
-
-[[redirects]]
-  from = "/shop"
   to = "/"
   status = 410
   force = true
@@ -248,10 +242,31 @@
   status = 410
   force = true
 
+# /shop and /shop/* are LIVE — handled by /shop/index.html and /shop/product.html
+# /shop.html is a legacy path: redirect to the new shop home (not 410)
 [[redirects]]
-  from = "/shop/*"
-  to = "/"
-  status = 410
+  from = "/shop.html"
+  to = "/shop/"
+  status = 301
+  force = true
+
+# Legacy merch pages: single source of truth is /shop/ (fed by Printful at build time)
+[[redirects]]
+  from = "/dopamine-depot.html"
+  to = "/shop/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/store.html"
+  to = "/shop/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/store"
+  to = "/shop/"
+  status = 301
   force = true
 
 [[redirects]]

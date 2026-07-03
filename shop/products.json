@@ -1,0 +1,1212 @@
+{
+  "status": "ok",
+  "reason": null,
+  "generated_at": "2026-07-03T17:14:30.934Z",
+  "product_count": 14,
+  "products": [
+    {
+      "id": 439908228,
+      "external_id": "6a317c1a9190f9",
+      "name": "Chaos Is My Co-Pilot — Divergify",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/IqcXbrHjIAmHynhC.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 27.99,
+        "max": 27.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356824527,
+          "external_id": "6a317c1a93e0f9",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / S",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        },
+        {
+          "id": 5356824533,
+          "external_id": "6a317c1aa0f486",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / M",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        },
+        {
+          "id": 5356824560,
+          "external_id": "6a317c1aaa0c65",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / L",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        },
+        {
+          "id": 5356824561,
+          "external_id": "6a317c1ab45202",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        },
+        {
+          "id": 5356824562,
+          "external_id": "6a317c1abdc8b2",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / 2XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        },
+        {
+          "id": 5356824563,
+          "external_id": "6a317c1ac6ecd7",
+          "name": "Chaos Is My Co-Pilot — Divergify / White / 3XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/a04/a041199057dbb3c7159a82c668aa0365_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439908189,
+      "external_id": "6a317c167e00b4",
+      "name": "Brain: Status Currently Unavailable",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/NUditnjKRWuDPGiW.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 27.99,
+        "max": 27.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356824081,
+          "external_id": "6a317c168144e8",
+          "name": "Brain: Status Currently Unavailable / White / S",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        },
+        {
+          "id": 5356824082,
+          "external_id": "6a317c168dd497",
+          "name": "Brain: Status Currently Unavailable / White / M",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        },
+        {
+          "id": 5356824084,
+          "external_id": "6a317c16991ac7",
+          "name": "Brain: Status Currently Unavailable / White / L",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        },
+        {
+          "id": 5356824088,
+          "external_id": "6a317c16a46f74",
+          "name": "Brain: Status Currently Unavailable / White / XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        },
+        {
+          "id": 5356824089,
+          "external_id": "6a317c16af5ea4",
+          "name": "Brain: Status Currently Unavailable / White / 2XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        },
+        {
+          "id": 5356824090,
+          "external_id": "6a317c16ba47b6",
+          "name": "Brain: Status Currently Unavailable / White / 3XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/529/5297d3c7cdfefcb6297ec82349d1cbd4_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439908155,
+      "external_id": "6a317c125c3b51",
+      "name": "My Brain Has Sidequests",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/LFtFPYmfPyYEChyG.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 27.99,
+        "max": 27.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356823797,
+          "external_id": "6a317c125e68b3",
+          "name": "My Brain Has Sidequests / White / S",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        },
+        {
+          "id": 5356823798,
+          "external_id": "6a317c12698918",
+          "name": "My Brain Has Sidequests / White / M",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        },
+        {
+          "id": 5356823799,
+          "external_id": "6a317c127289b1",
+          "name": "My Brain Has Sidequests / White / L",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        },
+        {
+          "id": 5356823800,
+          "external_id": "6a317c127b34c2",
+          "name": "My Brain Has Sidequests / White / XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        },
+        {
+          "id": 5356823801,
+          "external_id": "6a317c1284a371",
+          "name": "My Brain Has Sidequests / White / 2XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        },
+        {
+          "id": 5356823802,
+          "external_id": "6a317c128d3d84",
+          "name": "My Brain Has Sidequests / White / 3XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c60/c60e5c45ad2761af87b7e670cd1c0152_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439908138,
+      "external_id": "6a317c0e4e5a99",
+      "name": "Executive Dysfunction World Champion",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/ZiRqwPPyHcWMGaSm.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 27.99,
+        "max": 27.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356823598,
+          "external_id": "6a317c0e50af08",
+          "name": "Executive Dysfunction World Champion / Black / S",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        },
+        {
+          "id": 5356823599,
+          "external_id": "6a317c0e5cdfd1",
+          "name": "Executive Dysfunction World Champion / Black / M",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        },
+        {
+          "id": 5356823600,
+          "external_id": "6a317c0e666f09",
+          "name": "Executive Dysfunction World Champion / Black / L",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        },
+        {
+          "id": 5356823601,
+          "external_id": "6a317c0e708c82",
+          "name": "Executive Dysfunction World Champion / Black / XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        },
+        {
+          "id": 5356823602,
+          "external_id": "6a317c0e7a1994",
+          "name": "Executive Dysfunction World Champion / Black / 2XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        },
+        {
+          "id": 5356823603,
+          "external_id": "6a317c0e8420e1",
+          "name": "Executive Dysfunction World Champion / Black / 3XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/09b/09bcd87b6360cc329808c55c656df4e0_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907461,
+      "external_id": "6a317ba47ecc23",
+      "name": "ADHD Brain Loading... 3%",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/iRnUlgvOPEiXlaaV.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 27.99,
+        "max": 27.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356819083,
+          "external_id": "6a317ba48163e5",
+          "name": "ADHD Brain Loading... 3% / White / S",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        },
+        {
+          "id": 5356819084,
+          "external_id": "6a317ba48bdcf3",
+          "name": "ADHD Brain Loading... 3% / White / M",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        },
+        {
+          "id": 5356819086,
+          "external_id": "6a317ba494b5b9",
+          "name": "ADHD Brain Loading... 3% / White / L",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        },
+        {
+          "id": 5356819087,
+          "external_id": "6a317ba49ddaf2",
+          "name": "ADHD Brain Loading... 3% / White / XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        },
+        {
+          "id": 5356819088,
+          "external_id": "6a317ba4a6d872",
+          "name": "ADHD Brain Loading... 3% / White / 2XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        },
+        {
+          "id": 5356819090,
+          "external_id": "6a317ba4af97b6",
+          "name": "ADHD Brain Loading... 3% / White / 3XL",
+          "sku": null,
+          "retail_price": "27.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2ab/2ab83955ff35d1b4292c9db934c2adc5_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907445,
+      "external_id": "6a317ba17e86e9",
+      "name": "Sensory Budget — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/drxShYoxeBoaBINB.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356819048,
+          "external_id": "6a317ba1812942",
+          "name": "Sensory Budget — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        },
+        {
+          "id": 5356819049,
+          "external_id": "6a317ba18d1d53",
+          "name": "Sensory Budget — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        },
+        {
+          "id": 5356819050,
+          "external_id": "6a317ba196f059",
+          "name": "Sensory Budget — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        },
+        {
+          "id": 5356819051,
+          "external_id": "6a317ba1a07e57",
+          "name": "Sensory Budget — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        },
+        {
+          "id": 5356819053,
+          "external_id": "6a317ba1a9d275",
+          "name": "Sensory Budget — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        },
+        {
+          "id": 5356819054,
+          "external_id": "6a317ba1b2ab24",
+          "name": "Sensory Budget — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/2d4/2d44050522a5842675e1637b9c28a205_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907406,
+      "external_id": "6a317b9e83c2a6",
+      "name": "Shutdown Protocol — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/VrKTGltdDdJTBoYf.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818921,
+          "external_id": "6a317b9e8711f7",
+          "name": "Shutdown Protocol — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        },
+        {
+          "id": 5356818922,
+          "external_id": "6a317b9e910a28",
+          "name": "Shutdown Protocol — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        },
+        {
+          "id": 5356818923,
+          "external_id": "6a317b9e9a3498",
+          "name": "Shutdown Protocol — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        },
+        {
+          "id": 5356818924,
+          "external_id": "6a317b9ea44612",
+          "name": "Shutdown Protocol — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        },
+        {
+          "id": 5356818927,
+          "external_id": "6a317b9ead47c2",
+          "name": "Shutdown Protocol — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        },
+        {
+          "id": 5356818928,
+          "external_id": "6a317b9eb69f28",
+          "name": "Shutdown Protocol — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/039/0396c2ce4da3f97419ea5cf5b262ea9a_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907398,
+      "external_id": "6a317b9ba299a8",
+      "name": "Monotropic Mind — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/MWiOrPLjMJotInXu.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818902,
+          "external_id": "6a317b9ba4bc91",
+          "name": "Monotropic Mind — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        },
+        {
+          "id": 5356818903,
+          "external_id": "6a317b9bad1bc5",
+          "name": "Monotropic Mind — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        },
+        {
+          "id": 5356818904,
+          "external_id": "6a317b9bb51261",
+          "name": "Monotropic Mind — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        },
+        {
+          "id": 5356818905,
+          "external_id": "6a317b9bbc0019",
+          "name": "Monotropic Mind — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        },
+        {
+          "id": 5356818906,
+          "external_id": "6a317b9bc2d5c2",
+          "name": "Monotropic Mind — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        },
+        {
+          "id": 5356818907,
+          "external_id": "6a317b9bc99228",
+          "name": "Monotropic Mind — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/226/2263707ae3e49d89dc751cd1cf1390fa_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907396,
+      "external_id": "6a317b98a9e2d8",
+      "name": "Masking Tax — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/bIqRZklGflPZJfGg.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818801,
+          "external_id": "6a317b98ad2366",
+          "name": "Masking Tax — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        },
+        {
+          "id": 5356818803,
+          "external_id": "6a317b98b8ff96",
+          "name": "Masking Tax — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        },
+        {
+          "id": 5356818805,
+          "external_id": "6a317b98c1b661",
+          "name": "Masking Tax — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        },
+        {
+          "id": 5356818806,
+          "external_id": "6a317b98cad331",
+          "name": "Masking Tax — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        },
+        {
+          "id": 5356818807,
+          "external_id": "6a317b98d3a974",
+          "name": "Masking Tax — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        },
+        {
+          "id": 5356818808,
+          "external_id": "6a317b98dc99d5",
+          "name": "Masking Tax — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/696/696abfa9f1263c4153df70ac30e66ec1_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907385,
+      "external_id": "6a317b95c04902",
+      "name": "Escape Velocity — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/uItLJLSVxtydSCYW.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818725,
+          "external_id": "6a317b95c25874",
+          "name": "Escape Velocity — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        },
+        {
+          "id": 5356818726,
+          "external_id": "6a317b95cc31c2",
+          "name": "Escape Velocity — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        },
+        {
+          "id": 5356818728,
+          "external_id": "6a317b95d318e5",
+          "name": "Escape Velocity — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        },
+        {
+          "id": 5356818729,
+          "external_id": "6a317b95da1cd8",
+          "name": "Escape Velocity — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        },
+        {
+          "id": 5356818730,
+          "external_id": "6a317b95e0da27",
+          "name": "Escape Velocity — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        },
+        {
+          "id": 5356818731,
+          "external_id": "6a317b95e70442",
+          "name": "Escape Velocity — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/117/117fd0ca1d78ceadfe4e7f27122bb5a7_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907369,
+      "external_id": "6a317b92d3c693",
+      "name": "Dopamine Breadcrumbs — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/pWAOvKgNXDjjIgYs.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818526,
+          "external_id": "6a317b92d675c6",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        },
+        {
+          "id": 5356818527,
+          "external_id": "6a317b92e0f9e6",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        },
+        {
+          "id": 5356818529,
+          "external_id": "6a317b92ea8968",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        },
+        {
+          "id": 5356818530,
+          "external_id": "6a317b92f413c4",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        },
+        {
+          "id": 5356818532,
+          "external_id": "6a317b93096ce8",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        },
+        {
+          "id": 5356818533,
+          "external_id": "6a317b931368e4",
+          "name": "Dopamine Breadcrumbs — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/de3/de339133681a1c239849c285ce937964_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907363,
+      "external_id": "6a317b8fd0c9c5",
+      "name": "Gremlin Mode — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/HVvwBXhJoWPhrMKl.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818476,
+          "external_id": "6a317b8fd36d11",
+          "name": "Gremlin Mode — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        },
+        {
+          "id": 5356818478,
+          "external_id": "6a317b8fdcf4b3",
+          "name": "Gremlin Mode — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        },
+        {
+          "id": 5356818481,
+          "external_id": "6a317b8fe56c18",
+          "name": "Gremlin Mode — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        },
+        {
+          "id": 5356818482,
+          "external_id": "6a317b8fed2479",
+          "name": "Gremlin Mode — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        },
+        {
+          "id": 5356818483,
+          "external_id": "6a317b8ff41b66",
+          "name": "Gremlin Mode — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        },
+        {
+          "id": 5356818485,
+          "external_id": "6a317b90082b72",
+          "name": "Gremlin Mode — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/970/970c18fdc5faa1c2cb2501640547d398_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907356,
+      "external_id": "6a317b8ce96108",
+      "name": "Taskache — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/opDqiUJmGKirfPaY.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818390,
+          "external_id": "6a317b8cebabb8",
+          "name": "Taskache — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        },
+        {
+          "id": 5356818391,
+          "external_id": "6a317b8d021329",
+          "name": "Taskache — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        },
+        {
+          "id": 5356818392,
+          "external_id": "6a317b8d08b244",
+          "name": "Taskache — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        },
+        {
+          "id": 5356818393,
+          "external_id": "6a317b8d0f5d86",
+          "name": "Taskache — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        },
+        {
+          "id": 5356818394,
+          "external_id": "6a317b8d176f73",
+          "name": "Taskache — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        },
+        {
+          "id": 5356818395,
+          "external_id": "6a317b8d1e7bd6",
+          "name": "Taskache — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/198/19829fce50797ca68d377647f6810fdf_preview.png"
+        }
+      ]
+    },
+    {
+      "id": 439907353,
+      "external_id": "6a317b8a0f6b34",
+      "name": "Chaos Clocking — Divergipedia",
+      "thumbnail": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663527486348/xOpqXnLiFGQiJxVh.png",
+      "variant_count": 6,
+      "pricing": {
+        "min": 29.99,
+        "max": 29.99,
+        "currency": "USD"
+      },
+      "variants": [
+        {
+          "id": 5356818365,
+          "external_id": "6a317b8a11bb87",
+          "name": "Chaos Clocking — Divergipedia / White / S",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        },
+        {
+          "id": 5356818366,
+          "external_id": "6a317b8a1b6ef4",
+          "name": "Chaos Clocking — Divergipedia / White / M",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        },
+        {
+          "id": 5356818368,
+          "external_id": "6a317b8a23ede7",
+          "name": "Chaos Clocking — Divergipedia / White / L",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        },
+        {
+          "id": 5356818369,
+          "external_id": "6a317b8a2c9442",
+          "name": "Chaos Clocking — Divergipedia / White / XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        },
+        {
+          "id": 5356818370,
+          "external_id": "6a317b8a34a8d7",
+          "name": "Chaos Clocking — Divergipedia / White / 2XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        },
+        {
+          "id": 5356818371,
+          "external_id": "6a317b8a3e55b5",
+          "name": "Chaos Clocking — Divergipedia / White / 3XL",
+          "sku": null,
+          "retail_price": "29.99",
+          "currency": "USD",
+          "is_available": true,
+          "color": null,
+          "size": null,
+          "image": "https://files.cdn.printful.com/files/c47/c476d8e78597dae4b0bd0b35e0a9967c_preview.png"
+        }
+      ]
+    }
+  ]
+}
