@@ -242,30 +242,41 @@
   status = 410
   force = true
 
-# /shop and /shop/* are LIVE — handled by /shop/index.html and /shop/product.html
-# /shop.html is a legacy path: redirect to the new shop home (not 410)
+# Dopamine Depot lives on Printful's hosted storefront (Quick Store).
+# Every merch path on this domain forwards there — one store, auto-fulfillment.
 [[redirects]]
   from = "/shop.html"
-  to = "/shop/"
+  to = "https://dopamine-depot.printful.me"
   status = 301
   force = true
 
-# Legacy merch pages: single source of truth is /shop/ (fed by Printful at build time)
+[[redirects]]
+  from = "/shop"
+  to = "https://dopamine-depot.printful.me"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/*"
+  to = "https://dopamine-depot.printful.me"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/dopamine-depot.html"
-  to = "/shop/"
+  to = "https://dopamine-depot.printful.me"
   status = 301
   force = true
 
 [[redirects]]
   from = "/store.html"
-  to = "/shop/"
+  to = "https://dopamine-depot.printful.me"
   status = 301
   force = true
 
 [[redirects]]
   from = "/store"
-  to = "/shop/"
+  to = "https://dopamine-depot.printful.me"
   status = 301
   force = true
 
