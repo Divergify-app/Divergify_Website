@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Hub | Divergify</title>
+  <meta name="description" content="The Divergify Hub — start with Brain Dump, then add the app to your phone's home screen. Works on iPhone and Android, no App Store needed." />
+
+  <!-- SEO-META:START -->
+  <link rel="canonical" href="https://divergify.app/hub" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:site_name" content="Divergify" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Hub | Divergify" />
+  <meta property="og:description" content="Start with Brain Dump, then add Divergify to your home screen. iPhone and Android, no App Store needed." />
+  <meta property="og:url" content="https://divergify.app/hub" />
+  <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Hub | Divergify" />
+  <meta name="twitter:description" content="Start with Brain Dump, then add Divergify to your home screen. iPhone and Android, no App Store needed." />
+  <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
+  <!-- SEO-META:END -->
+
+  <meta name="theme-color" content="#232147" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/global.css" />
+
+  <style>
+    /* Scoped styles for the install widget — uses brand tokens from global.css */
+    .install-card {
+      margin-top: var(--space-6, 42px);
+      padding: var(--space-5, 26px);
+      background: var(--color-surface, rgba(123,140,222,0.06));
+      border: 1px solid var(--color-border, rgba(123,140,222,0.10));
+      border-radius: var(--radius-lg, 16px);
+    }
+    .install-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3, 10px);
+      margin-top: var(--space-4, 16px);
+    }
+    .install-hint {
+      margin-top: var(--space-3, 10px);
+      font-size: var(--text-sm, 14px);
+      color: var(--color-text-muted, #9ca3af);
+    }
+    /* Instruction modal */
+    .a2hs-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 24, 41, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 3000;
+    }
+    .a2hs-overlay[data-open="true"] { display: flex; }
+    .a2hs-modal {
+      max-width: 420px;
+      width: 100%;
+      background: var(--color-brand-navy-dark, #0f1829);
+      border: 1px solid var(--color-border, rgba(123,140,222,0.18));
+      border-radius: var(--radius-lg, 16px);
+      padding: var(--space-5, 26px);
+    }
+    .a2hs-modal h3 { margin: 0 0 10px; font-family: var(--font-heading, "Poppins", sans-serif); }
+    .a2hs-modal ol { margin: 0 0 8px; padding-left: 20px; line-height: 1.7; }
+    .a2hs-modal .a2hs-close { margin-top: var(--space-4, 16px); }
+    .a2hs-share {
+      display: inline-block;
+      min-width: 1.4em;
+      text-align: center;
+      border: 1px solid var(--color-border, rgba(123,140,222,0.25));
+      border-radius: 6px;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+  <div data-partial="header"></div>
+
+  <main id="main" class="page-shell">
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">The Hub</h1>
+        <h2>Planning tools for crowded brains.</h2>
+        <p class="text-muted">This is where the actual app lives. Start with Brain Dump — get the pile out of your head and pick one sane next step. The planner, focus sessions, habits, and Takota are all in here when you want them, and quiet when you don't.</p>
+        <p class="text-muted">Works right in your browser. No download, no account required to look around.</p>
+        <div class="install-actions">
+          <a class="button button-primary" href="/hub/beta/brain-dump">Open Divergify</a>
+        </div>
+      </div>
+      <aside class="panel hero-panel">
+        <div class="kicker">Put it on your phone</div>
+        <h3>Add Divergify to your home screen</h3>
+        <p class="text-muted">Get an app icon that opens Divergify fullscreen, like a native app — no App Store, no cost. Works on iPhone and Android.</p>
+        <div class="install-card">
+          <strong>Install Divergify</strong>
+          <p class="text-muted" style="margin:6px 0 0;">One tap gets you set up. We'll show the right steps for your phone.</p>
+          <div class="install-actions">
+            <button class="button button-primary" type="button" id="installBtn">Add to home screen</button>
+          </div>
+          <p class="install-hint" id="installHint">On iPhone this opens the app, then you tap Share → Add to Home Screen.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">What's inside the Hub</div>
+        <h2 class="section-title">Start small. The rest waits for you.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3><a href="/hub/beta/brain-dump">Brain Dump</a></h3>
+          <p class="text-muted">Dump everything cluttering your head. No order, no formatting, no guilt. Then get one next step.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/hub/beta/brain-dump">Planner &amp; Focus</a></h3>
+          <p class="text-muted">Move into the planner, habits, and focus sessions only when you actually need them.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/takota.html">Takota</a></h3>
+          <p class="text-muted">Your sidekick. Reads your capacity, breaks the scary thing into micro-steps, never shames you for disappearing.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add-to-home-screen instruction modal -->
+  <div class="a2hs-overlay" id="a2hsOverlay" role="dialog" aria-modal="true" aria-labelledby="a2hsTitle">
+    <div class="a2hs-modal">
+      <h3 id="a2hsTitle">Add Divergify to your home screen</h3>
+      <div id="a2hsBody"></div>
+      <button class="button button-primary a2hs-close" type="button" id="a2hsClose">Got it</button>
+    </div>
+  </div>
+
+  <div data-partial="footer"></div>
+
+  <script src="/assets/site.js"></script>
+
+  <script>
+    (function () {
+      var APP_URL = "/hub/beta/brain-dump";
+      var btn = document.getElementById("installBtn");
+      var hint = document.getElementById("installHint");
+      var overlay = document.getElementById("a2hsOverlay");
+      var body = document.getElementById("a2hsBody");
+      var closeBtn = document.getElementById("a2hsClose");
+      var deferredPrompt = null;
+
+      function isIOS() {
+        var ua = navigator.userAgent || "";
+        var iOSDevice = /iphone|ipad|ipod/i.test(ua);
+        // iPadOS 13+ reports as Mac; detect via touch points.
+        var iPadOS = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+        return iOSDevice || iPadOS;
+      }
+      function isStandalone() {
+        return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+               window.navigator.standalone === true;
+      }
+      function openModal(html) {
+        body.innerHTML = html;
+        overlay.setAttribute("data-open", "true");
+      }
+      function closeModal() { overlay.setAttribute("data-open", "false"); }
+
+      // Already installed — no need for the button.
+      if (isStandalone()) {
+        btn.style.display = "none";
+        if (hint) hint.textContent = "You're already running the installed app. Nice.";
+      }
+
+      // Android / desktop Chrome: capture the real install prompt.
+      window.addEventListener("beforeinstallprompt", function (e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (hint) hint.textContent = "Tap to install Divergify as an app on this device.";
+      });
+
+      window.addEventListener("appinstalled", function () {
+        if (hint) hint.textContent = "Installed. Look for the Divergify icon on your home screen.";
+        btn.style.display = "none";
+      });
+
+      btn.addEventListener("click", function () {
+        // Best case: a real install prompt is available (Android/desktop Chrome).
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.finally(function () { deferredPrompt = null; });
+          return;
+        }
+        // iPhone/iPad: can't auto-install. Send them into the app, then show steps.
+        if (isIOS()) {
+          openModal(
+            '<ol>' +
+              '<li>Tap <strong>Open Divergify</strong> below.</li>' +
+              '<li>In Safari, tap the <span class="a2hs-share">&#x2191;</span> <strong>Share</strong> button (bottom of the screen).</li>' +
+              '<li>Scroll down and tap <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</li>' +
+            '</ol>' +
+            '<a class="button button-primary" href="' + APP_URL + '">Open Divergify</a>'
+          );
+          return;
+        }
+        // Other browsers (Firefox, non-prompting Chrome, etc.): generic guidance.
+        openModal(
+          '<ol>' +
+            '<li>Tap <strong>Open Divergify</strong> below.</li>' +
+            '<li>Open your browser menu (&#8942; or &#8230;).</li>' +
+            '<li>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>' +
+          '</ol>' +
+          '<a class="button button-primary" href="' + APP_URL + '">Open Divergify</a>'
+        );
+      });
+
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", function (e) { if (e.target === overlay) closeModal(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "feature_id": "2026-07-06-site-pages-hub-pricing-community",
+  "feature_name": "Site pages: hub + install button, pricing/tiers, Signal Station community, live/dev messaging fix",
+  "owner": "Jess (executed by Claude with Jess's explicit in-session approval 2026-07-06)",
+  "date": "2026-07-06",
+  "scope_summary": "Fixes the trust-damaging 'the app is live' vs 'still in active development' contradiction by aligning contact.html to the homepage's 'live and still being built in public' framing. Adds hub.html (real page behind the previously-broken /hub nav link) carrying a smart Add-to-Home-Screen install button (Android/Chrome one-tap install; iPhone shows Share -> Add to Home Screen instructions; hides when already installed). Adds pricing.html: a transparent free-local-first / bring-your-own-key / token-packs tier explanation, with paid tiers explicitly marked as arriving with the app (v2) and no on-site checkout. Adds community.html (Signal Station) with ways-to-plug-in, a Support-the-build section surfacing existing Ko-fi tip jar and Dopamine Depot, and a short house-rules summary; the 'coming soon' community line and waitlist card were removed at Jess's request. Adds Pricing and Community links to the shared header nav. Also adds a .gitignore for local caches/scratch.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": false,
+    "health_related_context": true,
+    "third_party_network": false,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Static informational pages with no PII capture (the waitlist form card was removed from community). No payment is processed on-site; the pricing page only describes the model and the paid tiers are marked not-yet-available.",
+      "evidence": ["No forms or PII collection on the new/edited pages", "Paid tiers labelled 'Arriving with the app launch' — no live transaction path"]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No new trackers, pixels, cookies, or analytics were added. The install button uses only the client-side beforeinstallprompt event and shows instructions; it transmits no user data anywhere.",
+      "evidence": ["No analytics or third-party pixels added to any page", "Install script is client-side only and makes no network calls"]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Copy is marketing/community only and makes no diagnosis or treatment claims. Community and pricing pages carry explicit 'does not diagnose, treat, or replace professional care' and crisis-support disclaimers.",
+      "evidence": ["Community page includes a peer-community / crisis-support disclaimer", "Pricing page repeats the non-diagnostic productivity-tool disclaimer"]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "No urgency mechanics, countdowns, scarcity, or streak pressure. The install button is optional and dismissible; pricing framing is calm and non-coercive.",
+      "evidence": ["No countdown/scarcity mechanics anywhere on the pages", "Copy explicitly avoids shame and pressure language"]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Pages reuse the low-stim brand styling (minimal motion, low-contrast surfaces) and tech-specs-not-pathology framing consistent with the product's ND-affirming approach.",
+      "evidence": ["Pages load the existing low-stim global.css", "Copy uses non-pathologizing, dignity-first framing"]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Resolves a conversion-damaging self-contradiction, repairs a broken nav link, and gives users honest pricing transparency, a community home, and an easy install path. Foreseeable harm is minimal for static informational pages.",
+      "evidence": ["'live vs in development' contradiction removed", "Previously-404ing /hub link now resolves to a real page"]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "All copy is in the established Divergify/Takota voice. Jess reviewed and approved the specific claims in-session on 2026-07-06 — including the pricing transparency line ('a fair margin to keep the lights on, not to get rich'), the v2/'coming with the app' framing, and the Signal Station house rules.",
+      "evidence": ["Jess gave explicit in-session approval of the pages and their claims on 2026-07-06", "Paid AI features are honestly marked as not-yet-available rather than overclaimed"]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Semantic HTML with headings, real links, and keyboard-usable buttons. The install instruction modal is dismissible via the Escape key and by clicking the overlay, and hides when the app is already installed.",
+      "evidence": ["Pages use semantic headings and anchor/button elements", "Install modal closes on Escape and overlay click"]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "Static HTML only; no secrets, server code, or new dependencies introduced. The install script is vanilla client-side JavaScript with no external network calls, so it cannot regress site security.",
+      "evidence": ["No secrets or credentials added to the repo", "No new server-side or third-party network code introduced"]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Pricing is fully transparent: free local-first core stated as free forever, no data selling, paid tiers clearly marked as coming with the app, and no checkout, subscription, or pre-checked boxes on-site. Support (Ko-fi, Dopamine Depot) is opt-in and framed as optional.",
+      "evidence": ["Pricing page states 'free forever' core and 'we never sell your data'", "No on-site checkout, subscription, or default-opt-in anywhere"]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Jess approved shipping these pages and their claims in-session on 2026-07-06. Non-blocking follow-ups: set real token prices before the paid tiers actually go live; wire a real Discord/community-space link into community.html when that space exists; and the Brain Dump -> next-step app change is a separate deploy in the divergify-hub repo, not included here."
+  }
+}

@@ -1,0 +1,25 @@
+# Node / npm
+node_modules/
+npm-debug.log*
+
+# Netlify local state
+.netlify/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Note: shop/products.json IS committed as a placeholder so the page works
+# locally without a token. The Netlify build script overwrites it with
+# real Printful data on every deploy. Don't .gitignore it.
+
+# Local tooling caches & scratch
+.playwright-cli/
+trash/
+
+# Local env / secrets — never commit
+.env
+.env.*
