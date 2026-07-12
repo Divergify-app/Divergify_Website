@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Waitlist + Feedback | Divergify</title>
-      <meta name="description" content="Join the Divergify waitlist and share feedback about what would make the app more useful. Includes legal-safe boundaries and development-stage disclosures." />
+  <title>Contact | Divergify</title>
+      <meta name="description" content="Get in touch with the Divergify team. Share feedback, ask a question, or report an issue." />
 
   <!-- SEO-META:START -->
   <link rel="canonical" href="https://divergify.app/contact" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:site_name" content="Divergify" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Waitlist + Feedback | Divergify" />
-  <meta property="og:description" content="Join the Divergify waitlist and share feedback about what would make the app more useful. Includes legal-safe boundaries and development-stage disclosures." />
+  <meta property="og:title" content="Contact | Divergify" />
+  <meta property="og:description" content="Get in touch with the Divergify team. Share feedback, ask a question, or report an issue." />
   <meta property="og:url" content="https://divergify.app/contact" />
   <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Waitlist + Feedback | Divergify" />
-  <meta name="twitter:description" content="Join the Divergify waitlist and share feedback about what would make the app more useful. Includes legal-safe boundaries and development-stage disclosures." />
+  <meta name="twitter:title" content="Contact | Divergify" />
+  <meta name="twitter:description" content="Get in touch with the Divergify team. Share feedback, ask a question, or report an issue." />
   <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Waitlist + Feedback | Divergify", "description": "Join the Divergify waitlist and share feedback about what would make the app more useful. Includes legal-safe boundaries and development-stage disclosures.", "url": "https://divergify.app/contact", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Contact | Divergify", "description": "Get in touch with the Divergify team.", "url": "https://divergify.app/contact", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
   <!-- SEO-META:END -->
 <meta name="theme-color" content="#232147" />
   <link rel="icon" href="/favicon.ico">
@@ -30,57 +30,78 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/global.css" />
-  
+  <style>
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; max-width: 540px; margin-top: 1.5rem; }
+    .contact-form label { font-weight: 600; font-size: var(--text-sm, 14px); display: flex; flex-direction: column; gap: 0.4rem; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select { background: var(--color-surface, #1a1f3a); border: 1px solid var(--color-border, #2e3460); border-radius: 6px; color: var(--color-text, #e8e8f0); padding: 0.65rem 0.9rem; font-size: var(--text-md, 16px); font-family: inherit; width: 100%; }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form .consent-row { display: flex; align-items: flex-start; gap: 0.75rem; font-weight: 400; font-size: var(--text-sm, 14px); color: var(--color-muted, #9090b0); }
+    .contact-form .consent-row input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; }
+  </style>
 </head>
 <body>
   <div data-partial="header"></div>
 
   <main id="main" class="page-shell">
-    <h1>Waitlist + Feedback</h1>
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Contact</h1>
+        <h2>Say something. We actually read it.</h2>
+        <p class="text-muted">Bug, feedback, idea, or just a thought — drop it here. This goes directly to the founder. No support ticket queue, no bot auto-reply.</p>
+        <p class="text-muted">Legal boundary: Divergify does not diagnose, treat, or provide clinical care. Do not submit medical records, diagnosis details, insurance numbers, or crisis information in this form.</p>
+      </div>
+    </section>
 
-    <h2>Simple signup. No spam funnel.</h2>
+    <section class="section">
+      <form
+        id="contact-form"
+        class="contact-form"
+        name="contact"
+        method="POST"
+        action="/contact-success.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none;"><label>Leave this field blank <input name="bot-field" /></label></p>
 
-    <p class="text-muted">
-      Divergify is live and still being built in public. Join the waitlist for release updates and share one thing you want to see built.
-    </p>
-    <p class="text-muted">
-      Legal boundary: Divergify does not diagnose, treat, or provide clinical care. Do not submit medical records, diagnosis details, insurance numbers, or crisis information in this form.
-    </p>
-
-    <form
-      id="waitlist-form"
-      class="waitlist-form"
-      name="waitlist"
-      method="POST"
-      action="/waitlist-success.html"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="waitlist" />
-      <p style="display:none;">
-        <label>
-          Leave this field blank
-          <input name="bot-field" />
+        <label for="contact-name">
+          Name
+          <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Whatever you go by is fine." />
         </label>
-      </p>
 
-      <label for="waitlist-name">Name</label>
-      <input id="waitlist-name" type="text" name="name" autocomplete="name" />
+        <label for="contact-email">
+          Email <span style="color:var(--color-brand-gold,#d4a853)">*</span>
+          <input id="contact-email" type="email" name="email" autocomplete="email" required placeholder="So we can actually reply." />
+        </label>
 
-      <label for="waitlist-email">Email</label>
-      <input id="waitlist-email" type="email" name="email" autocomplete="email" required />
+        <label for="contact-reason">
+          What's this about?
+          <select id="contact-reason" name="reason">
+            <option value="">— pick one —</option>
+            <option value="bug">Bug or something broken</option>
+            <option value="feedback">Feedback or feature idea</option>
+            <option value="premium">Question about premium / tokens</option>
+            <option value="shop">Dopamine Depot / order question</option>
+            <option value="other">Something else</option>
+          </select>
+        </label>
 
-      <label for="waitlist-needs">What would make this app most useful for you?</label>
-      <textarea id="waitlist-needs" name="what_is_needed" rows="6" placeholder="You can keep this short."></textarea>
+        <label for="contact-message">
+          Message
+          <textarea id="contact-message" name="message" rows="6" placeholder="Short is fine. Long is fine too."></textarea>
+        </label>
 
-      <label class="waitlist-consent" for="waitlist-consent">
-        <input id="waitlist-consent" type="checkbox" name="consent_to_process" value="yes" required />
-        <span>I consent to Divergify and its form processor storing this submission so we can contact me about waitlist and product updates.</span>
-      </label>
+        <label class="consent-row" for="contact-consent">
+          <input id="contact-consent" type="checkbox" name="consent_to_process" value="yes" required />
+          <span>I consent to Divergify storing this submission to respond to my message.</span>
+        </label>
 
-      <button class="button button-primary" type="submit">Join waitlist</button>
-    </form>
-
+        <button class="button button-primary" type="submit">Send it</button>
+      </form>
+    </section>
   </main>
 
   <div data-partial="footer"></div>
