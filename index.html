@@ -19,7 +19,47 @@
   <meta name="twitter:title" content="Divergify | For brains that zig when the world zags." />
   <meta name="twitter:description" content="Divergify is a home base for neurodivergent people: Brain Dump, The Hub, Field Notes, Divergipedia, and Dopamine Depot." />
   <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Divergify | For brains that zig when the world zags.", "description": "Divergify is a home base for neurodivergent people: Brain Dump, The Hub, Field Notes, Divergipedia, and Dopamine Depot.", "url": "https://divergify.app/", "isPartOf": {"@type": "WebSite", "name": "Divergify", "url": "https://divergify.app"}}</script>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://divergify.app/#organization",
+      "name": "Divergify",
+      "alternateName": "Divergify App",
+      "url": "https://divergify.app",
+      "logo": "https://divergify.app/assets/brand/divergify-constellation-logo.png",
+      "description": "Divergify is a neurodivergent productivity platform — tools, community, and an AI sidekick named Takota built for brains that work differently.",
+      "foundingDate": "2024",
+      "founder": {"@type": "Person", "name": "Jess"},
+      "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "chaoscontrol@divergify.app"},
+      "sameAs": ["https://divergify.app"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://divergify.app/#website",
+      "name": "Divergify",
+      "url": "https://divergify.app",
+      "description": "Divergify — neurodivergent productivity tools, Takota AI sidekick, Divergipedia, Field Notes, and Dopamine Depot merch.",
+      "publisher": {"@id": "https://divergify.app/#organization"},
+      "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://divergify.app/divergipedia.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "@id": "https://divergify.app/#app",
+      "name": "Divergify",
+      "alternateName": "Divergify Hub",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "url": "https://divergify.app/hub.html",
+      "description": "A free, local-first productivity app for neurodivergent people. Brain Dump, planner, focus sessions, habits, and Takota AI sidekick.",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free core app. Premium AI features available."},
+      "author": {"@id": "https://divergify.app/#organization"}
+    }
+  ]
+  </script>
   <!-- SEO-META:END -->
 <meta name="theme-color" content="#232147" />
   <link rel="icon" href="/favicon.ico">
