@@ -6,5 +6,6 @@ Disallow: /scripts/
 Disallow: /content-lock/
 Disallow: /partials/
 Disallow: /field-notes/template.html
+Disallow: /assets/merch/
 
 Sitemap: https://divergify.app/sitemap.xml

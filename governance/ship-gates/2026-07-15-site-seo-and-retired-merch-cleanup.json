@@ -1,0 +1,93 @@
+{
+  "feature_id": "2026-07-15-site-seo-and-retired-merch-cleanup",
+  "feature_name": "Site SEO and retired merch cleanup",
+  "owner": "Codex",
+  "date": "2026-07-15",
+  "scope_summary": "Clean up public website SEO so the sitemap lists only current active pages, retired local merch/shop/store pages are removed or marked gone, and Dopamine Depot links clearly disclose that they open the Printful store off-site.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The change removes stale local commerce surfaces and adds clearer off-site disclosure for the remaining Printful store link.",
+      "evidence": [
+        "Removed local Dopamine Depot, shop, and store pages from the deploy surface",
+        "Visible Printful links now identify Printful and open in a new tab"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "No new tracking or data collection was added, and external Printful links use noreferrer to avoid sending the page referrer.",
+      "evidence": [
+        "Printful links use rel=\"noopener noreferrer\"",
+        "Retired merch routes return 410 instead of silently redirecting visitors off-site"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "No medical advice, diagnosis, or treatment claims were added in this SEO and routing cleanup.",
+      "evidence": [
+        "Changes are limited to routing, sitemap, SEO metadata, and retired merch files"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "n_a",
+      "rationale": "No behavioral design feature was changed.",
+      "evidence": []
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "No neurodivergence research guidance was changed.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users and crawlers get clearer current paths, fewer stale pages, and explicit notice before leaving Divergify for the Printful store.",
+      "evidence": [
+        "Updated sitemap.xml to current active pages only",
+        "Old local merch/shop/store routes now return 410 Gone"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Branding remains consistent while removing confusing stale merchandise content and clarifying the current Printful relationship.",
+      "evidence": [
+        "Dopamine Depot visible links now read as Printful links",
+        "Homepage metadata now describes a clearly disclosed Printful merch link"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "External store links include accessible labels that tell screen-reader users the link opens Printful in a new tab.",
+      "evidence": [
+        "Printful links include aria-label text with the off-site/new-tab behavior"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "The cleanup removes unused build-time Printful fetching and reduces the number of stale public files that could be served accidentally.",
+      "evidence": [
+        "Netlify build no longer runs the retired Printful catalog fetch",
+        "Deleted retired local shop files and their CSS/API script"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "The only remaining merch path is an explicit opt-in external Printful link, with no hidden redirects, countdowns, or duplicate checkout paths.",
+      "evidence": [
+        "Removed old local shop and Stripe checkout-link files",
+        "Retired merch URLs return 410 rather than sending users to a store without a fresh click"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Deploy, then verify old merch URLs return 410 and submit the updated sitemap in search tools if stale URLs remain indexed."
+  }
+}

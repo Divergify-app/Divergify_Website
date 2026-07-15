@@ -1,10 +1,8 @@
 [build]
   publish = "."
-  command = "npm run build:shop"
+  command = "npm run build"
 
   [build.environment]
-    # PRINTFUL_API_TOKEN is read from Netlify Site settings -> Environment variables.
-    # Node 18+ is required for the global fetch() used by the shop build script.
     NODE_VERSION = "20"
 
   [build.processing]
@@ -17,20 +15,20 @@
 
 [[redirects]]
   from = "/app-build"
-  to = "/app-build.html"
+  to = "/hub"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hub-beta"
-  to = "/hub-beta.html"
+  to = "/hub"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hub"
   to = "/hub.html"
-  status = 301
+  status = 200
   force = true
 
 [[redirects]]
@@ -201,6 +199,18 @@
   force = true
 
 [[redirects]]
+  from = "/field-notes/chaos-kitchen-vol-1.html"
+  to = "/field-notes/dippable-hot-dog-bun-french-toast/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/field-notes/chaos-kitchen-vol-2.html"
+  to = "/field-notes/validation-and-sandwiches/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/"
   to = "/"
   status = 410
@@ -242,42 +252,66 @@
   status = 410
   force = true
 
-# Dopamine Depot lives on Printful's hosted storefront (Quick Store).
-# Every merch path on this domain forwards there — one store, auto-fulfillment.
+# Dopamine Depot lives on Printful's hosted storefront.
+# Retired same-site merch pages are gone so visitors are not silently sent off-site.
 [[redirects]]
   from = "/shop.html"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]
   from = "/shop"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]
   from = "/shop/*"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/dopamine-depot"
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]
   from = "/dopamine-depot.html"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/dopamine-depot/*"
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]
   from = "/store.html"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]
   from = "/store"
-  to = "https://dopamine-depot.printful.me"
-  status = 301
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/store/*"
+  to = "/"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/assets/merch/*"
+  to = "/"
+  status = 410
   force = true
 
 [[redirects]]

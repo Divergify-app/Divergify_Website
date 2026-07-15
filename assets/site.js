@@ -49,10 +49,12 @@ const INLINE_HEADER_PARTIAL = `
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/">Divergify</a>
-      <a href="/takota.html">Takota</a>
+      <a href="/hub.html">The Hub</a>
       <a href="/guide.html">Guide</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/field-notes/">Field Notes</a>
-      <a href="/dopamine-depot.html">Dopamine Depot</a>
+      <a href="/community.html">Community</a>
+      <a href="https://dopamine-depot.printful.me" target="_blank" rel="noopener noreferrer" aria-label="Dopamine Depot on Printful, opens in a new tab">Dopamine Depot (Printful)</a>
       <a href="/divergipedia.html">Divergipedia</a>
       <a href="/contact.html">Waitlist</a>
     </nav>
@@ -79,12 +81,12 @@ const INLINE_FOOTER_PARTIAL = `
   <div class="site-footer-inner">
     <div class="footer-row footer-social">
       <div class="footer-links footer-actions">
-        <a href="https://www.facebook.com/profile.php?id=61579035562612" rel="noopener" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/divergify.app/" rel="noopener" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61579035562612" rel="noopener noreferrer" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/divergify.app/" rel="noopener noreferrer" target="_blank">Instagram</a>
         <a href="mailto:chaoscontrol@divergify.app">Email</a>
       </div>
       <div class="footer-links footer-actions footer-tipjar">
-        <a href="https://ko-fi.com/divergify" rel="noopener" target="_blank">Tip jar</a>
+        <a href="https://ko-fi.com/divergify" rel="noopener noreferrer" target="_blank">Tip jar</a>
       </div>
     </div>
     <div class="footer-row footer-legal">
@@ -496,8 +498,7 @@ function initFieldNotesLayout() {
   const isFieldNotesIndex =
     path === "/field-notes" ||
     path === "/field-notes/" ||
-    path === "/field-notes/index.html" ||
-    path === "/field-notes.html";
+    path === "/field-notes/index.html";
   document.body.dataset.fieldNotesView = isFieldNotesIndex ? "index" : "article";
   ensureFieldNotesStyles();
   if (isFieldNotesIndex) return;
