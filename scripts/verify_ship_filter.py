@@ -258,7 +258,8 @@ def main():
     if not gate_files:
         print("Ship filter blocked: product changes require a gate file update.")
         print("Create/update a JSON file in governance/ship-gates/ and stage it with the feature.")
-        print("Start one with: python3 scripts/new_ship_gate.py \\"Feature name\\" --owner \\"Owner name\\" --risk low")\n        print("Template: governance/ship-gates/000-template.json")
+        print('Start one with: python3 scripts/new_ship_gate.py "Feature name" --owner "Owner name" --risk low')
+        print("Template: governance/ship-gates/000-template.json")
         print("Detected product changes:")
         for path in product_changes:
             print(f"- {path}")
