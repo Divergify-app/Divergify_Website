@@ -20,6 +20,8 @@
   --color-text: #e8e6e1;
   --color-text-muted: #9ca3af;
   --color-link: var(--color-brand-gold);
+  /* Existing primary-action styles use this semantic alias. */
+  --color-action-green: var(--color-brand-gold);
 
   /* Accents (gold only for key moments) */
   --color-tag-bg: rgba(212, 168, 83, 0.08);
@@ -808,7 +810,7 @@ body.mode-reduced * { transition: none !important; animation: none !important; }
   .mode-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1450px) {
   .site-header-inner {
     flex-wrap: wrap;
     row-gap: var(--space-3);
