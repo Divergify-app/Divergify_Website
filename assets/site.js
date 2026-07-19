@@ -61,11 +61,11 @@ const INLINE_HEADER_PARTIAL = `
     <div class="header-right" aria-label="Modes">
       <div class="toggle">
         <span>Tin Foil Hat</span>
-        <button class="switch" type="button" role="switch" aria-checked="false" data-switch="tinfoil" data-on="false"></button>
+        <button class="switch" type="button" role="switch" aria-label="Tin Foil Hat mode" aria-checked="false" data-switch="tinfoil" data-on="false"></button>
       </div>
       <div class="toggle">
         <span>Shades</span>
-        <button class="switch" type="button" role="switch" aria-checked="false" data-switch="shades" data-on="false"></button>
+        <button class="switch" type="button" role="switch" aria-label="Shades mode" aria-checked="false" data-switch="shades" data-on="false"></button>
       </div>
       <div class="toggle">
         <span data-brain-mode-label>Brain Mode: Sprint</span>
