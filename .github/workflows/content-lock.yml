@@ -10,25 +10,10 @@ jobs:
   verify-content-lock:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update All Lock Files
-        run: |
-          # 1. Update the JSON manifest
-          find field-notes -name "index.html" -exec sha256sum {} + > content-lock/field-notes.lock.json
-          
-          # 2. Update the Markdown lock file (FIELD_NOTES_LOCK.md)
-          echo "# Field Notes Integrity Lock" > FIELD_NOTES_LOCK.md
-          echo "Generated on: $(date)" >> FIELD_NOTES_LOCK.md
-          echo "" >> FIELD_NOTES_LOCK.md
-          find field-notes -name "index.html" -exec sha256sum {} + >> FIELD_NOTES_LOCK.md
-          
-          # 3. Commit and push everything back
-          git config --global user.name "Divergify-Bot"
-          git config --global user.email "bot@divergify.app"
-          git add content-lock/field-notes.lock.json FIELD_NOTES_LOCK.md
-          git diff-index --quiet HEAD || git commit -m "chore: sync all lock files [skip ci]"
-          git push
+      - name: Verify Field Notes content lock
+        run: python3 scripts/verify_content_lock.py

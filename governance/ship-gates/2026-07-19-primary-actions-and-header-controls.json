@@ -1,0 +1,86 @@
+{
+  "feature_id": "2026-07-19-primary-actions-and-header-controls",
+  "feature_name": "Primary actions and header controls",
+  "owner": "Codex",
+  "date": "2026-07-19",
+  "scope_summary": "Restore visible primary action styling, prevent header navigation and controls from colliding at laptop widths, and provide accessible names for the Tin Foil Hat and Shades switches without changing their behavior.",
+  "risk_level": "low",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": false,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "n_a",
+      "rationale": "The change does not alter legal terms, regulated activity, data handling, or user consent.",
+      "evidence": []
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Existing local switch preferences remain unchanged and no new collection, transmission, or storage is introduced.",
+      "evidence": [
+        "Existing switch storage keys and mode application functions are unchanged",
+        "No network requests or analytics were added"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "The change adds no medical, diagnostic, or treatment content.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "n_a",
+      "rationale": "The change does not introduce persuasion, habit formation, or behavioral intervention.",
+      "evidence": []
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "The change does not alter neurodivergence research claims or guidance.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users regain visible primary actions and a non-overlapping header while retaining the established appearance controls.",
+      "evidence": [
+        "Default primary action color now resolves to the existing brand-gold token",
+        "Header wrap breakpoint covers the previously colliding 1363px viewport"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "The update preserves Divergify's existing labels, visual personality, and brand palette without adding claims.",
+      "evidence": [
+        "Tin Foil Hat and Shades visible labels are unchanged",
+        "Primary actions use the existing brand-gold design token"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "The two appearance switches now expose meaningful accessible names and the wider wrap point reduces visual crowding.",
+      "evidence": [
+        "Tin Foil Hat mode and Shades mode aria-labels exist in shared and fallback headers",
+        "Switch role, aria-checked state, click handling, and persistence remain intact"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "The patch changes presentation metadata and responsive styling only, with no new dependencies or execution paths.",
+      "evidence": [
+        "Existing switch click handlers and storage logic are unchanged",
+        "Fallback and shared headers contain matching accessible labels"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "n_a",
+      "rationale": "The change does not affect pricing, payments, merchandising, or conversion patterns.",
+      "evidence": []
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "After deployment, smoke-test primary actions and both switches at desktop, 1363px laptop, and mobile widths."
+  }
+}
