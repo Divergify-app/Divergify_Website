@@ -1,0 +1,93 @@
+{
+  "feature_id": "2026-08-18-android-pricing-and-optional-ai-paths",
+  "feature_name": "Android pricing and optional AI paths",
+  "owner": "Jessibelle Starr",
+  "date": "2026-08-18",
+  "scope_summary": "Align public pricing language with a free local-first web core, a $4.99 one-time Android app, and optional BYOK or token-pack AI without making AI or community membership required.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": false,
+    "health_related_context": false,
+    "third_party_network": false,
+    "monetization_or_payments": true,
+    "ai_processing": true
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Pricing language distinguishes the paid app from optional AI and does not promise regulated outcomes.",
+      "evidence": [
+        "Pricing page states the Android purchase is one time",
+        "AI is described as optional and separate"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "The local-first core remains available without an account or AI; BYOK and token packs are presented as opt-in paths.",
+      "evidence": [
+        "Web core remains free",
+        "No new data collection or account requirement is introduced"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "The change adds no diagnosis, treatment, or medical claim.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "The language preserves user choice and avoids coercive subscription or AI upsells.",
+      "evidence": [
+        "No subscription is introduced",
+        "Users can use the local core without AI"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "The change does not add research claims or behavioral prescriptions.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Clear pricing reduces surprise while preserving access for users who cannot or do not want to pay for AI.",
+      "evidence": [
+        "Free web core remains explicit",
+        "Optional AI paths are separated from app purchase"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "The copy stays direct, transparent, and grounded in Divergify's local-first identity.",
+      "evidence": [
+        "Pricing language is plain and non-marketingy",
+        "No unfinished feature is labeled live"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "The copy uses short explicit distinctions between free core, paid app, and optional AI.",
+      "evidence": [
+        "Pricing choices are visible in metadata and body copy"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "This is a content-only change with no runtime or dependency changes.",
+      "evidence": [
+        "No scripts or data paths changed"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "The one-time price and optional AI paths are disclosed without urgency, recurring billing, or forced account creation.",
+      "evidence": [
+        "No subscription language",
+        "BYOK and token packs are opt-in"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Verify final copy after deployment and keep Play pricing contingent on the listing eligibility check."
+  }
+}

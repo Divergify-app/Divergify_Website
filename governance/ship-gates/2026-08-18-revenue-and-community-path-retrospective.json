@@ -1,0 +1,91 @@
+{
+  "feature_id": "2026-08-18-revenue-and-community-path-retrospective",
+  "feature_name": "Revenue and community path retrospective record",
+  "owner": "Jessibelle Starr",
+  "date": "2026-08-18",
+  "scope_summary": "Record the earlier contact, privacy, revenue, and community route changes so release governance reflects the user-facing paths already merged.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": false,
+    "third_party_network": true,
+    "monetization_or_payments": true,
+    "ai_processing": false
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "Public support, privacy, and revenue paths are documented without medical or financial promises.",
+      "evidence": [
+        "Public privacy and terms routes are part of the reviewed change",
+        "Revenue links are disclosed as third-party or direct support paths"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "The changes preserve local-first defaults and disclose optional external services rather than silently sending data.",
+      "evidence": [
+        "Data controls remain explicit",
+        "Third-party store links leave Divergify in a disclosed way"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "n_a",
+      "rationale": "No medical or treatment claim is introduced.",
+      "evidence": []
+    },
+    "behavioral_science_alignment": {
+      "status": "n_a",
+      "rationale": "No behavioral intervention is introduced.",
+      "evidence": []
+    },
+    "neurodivergence_research_alignment": {
+      "status": "n_a",
+      "rationale": "No research claim is introduced.",
+      "evidence": []
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Reliable contact, privacy, and support paths reduce user confusion and make help reachable.",
+      "evidence": [
+        "Support email was repaired",
+        "Privacy and data-control routes remain discoverable"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "The paths use transparent, non-coercive Divergify language.",
+      "evidence": [
+        "No subscription pressure",
+        "Third-party fulfillment is disclosed"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Core support and privacy destinations remain reachable through visible links.",
+      "evidence": [
+        "Support and privacy links are public",
+        "Community content is intended to have a stable route"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "The record covers user-facing routing and does not add runtime dependencies.",
+      "evidence": [
+        "Static routes and contact wiring are documented"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "Support and purchase paths are optional and clearly separated from the free local-first core.",
+      "evidence": [
+        "No account requirement",
+        "No recurring billing"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Verify the /community route after deployment and re-run the ship filter."
+  }
+}
