@@ -1,0 +1,101 @@
+{
+  "feature_id": "2026-10-09-takota-local-and-guarded-live",
+  "feature_name": "Takota local product flows and guarded live client",
+  "owner": "Codex",
+  "date": "2026-10-09",
+  "scope_summary": "Unify mobile and website Takota behavior, add local supports/return notes/editable actions, and gate the optional Manus client behind adult consent and privacy cancellation.",
+  "risk_level": "medium",
+  "touches": {
+    "user_data": true,
+    "health_related_context": true,
+    "third_party_network": true,
+    "monetization_or_payments": false,
+    "ai_processing": true
+  },
+  "filters": {
+    "legal_and_regulatory": {
+      "status": "pass",
+      "rationale": "The code requires explicit adult consent and names the existing provider before any live request; it makes no diagnostic or legal-compliance claim. Actual provider retention and production launch review remain release conditions.",
+      "evidence": [
+        "js/takota-chat.js: consent dialog and adult disclosure",
+        "TAKOTA_HANDOFF.md: production and retention checks remain open"
+      ]
+    },
+    "privacy_local_first_promise": {
+      "status": "pass",
+      "rationale": "Default guidance and local saves make no API calls. Only live-consent-session messages enter live context; cards, notes and local chat are excluded. Site privacy synchronously cancels replies.",
+      "evidence": [
+        "tests/takota.test.cjs: default zero calls, payload exclusion, pending request cancellation and site privacy",
+        "Shared mobile engine: 47 passing regression checks"
+      ]
+    },
+    "medical_scope_and_claims": {
+      "status": "pass",
+      "rationale": "Takota presents productivity support, not diagnosis or treatment. Limited crisis and age rules are handled locally. Real-model behavior remains unverified and is not certified by this gate.",
+      "evidence": [
+        "js/takota-chat.js: product boundaries",
+        "Mobile shared/takota.ts and tests/takota.local.test.ts"
+      ]
+    },
+    "behavioral_science_alignment": {
+      "status": "pass",
+      "rationale": "Actions are optional, editable and saved once. No timer, streak, randomized praise or reminder begins automatically; users can pause or close work.",
+      "evidence": [
+        "tests/takota.test.cjs: queued action saved once",
+        "js/takota-chat.js: stop, postpone and close controls"
+      ]
+    },
+    "neurodivergence_research_alignment": {
+      "status": "pass",
+      "rationale": "Three predictable support states and user-authored supports are offered as design choices. No scientific efficacy or therapeutic color claim is made.",
+      "evidence": [
+        "takota.html: concrete support states",
+        "css/takota-chat.css: reduced motion and Shades"
+      ]
+    },
+    "user_benefit_and_harm_check": {
+      "status": "pass",
+      "rationale": "Users can keep support local, edit or reject actions, stop, export or restore data, and see unavailable service states without fake live reassurance.",
+      "evidence": [
+        "tests/takota.test.cjs: malformed reply fallback and corrupt-data preservation",
+        "TAKOTA_HANDOFF.md: remaining device and provider checks"
+      ]
+    },
+    "brand_voice_and_claims": {
+      "status": "pass",
+      "rationale": "Takota uses the existing grounded voice and clearly labels templates versus live AI. The page does not advertise subscriptions, purchased tokens or an available production model.",
+      "evidence": [
+        "Shared mobile shared/sidekicks.ts",
+        "takota.html and js/takota-chat.js: source labels and planned-feature disclosure"
+      ]
+    },
+    "accessibility_and_inclusion": {
+      "status": "pass",
+      "rationale": "Source uses semantic labels, native controls, log/status regions, keyboard submission with composition support, 44px controls, high-contrast text and reduced-motion rules. Actual viewport and assistive-technology checks remain required before public launch.",
+      "evidence": [
+        "js/takota-chat.js and css/takota-chat.css: semantic controls and contrast",
+        "TAKOTA_HANDOFF.md: viewport, keyboard and screen-reader conditions"
+      ]
+    },
+    "security_and_reliability": {
+      "status": "pass",
+      "rationale": "User text is rendered as text, never HTML. Consent is guarded before fetch and late replies are rejected. Corrupt stored JSON is preserved. The matching server meters live requests and protects owner AI routes.",
+      "evidence": [
+        "tests/takota.test.cjs: HTML safety, cancellation and corrupt storage",
+        "Mobile tests/takota.server.test.ts: usage caps and owner authorization"
+      ]
+    },
+    "monetization_and_dark_pattern_check": {
+      "status": "pass",
+      "rationale": "No checkout, payment or subscription behavior is added. Suggestions never become tasks automatically; no paid or unlimited AI entitlement is implied.",
+      "evidence": [
+        "js/takota-chat.js: explicit save and consent copy",
+        "TAKOTA_HANDOFF.md: token packs and BYO keys are not implemented"
+      ]
+    }
+  },
+  "ship_decision": {
+    "ready": true,
+    "conditions": "Ready for code review and local guidance verification. This is not certification of a live AI or native-store release. Complete actual viewport/assistive-technology checks before website publication and persistent limits, retention/disclosures, deployed API and adversarial real-model verification before live AI activation."
+  }
+}

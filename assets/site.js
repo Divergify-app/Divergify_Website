@@ -214,6 +214,7 @@ function setMode(key, value) {
           : String(value);
     writeLocalStorage(key, normalizedValue);
     applyModesFromStorage();
+    window.dispatchEvent(new Event('divergify:modes-changed'));
   } catch (error) {
     console.error("Divergify: Storage locked.", error);
   }

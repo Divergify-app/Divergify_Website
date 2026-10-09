@@ -145,6 +145,7 @@ class ModeManager {
     this.currentMode = mode;
     this.saveMode(mode);
     this.applyMode(mode);
+    window.dispatchEvent(new Event('divergify:modes-changed'));
   }
 
   saveMode(mode) {

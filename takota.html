@@ -1,342 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Takota — Divergify AI Companion</title>
-  <meta name="description" content="Takota is a calm, grounded AI companion built for neurodivergent people. No toxic positivity. No clinical labels. Just presence." />
-  <link rel="canonical" href="https://divergify.app/takota.html" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:site_name" content="Divergify" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Takota — Divergify AI Companion" />
-  <meta property="og:description" content="Takota is a calm, grounded AI companion built for neurodivergent people. No toxic positivity. No clinical labels. Just presence." />
-  <meta property="og:url" content="https://divergify.app/takota.html" />
-  <meta property="og:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Takota — Divergify AI Companion" />
-  <meta name="twitter:description" content="Takota is a calm, grounded AI companion built for neurodivergent people. No toxic positivity. No clinical labels. Just presence." />
-  <meta name="twitter:image" content="https://divergify.app/assets/brand/divergify-constellation-logo.png" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Takota — Divergify AI Companion", "description": "Takota is the AI sidekick built into Divergify for neurodivergent people.", "url": "https://divergify.app/takota.html", "isPartOf": {"@id": "https://divergify.app/#website"}, "about": {"@id": "https://divergify.app/#organization"}}</script>
-  <link rel="icon" href="/favicon.ico" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0D1538;
-      --periwinkle: #141B3D;
-      --periwinkle-mid: #252D54;
-      --gold: #C9A84C;
-      --text: #E8EAF0;
-      --muted: #6B7294;
-      --border: #252D54;
-    }
-    html, body {
-      height: 100%;
-      background: var(--navy);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-      gap: 32px;
-    }
-    .hero {
-      text-align: center;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-    .hero-mark {
-      font-size: 48px;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .hero h1 {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-    .hero p {
-      font-size: 16px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-    .chat-card {
-      width: 100%;
-      max-width: 480px;
-      background: var(--periwinkle);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 520px;
-    }
-    .chat-header {
-      padding: 18px 20px 14px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .chat-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--navy);
-      border: 1px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .chat-header-text .name {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .chat-header-text .sub {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-    .chat-messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      scroll-behavior: smooth;
-    }
-    .chat-messages::-webkit-scrollbar { width: 4px; }
-    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-    .msg {
-      max-width: 88%;
-      padding: 11px 15px;
-      border-radius: 14px;
-      font-size: 14px;
-      line-height: 1.55;
-    }
-    .msg.user {
-      align-self: flex-end;
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 500;
-    }
-    .msg.assistant {
-      align-self: flex-start;
-      background: var(--navy);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .msg.typing {
-      align-self: flex-start;
-      background: var(--navy);
-      color: var(--muted);
-      border: 1px solid var(--border);
-      font-style: italic;
-    }
-    .chat-footer {
-      padding: 14px 16px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 10px;
-      align-items: flex-end;
-    }
-    .chat-input {
-      flex: 1;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 14px;
-      color: var(--text);
-      font-size: 14px;
-      font-family: inherit;
-      resize: none;
-      max-height: 88px;
-      outline: none;
-      line-height: 1.4;
-    }
-    .chat-input::placeholder { color: var(--muted); }
-    .chat-input:focus { border-color: #C9A84C44; }
-    .chat-send {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--gold);
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      color: var(--navy);
-      font-weight: 700;
-      flex-shrink: 0;
-      transition: opacity 0.1s;
-    }
-    .chat-send:disabled { background: var(--periwinkle-mid); color: var(--muted); cursor: default; }
-    .chat-send:not(:disabled):hover { opacity: 0.85; }
-    .disclaimer {
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      padding: 0 16px 12px;
-    }
-    .back-link {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .back-link:hover { color: var(--gold); }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="hero">
-      <div class="hero-mark">✦</div>
-      <h1>Takota</h1>
-      <p>A calm, grounded AI companion built for neurodivergent people. No toxic positivity. No clinical labels. Just presence.</p>
-    </div>
-
-    <div class="chat-card">
-      <div class="chat-header">
-        <div class="chat-avatar">✦</div>
-        <div class="chat-header-text">
-          <div class="name">Takota</div>
-          <div class="sub">AI companion · Divergify</div>
-        </div>
-      </div>
-      <div class="chat-messages" id="messages" role="log" aria-live="polite">
-        <div class="msg assistant">Hey. I'm Takota. What's on your mind?</div>
-      </div>
-      <div class="chat-footer">
-        <textarea
-          class="chat-input"
-          id="chat-input"
-          placeholder="Tell me what's happening..."
-          rows="1"
-          maxlength="500"
-          aria-label="Message Takota"
-        ></textarea>
-        <button class="chat-send" id="chat-send" disabled aria-label="Send">→</button>
-      </div>
-      <div class="disclaimer">Not medical advice. Does not diagnose or treat any condition.</div>
-    </div>
-
-    <a href="/" class="back-link">← Back to Divergify</a>
-  </div>
-
-  <script>
-    (function () {
-      const API_BASE = 'https://api.divergify.app';
-      const STORAGE_KEY = 'takota_page_history';
-      let history = [];
-      let isLoading = false;
-
-      try {
-        const saved = sessionStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          history = JSON.parse(saved);
-          history.forEach((m) => appendMsg(m.role, m.content, false));
-        }
-      } catch (_) {}
-
-      const input = document.getElementById('chat-input');
-      const sendBtn = document.getElementById('chat-send');
-      const messages = document.getElementById('messages');
-
-      input.addEventListener('input', () => {
-        sendBtn.disabled = !input.value.trim() || isLoading;
-        input.style.height = 'auto';
-        input.style.height = Math.min(input.scrollHeight, 88) + 'px';
-      });
-
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-          e.preventDefault();
-          if (!sendBtn.disabled) send();
-        }
-      });
-
-      sendBtn.addEventListener('click', send);
-
-      function appendMsg(role, text, save) {
-        const div = document.createElement('div');
-        div.className = 'msg ' + role;
-        div.textContent = text;
-        messages.appendChild(div);
-        messages.scrollTop = messages.scrollHeight;
-        if (save !== false) {
-          history.push({ role, content: text });
-          if (history.length > 10) history = history.slice(-10);
-          try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch (_) {}
-        }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Takota — find your next step | Divergify</title>
+    <meta
+      name="description"
+      content="Overloaded, stuck, or coming back? Takota helps you use saved supports, shrink a task, and leave a return note. Local guidance first; live AI by choice."
+    />
+    <link rel="canonical" href="https://divergify.app/takota.html" />
+    <meta
+      property="og:title"
+      content="Takota — find your next step | Divergify"
+    />
+    <meta
+      property="og:description"
+      content="Use a saved support, shrink a task, or find your way back. Nothing starts automatically."
+    />
+    <meta property="og:url" content="https://divergify.app/takota.html" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0d1538" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/takota-chat.css" />
+    <style>
+      * {
+        box-sizing: border-box;
       }
-
-      function showTyping() {
-        const div = document.createElement('div');
-        div.className = 'msg typing';
-        div.id = 'typing-indicator';
-        div.textContent = 'Thinking…';
-        messages.appendChild(div);
-        messages.scrollTop = messages.scrollHeight;
+      body {
+        margin: 0;
+        background: #0d1538;
+        color: #e8eaf0;
+        font:
+          1rem/1.5 system-ui,
+          sans-serif;
       }
-
-      function removeTyping() {
-        const el = document.getElementById('typing-indicator');
-        if (el) el.remove();
+      a {
+        color: #dac274;
       }
-
-      async function send() {
-        const text = input.value.trim();
-        if (!text || isLoading) return;
-        input.value = '';
-        input.style.height = 'auto';
-        sendBtn.disabled = true;
-        isLoading = true;
-        appendMsg('user', text);
-        showTyping();
-
-        try {
-          const payload = {
-            '0': {
-              json: {
-                message: text,
-                history: history.slice(-6).filter((m) => !(m.role === 'user' && m.content === text)),
-              },
-            },
-          };
-          const res = await fetch(API_BASE + '/api/trpc/takota.widgetChat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-            credentials: 'include',
-          });
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          const data = await res.json();
-          const reply =
-            data?.[0]?.result?.data?.json?.reply ||
-            data?.result?.data?.json?.reply ||
-            "I'm here. Something went sideways — try again?";
-          removeTyping();
-          appendMsg('assistant', reply);
-        } catch (_) {
-          removeTyping();
-          appendMsg('assistant', "I'm here. Something went sideways on my end — try again?");
-        } finally {
-          isLoading = false;
-          sendBtn.disabled = !input.value.trim();
-        }
+      a:focus-visible {
+        outline: 3px solid #dac274;
+        outline-offset: 4px;
       }
-    })();
-  </script>
-</body>
+      header,
+      main,
+      footer {
+        width: min(760px, 100%);
+        margin: auto;
+        padding: 1rem;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      header a {
+        padding: 0.5rem 0;
+      }
+      h1 {
+        margin: 1rem 0 0.5rem;
+        font-size: clamp(2rem, 7vw, 3rem);
+        line-height: 1.15;
+      }
+      .intro {
+        color: #b8bfd6;
+        max-width: 55ch;
+        margin-bottom: 1.5rem;
+      }
+      footer {
+        color: #b8bfd6;
+        font-size: 0.875rem;
+        padding: 2rem 1rem;
+      }
+      .skip {
+        position: absolute;
+        top: -80px;
+        background: #0d1538;
+        padding: 1rem;
+      }
+      .skip:focus {
+        top: 0;
+      }
+    </style>
+    <script defer src="/js/takota-core.js"></script>
+    <script defer src="/js/takota-chat.js"></script>
+  </head>
+  <body>
+    <a href="#takota" class="skip">Skip to Takota</a>
+    <header>
+      <a href="/">Divergify</a>
+      <nav aria-label="Main navigation">
+        <a href="/app/">App</a><a href="/community/">Community</a
+        ><a href="/field-notes/">Field Notes</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Find the next foothold.</h1>
+      <p class="intro">
+        Overloaded, stuck, or coming back? Takota can help you use a support you
+        trust, shrink a task, or pick up where you left off. One action, a
+        question, or a pause.
+      </p>
+      <section
+        id="takota"
+        data-takota-root
+        aria-label="Takota support tool"
+      ></section>
+      <noscript
+        >Takota needs JavaScript to save local supports and actions. Your
+        browser can block live AI independently.</noscript
+      >
+    </main>
+    <footer>
+      <p>Built by Jess for brains that work differently.</p>
+      <nav aria-label="Support and policies">
+        <a href="/privacy.html">Privacy</a
+        ><a href="mailto:divergifyapp@proton.me">Support</a>
+      </nav>
+    </footer>
+  </body>
 </html>
