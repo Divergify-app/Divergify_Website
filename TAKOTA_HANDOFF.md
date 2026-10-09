@@ -1,6 +1,6 @@
 # Takota website handoff — 2026-10-09
 
-Implementation checkpoints: website `859351bd05b2255896d45aea09571ced1670275e`; shared mobile engine `c39f7840f97bf5321d890bee239b2b3d0fa900fb`. Both are saved in the existing repositories under `codex/takota-product-2026-10-09`.
+Implementation checkpoints: website `859351bd05b2255896d45aea09571ced1670275e`; shared mobile engine `009439fa70690815e27b2b2866c21b36bca34290` (includes original engine `c39f7840f97bf5321d890bee239b2b3d0fa900fb`). Both are saved in the existing repositories under `codex/takota-product-2026-10-09`. The core was regenerated for the clarified failure notice: already-sent text may have reached the service. Full-page assets use relative paths so a repository preview can load them.
 
 The full page and widget now share `js/takota-chat.js` and the mobile product's generated `js/takota-core.js`. They support overload, a stuck task and returning, saved supports/notes, editable actions, one-time saves, backup/restore and explicit adult live consent. Guidance is local by default and labeled as templates. A new page, site privacy activation or closing the widget ends live consent. Local chat, supports and notes are excluded from the live payload. Browser actions stay local until exported; no Hub sync is claimed.
 
