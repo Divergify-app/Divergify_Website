@@ -1,5 +1,7 @@
 # Takota website handoff — 2026-10-09
 
+Implementation checkpoints: website `859351bd05b2255896d45aea09571ced1670275e`; shared mobile engine `c39f7840f97bf5321d890bee239b2b3d0fa900fb`. Both are saved in the existing repositories under `codex/takota-product-2026-10-09`.
+
 The full page and widget now share `js/takota-chat.js` and the mobile product's generated `js/takota-core.js`. They support overload, a stuck task and returning, saved supports/notes, editable actions, one-time saves, backup/restore and explicit adult live consent. Guidance is local by default and labeled as templates. A new page, site privacy activation or closing the widget ends live consent. Local chat, supports and notes are excluded from the live payload. Browser actions stay local until exported; no Hub sync is claimed.
 
 The API uses a non-batch tRPC body, `{ "json": input }`, against `takota.chat`. The matching guarded router is in `Divergify-app/divergify-mobile-app`. `https://api.divergify.app` is still an unverified placeholder, not a proven deployment. Do not enable or advertise production live AI until the existing Manus backend, provider, persistent usage limits, retention/disclosures and real-model behavior have been verified. There are no client provider secrets and no paid AI entitlements here.
