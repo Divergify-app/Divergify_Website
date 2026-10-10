@@ -137,6 +137,7 @@
     applyBodyModes();
     syncSwitches();
     setFooterLine();
+    window.dispatchEvent(new Event('divergify:modes-changed'));
   }
 
   function bindSwitches() {

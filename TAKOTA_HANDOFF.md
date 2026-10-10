@@ -1,0 +1,17 @@
+# Takota website handoff — 2026-10-09
+
+Implementation checkpoints: website `859351bd05b2255896d45aea09571ced1670275e`; shared mobile engine `009439fa70690815e27b2b2866c21b36bca34290` (includes original engine `c39f7840f97bf5321d890bee239b2b3d0fa900fb`). Both are saved in the existing repositories under `codex/takota-product-2026-10-09`. The core was regenerated for the clarified failure notice: already-sent text may have reached the service. Full-page assets use relative paths so a repository preview can load them.
+
+The full page and widget now share `js/takota-chat.js` and the mobile product's generated `js/takota-core.js`. They support overload, a stuck task and returning, saved supports/notes, editable actions, one-time saves, backup/restore and explicit adult live consent. Guidance is local by default and labeled as templates. A new page, site privacy activation or closing the widget ends live consent. Local chat, supports and notes are excluded from the live payload. Browser actions stay local until exported; no Hub sync is claimed.
+
+The API uses a non-batch tRPC body, `{ "json": input }`, against `takota.chat`. The matching guarded router is in `Divergify-app/divergify-mobile-app`. `https://api.divergify.app` is still an unverified placeholder, not a proven deployment. Do not enable or advertise production live AI until the existing Manus backend, provider, persistent usage limits, retention/disclosures and real-model behavior have been verified. There are no client provider secrets and no paid AI entitlements here.
+
+Eight behavior tests in `tests/takota.test.cjs` run against the committed bundle and real UI adapter in a DOM emulator, using mocked fetch and polyfilled dialog APIs. They cover local action saves, reload/supports, consent payload privacy, late replies, site privacy, malformed service replies, age lock and safe text rendering. Run `npm ci && npm run test:takota`. GitHub's Takota, content-lock and ship-filter checks pass for code commit `cfbbcb9e802bb22759ebb6874f4ca264fa6f2150`.
+
+A desktop repository HTML preview loaded the real controls and engine, saved an edited local action, and verified that the consent dialog takes focus and Escape returns focus to its opener. The screenshot is implementation evidence, not a production or model test; the proxy rewrites navigation links. The browser could not reach the local test server, and its URL policy blocked the local-file narrow-screen harness. Verify 320px/390px widths, large fonts, screen readers, reduced motion and page/widget behavior in the actual hosted preview before publication.
+
+`python3 scripts/verify_content_lock.py` passes. Original Field Notes prose was not edited. Stage the product and its new gate together, then run `python3 scripts/verify_ship_filter.py`. The new gate is scoped to code review/local guidance and does not certify a live AI release or legal compliance.
+
+Regenerate the core in the existing mobile checkout with `node scripts/build-takota-web.mjs /path/to/Divergify_Website`. Commit the generated JavaScript and `takota-core.LICENSE.txt` together. Update this handoff and rerun the eight website behavior tests whenever the shared engine changes. Full provider/deployment/device steps are in the mobile repository's `docs/product/takota-release-2026-10-09.md`.
+
+No BYO keys, token packs, checkout, subscription, cross-device account sync or automated outreach was added. Native app distribution and real-model verification remain separate release work.
