@@ -162,6 +162,15 @@ window.DIVERGIPEDIA = [
     "slug": "cliffhanger-mechanism"
   },
   {
+    "term": "Clutter Blindness",
+    "phonetic": "clut-ter blind-ness",
+    "pos": "n.",
+    "definition": "1. The neurological inability to \"see\" a mess because it has become part of the background scenery. 2. When a pile of laundry becomes invisible furniture.",
+    "mechanism": "Sensory adaptation / Habituation.",
+    "usage": "\"I didn't see the box in the hallway until I cured my Clutter Blindness by tripping over it.\"",
+    "slug": "clutter-blindness"
+  },
+  {
     "term": "Cognitive Drag",
     "phonetic": "cog-ni-tive drag",
     "pos": "n.",
@@ -279,6 +288,15 @@ window.DIVERGIPEDIA = [
     "slug": "dopamine-deposit"
   },
   {
+    "term": "Dopamine Detour",
+    "phonetic": "do-pa-mine de-tour",
+    "pos": "n.",
+    "definition": "1. A productive but unauthorized deviation from the main objective. 2. Cleaning the fridge to avoid writing a report.",
+    "mechanism": "Productive procrastination / Novelty seeking.",
+    "usage": "\"I meant to finish the slide deck, but I took a Dopamine Detour and reorganized my entire spice rack.\"",
+    "slug": "dopamine-detour"
+  },
+  {
     "term": "Drag Timer",
     "phonetic": "drag ti-mer",
     "pos": "n.",
@@ -295,15 +313,6 @@ window.DIVERGIPEDIA = [
     "mechanism": " Perceived difficulty vs. actual duration. Calibrates expectations to reality.",
     "usage": " \"The task only takes 5 minutes, but the Effort Estimate is 'High' because it involves calling insurance.\"",
     "slug": "effort-estimate"
-  },
-  {
-    "term": "Open Loop Effect",
-    "phonetic": "el-lip-sis ef-fect",
-    "pos": "n.",
-    "definition": "1. The psychological pull created by leaving a task almost finished. 2. A strategy leveraging the brain's obsession with incomplete patterns.",
-    "mechanism": " Open loop psychology (Zeigarnik effect). Creates a subconscious drive to return to the work.",
-    "usage": " \"I used the Open Loop Effect by stopping mid-sentence yesterday; now I have to finish it just to stop the mental itching.\"",
-    "slug": "open-loop-effect"
   },
   {
     "term": "Emergency Eject",
@@ -504,6 +513,15 @@ window.DIVERGIPEDIA = [
     "slug": "loop-closer"
   },
   {
+    "term": "Meaning ESP",
+    "phonetic": "mean-ing E-S-P",
+    "pos": "n.",
+    "definition": "The apparently mandatory psychic ability to understand what someone intended to say instead of what they actually said.",
+    "mechanism": "A playful, nonclinical term for the effort of interpreting implied meaning and tone. Explicit clarification can reduce ambiguity; see /field-notes/say-what-you-mean/.",
+    "usage": "Apparently, ‘Do whatever you want’ was a test of my Meaning ESP. I failed.",
+    "slug": "meaning-esp"
+  },
+  {
     "term": "Momentum Thief",
     "phonetic": "mo-men-tum thief",
     "pos": "n.",
@@ -565,6 +583,15 @@ window.DIVERGIPEDIA = [
     "mechanism": " Friction cost quantification. Highlights how small annoyances compound into major blocks.",
     "usage": " \"The Obstacle Tax on this form is too high; why do I need to fax it? Who has a fax machine?\"",
     "slug": "obstacle-tax"
+  },
+  {
+    "term": "Open Loop Effect",
+    "phonetic": "el-lip-sis ef-fect",
+    "pos": "n.",
+    "definition": "1. The psychological pull created by leaving a task almost finished. 2. A strategy leveraging the brain's obsession with incomplete patterns.",
+    "mechanism": " Open loop psychology (Zeigarnik effect). Creates a subconscious drive to return to the work.",
+    "usage": " \"I used the Open Loop Effect by stopping mid-sentence yesterday; now I have to finish it just to stop the mental itching.\"",
+    "slug": "open-loop-effect"
   },
   {
     "term": "Overload Alarm",
@@ -648,6 +675,15 @@ window.DIVERGIPEDIA = [
     "slug": "repetition-lock"
   },
   {
+    "term": "Revenge Bedtime",
+    "phonetic": "re-venge bed-time",
+    "pos": "n.",
+    "definition": "1. Staying up late to reclaim agency and freedom lost during the workday. 2. Sacrificing sleep to feel like you own your time.",
+    "mechanism": "Autonomy restoration.",
+    "usage": "\"I am exhausted, but I'm doing Revenge Bedtime because 2 AM is the only time the world leaves me alone.\"",
+    "slug": "revenge-bedtime"
+  },
+  {
     "term": "Reward Roulette",
     "phonetic": "re-ward rou-lette",
     "pos": "n.",
@@ -709,6 +745,15 @@ window.DIVERGIPEDIA = [
     "mechanism": " Timeboxed intensity + forced recovery. Prevents burnout by enforcing limits.",
     "usage": " \"I'm entering a Sprint Window. If you text me, I will not see it until I emerge.\"",
     "slug": "sprint-window"
+  },
+  {
+    "term": "Stasis Lock",
+    "phonetic": "sta-sis lock",
+    "pos": "n.",
+    "definition": "1. The involuntary suspension of productive activity caused by an impending event. 2. A system freeze that occurs because the brain is \"buffering\" a future appointment.",
+    "mechanism": "Anxiety-induced executive freeze.",
+    "usage": "\"I have a dentist appointment at 4 PM, so I've been in Stasis Lock since breakfast.\"",
+    "slug": "stasis-lock"
   },
   {
     "term": "Status Check",
@@ -862,41 +907,5 @@ window.DIVERGIPEDIA = [
     "mechanism": " Environmental distraction elimination. Controls the inputs to control the output.",
     "usage": " \"I'm playing Zone Defense today: phone off, door locked, noise-canceling headphones on.",
     "slug": "zone-defense"
-  },
-  {
-    "term": "Stasis Lock",
-    "phonetic": "sta-sis lock",
-    "pos": "n.",
-    "definition": "1. The involuntary suspension of productive activity caused by an impending event. 2. A system freeze that occurs because the brain is \"buffering\" a future appointment.",
-    "mechanism": "Anxiety-induced executive freeze.",
-    "usage": "\"I have a dentist appointment at 4 PM, so I've been in Stasis Lock since breakfast.\"",
-    "slug": "stasis-lock"
-  },
-  {
-    "term": "Dopamine Detour",
-    "phonetic": "do-pa-mine de-tour",
-    "pos": "n.",
-    "definition": "1. A productive but unauthorized deviation from the main objective. 2. Cleaning the fridge to avoid writing a report.",
-    "mechanism": "Productive procrastination / Novelty seeking.",
-    "usage": "\"I meant to finish the slide deck, but I took a Dopamine Detour and reorganized my entire spice rack.\"",
-    "slug": "dopamine-detour"
-  },
-  {
-    "term": "Revenge Bedtime",
-    "phonetic": "re-venge bed-time",
-    "pos": "n.",
-    "definition": "1. Staying up late to reclaim agency and freedom lost during the workday. 2. Sacrificing sleep to feel like you own your time.",
-    "mechanism": "Autonomy restoration.",
-    "usage": "\"I am exhausted, but I'm doing Revenge Bedtime because 2 AM is the only time the world leaves me alone.\"",
-    "slug": "revenge-bedtime"
-  },
-  {
-    "term": "Clutter Blindness",
-    "phonetic": "clut-ter blind-ness",
-    "pos": "n.",
-    "definition": "1. The neurological inability to \"see\" a mess because it has become part of the background scenery. 2. When a pile of laundry becomes invisible furniture.",
-    "mechanism": "Sensory adaptation / Habituation.",
-    "usage": "\"I didn't see the box in the hallway until I cured my Clutter Blindness by tripping over it.\"",
-    "slug": "clutter-blindness"
   }
 ];
