@@ -513,12 +513,12 @@ window.DIVERGIPEDIA = [
     "slug": "loop-closer"
   },
   {
-    "term": "Meaning ESP",
-    "phonetic": "mean-ing E-S-P",
+    "term": "Social Telepathy",
+    "phonetic": "so-cial te-lep-a-thy",
     "pos": "n.",
-    "definition": "The apparently mandatory psychic ability to understand what someone intended to say instead of what they actually said.",
+    "definition": "The unwritten expectation that you should be able to decipher what someone means without them having to actually say it.",
     "mechanism": "A playful, nonclinical term for the effort of interpreting implied meaning and tone. Explicit clarification can reduce ambiguity; see /field-notes/say-what-you-mean/.",
-    "usage": "Apparently, ‘Do whatever you want’ was a test of my Meaning ESP. I failed.",
+    "usage": "Apparently, I'm supposed to know you're angry when you tell me you're fine. My Social Telepathy must be malfunctioning.",
     "slug": "meaning-esp"
   },
   {
